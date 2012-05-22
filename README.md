@@ -1,4 +1,0 @@
-Terminus
-========
-
-Linux learning game
