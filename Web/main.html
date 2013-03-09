@@ -1,7 +1,31 @@
-<html>
-
-<div id="term"> </div>
-
-<div id="pics"> </div>
-
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Terminus</title>
+    <!-- Scripts -->
+    <script type="text/javascript" src="./static/javascript/jquery-1.9.1.min.js" ></script>
+    <script type="text/javascript" src="./static/javascript/jquery.terminal-0.5.min.js"></script>
+    <!-- CSS -->
+    <link href="./static/css/jquery.terminal.css" rel="stylesheet"/>
+    <link href="./static/css/terminus.css" rel="stylesheet"/>
+    
+    <script>
+        $(document).ready(function() {
+            $('#terminal_div').terminal(function(command, term) {
+                if (command == 'test') {
+                    term.echo("you just typed 'test'");
+                } else {
+                    term.echo('unknown command');
+                }
+            }, { prompt: '>', name: 'terminus_terminal',greetings:""});
+        });
+    </script>
+  </head>
+<body>
+<div id="term">
+    <div id="terminal_div"></div>
+</div>
+<div id="pics"></div>
+</body>
 </html>
