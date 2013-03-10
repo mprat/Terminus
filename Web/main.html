@@ -14,23 +14,32 @@
     <link href="./static/css/jquery.terminal.css" rel="stylesheet"/>
     <link href="./static/css/terminus.css" rel="stylesheet"/>
     
-    <script>
+    <script>        
         $(document).ready(function() {
-            $('#terminal_div').terminal(function(command, term) {
-                CurrentRoom[command]();
-                if (command == 'test') {
-                    term.echo("you just typed 'test'");
-                } else {
-                    term.echo('unknown command');
+            $('#term').terminal(function(input, term) {
+                var split = input.split(" ");
+                var command = split[0].toString();
+                var args = split.splice(1,split.length);
+                if( current_room.commands.indexOf(command) > -1 ){ //Could use current_room.hasOwnProperty(command)
+                    term.echo(current_room[command](args));
                 }
-            }, { prompt: '>', name: 'terminus_terminal',greetings:""});
+                else{
+                    term.echo("Command '"+command+"' not found in room '"+current_room.room_name+"'");
+                }
+            }, { history: true,                     // Keep user's history of commands
+                prompt: '>',                        // Text that prefixes terminal entries
+                name: 'terminus_terminal',          // Name of terminal
+                greetings:"",                       // Signiture to include at top of terminal
+                exit: false,                        // Disable 'exit' command
+                clear: false,                       // Disable 'clear' command
+                });
         });
     </script>
   </head>
 <body>
 <div id="term">
-    <div id="terminal_div"></div>
 </div>
-<div id="pics"></div>
+<div id="pics">
+</div>
 </body>
 </html>

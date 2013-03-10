@@ -22,4 +22,4 @@ link(Home, WesternForest);
 link(Home, TestRoom);
 
 // set the current room
-var CurrentRoom = Home;
+var current_room = Home;

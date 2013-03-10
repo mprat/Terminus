@@ -13,6 +13,7 @@ function Room(roomname, introtext){
 	this.commands = ["cd", "ls", "less", "man", "help", "exit"];
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
+	this.cmd_text = {"man": "room man text", "less": this.room_name + " is a Room", "help": "room help text", "exit": "room exit text"};
 };
 
 Room.prototype.toString = function(){
@@ -60,7 +61,30 @@ Room.prototype.removeCommand = function(cmd){
 	}
 };
 
+Room.prototype.addCmdText = function(cmd, text) {
+	this.cmd_text[cmd] = text;
+};
+
 Room.prototype.ls = function(args){
-	console.log(this.children.toString())
 	return (this.children.toString()).replaceAll(",", "\n");
+};
+
+Room.prototype.cd = function(args){
+
+};
+
+Room.prototype.less = function(args){
+
+};
+
+Room.prototype.man = function(args){
+	return 
+};
+
+Room.prototype.help = function(args){
+
+};
+
+Room.prototype.exit = function(args){
+
 };
