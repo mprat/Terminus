@@ -171,7 +171,7 @@ Room.prototype.less = function(args){
 		item = args[0];
 		for (var i = 0; i < this.items.length; i++){
 			if (item === this.items[i].toString()){
-                $("#scene").attr("src",this.items[i].itempic); // Display image of item
+                $("#scene").attr("src",this.items[i].picturename); // Display image of item
 				return this.items[i].cmd_text["less"];
 			}
 		}

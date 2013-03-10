@@ -315,6 +315,7 @@ var Boulder = new Item("LargeBoulder", "It's much too big to move.", "item_bould
 Boulder.addCmdText("rm", "The boulder disappears with a pop. The way is clear now.");
 RockyPath.addItem(Boulder);
 RockyPath.addCommand("rm");
+Boulder.addValidCmd("rm");
 
 //ARTISAN'S SHOP
 var ArtisanShop = new Room("ArtisanShop", 
