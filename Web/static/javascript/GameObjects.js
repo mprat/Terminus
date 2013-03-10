@@ -318,7 +318,7 @@ var RockyPath = new Room("RockyPath",
 There is an enormous boulder blocking your way, however.",
     "loc_rockypath.gif");
 var Boulder = new Item("LargeBoulder", "It's much too big to move.", "item_boulder.gif");
-Boulder.addCmdText("rm", "The boulder disappears with a pop. The way is clear now.");
+Boulder.addCmdText("rm", "The boulder disappears with a pop.");
 RockyPath.addItem(Boulder);
 RockyPath.addCommand("rm");
 Boulder.addValidCmd("rm");
@@ -440,6 +440,7 @@ var UglyTroll = new Item("UglyTroll",
     "item_troll1.gif");
 UglyTroll.addCmdText("rm",
     "The troll looks briefy surprised, then vanishes with an unpleasant squelching sound.");
+Boulder.addValidCmd("rm");
 CaveOfTrolls.addItem(UglyTroll);
 //beforeCave.addItem(uglyTroll);
 var UglierTroll = new Item("UglierTroll", 

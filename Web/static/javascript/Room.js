@@ -263,13 +263,13 @@ Room.prototype.rm = function(args){
 };
 
 Room.prototype.grep = function(args){
-	return "NEED TO IMPLEMENT THE GREP COMMAND";
+	return "You haven't learned this spell yet.";
 };
 
 Room.prototype.touch = function(args){
-	return "NEED TO IMPLEMENT THE TOUCH COMMAND";
+	return "You haven't learned this spell yet.";
 };
 
 Room.prototype.cp = function(args){
-	return "NEED TO IMPLEMENT CP FUNCTION";
+	return "You haven't learned this spell yet.";
 };
