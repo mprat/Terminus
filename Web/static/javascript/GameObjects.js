@@ -238,8 +238,7 @@ Marketplace.addItem(Vendor);
 //		"Do you take the backpack? y\\n \n", "item_backpack.gif");
 //Marketplace.addItem(Backpack);
 var RmSpell = new Item("rmSpell", 
-    "The vendor snatches the gold from your hand and then hands you the scroll, \
-leering as he does so. \"Ah, yes, the rm spell,\" he muses. \"Simply say \"rm\" followed by the name of an item or person, \
+    "\"Ah, yes, the rm spell,\" he muses. \"Simply say \"rm\" followed by the name of an item or person, \
 and they will disappear from this plane... forever. D'you have the guts to use it, I wonder?\"",
     "item_manuscript.gif");
 
