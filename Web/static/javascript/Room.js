@@ -14,7 +14,7 @@ function Room(roomname, introtext, roompic){
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
 	this.room_pic = (typeof roompic === 'undefined') ? "./static/img/none.gif": "./static/img/" + roompic;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
-	this.cmd_text = {"help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
+	this.cmd_text = {"help": "This is the help text for a room.", "pwd": "You are in " + this.room_name + "."};
 	//for event handling
 	this.ev = new EventTarget();
 	EventTarget.call(this);
@@ -199,7 +199,8 @@ Room.prototype.help = function(args){
 
 //TODO: for some reason this doesn't close the window
 Room.prototype.exit = function(args){
-	window.close();
+	window.open('', '_self', ''); 
+	window.close(); 
 };
 
 Room.prototype.pwd = function(args){
