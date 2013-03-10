@@ -143,7 +143,7 @@ Room.prototype.man = function(args){
 };
 
 Room.prototype.help = function(args){
-
+	return "Type 'man' to ask the man for help";
 };
 
 Room.prototype.exit = function(args){
