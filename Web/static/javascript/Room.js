@@ -6,12 +6,13 @@ String.prototype.replaceAll = function(replaceThis, withThis){
 	return toreturn;
 };
 
-function Room(roomname, introtext){
+function Room(roomname, introtext, roompic){
 	this.parents = [];
 	this.children = new Array();
 	this.items = new Array();
 	this.commands = ["cd", "ls", "less", "man", "help", "exit", "pwd"];
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
+	this.room_pic = (typeof roompic === 'undefined') ? "./static/img/none.gif": "./static/img/" + roompic;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
 	this.cmd_text = {"man": "room man text", "less": this.room_name + " is a Room", "help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
 };

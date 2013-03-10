@@ -6,17 +6,20 @@
 * ROOMS
 * Players can cd between rooms
 *
-* API: Room(roomname, introtext){
+* API: Room(roomname, introtext, img){
 */
 var Home = new Room("home",
     "You are in the comfort of your own home.",
-    "./static/img/loc_farm.gif");
+    "loc_farm.gif");
 var WesternForest = new Room("WesternForest",
     "You enter and travel deep into the forest. \
         Eventually, the path leads to a clearing with a large impressive building. A sign \
         on it reads: Spell Casting Academy: The Elite School of Magic.",
-    "./static/img/loc_forest");
-var TestRoom = new Room("TestRoom", "this is a test");
+    "loc_forest.gif");
+var spellCastingAcademy = new Room("SpellCastingAcademy", "The halls are filled the hustle \
+	and bustle of academy students scurrying to and from classes. The inside of the \
+	academy is as impressive as it is on the outside with a high ceiling and gothic \
+	arches, it seems even larger on the inside.", "loc_academy.gif");
 
 /**
 * LINKS BETWEEN ROOMS
@@ -39,6 +42,7 @@ var Sign = new Item("Sign",
                 "Spell Casting Academy: The Elite School of Magic \n" +
                     "Today Only: Free Introductory Lessons! Novices welcome! \n",
                 "./static/img/loc_forest.gif");
+
 /**
 * ITEMS ADDED TO ROOMS 
 */
