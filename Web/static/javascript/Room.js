@@ -46,6 +46,11 @@ Room.prototype.itemStringArray = function(item){
 	return itemstrarray;
 };
 
+Room.prototype.getItemFromName = function(itemname){
+	itemindex = this.itemStringArray().indexOf(itemname);
+	return this.items[itemindex];
+}
+
 Room.prototype.addChild = function(newchild){
 	if (typeof newchild != 'undefined'){
 		this.children[this.children.length] = newchild;
@@ -122,7 +127,7 @@ Room.prototype.cd = function(args){
 				if (this.children[i].commands.indexOf("cd") > -1){
 					current_room = this.children[i];
 	                enterRoom();
-					return "You have moved to " + current_room.toString() + ".";
+					return "You have moved to " + current_room.toString() + ". \n" + current_room.cmd_text["cd"];
 				} else {
 					return this.children[i].cmd_text["cd"];
 				}
@@ -217,14 +222,33 @@ Room.prototype.mv = function(args){
 	}
 };
 
+Room.prototype.rm = function(args){
+	if (args.length < 1){
+		return "You must remove a particular item";
+	} else {
+		stringtoreturn = "";
+		for (var i = 0; i < args.length; i++){
+			if ("rm" in this.getItemFromName(args[i]).cmd_text){
+				stringtoreturn += this.getItemFromName(args[i]).cmd_text["rm"] + "\n";
+			} else {
+				stringtoreturn += "You just removed " + args[i] + "\n";
+			}
+			if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > -1){
+				this.removeItem(args[i]);
+			}
+		}
+		return stringtoreturn;
+	}
+};
+
 Room.prototype.grep = function(args){
 	return "NEED TO IMPLEMENT THE GREP COMMAND";
-}
+};
 
 Room.prototype.touch = function(args){
 	return "NEED TO IMPLEMENT THE TOUCH COMMAND";
-}
+};
 
 Room.prototype.cp = function(args){
 	return "NEED TO IMPLEMENT CP FUNCTION";
-}
+};

@@ -169,7 +169,7 @@ TownSquare.addItem(new Item("DistraughtLady", "The woman is sobbing uncontrollab
 
 //MARKETPLACE
 var Marketplace = new Room("Marketplace", "You are in the marketplace.\n", "loc_market.gif");
-var Vendor = new Item("Vendor", "\" 'Ello there.\" The vendor smiles at you unpleasantly, \n" +
+var Vendor = new Item("Vendor", "\" 'Ello there.\" The vendor smiles at you unpleasantly, " +
 		"revealing a mouth full of gold teeth. \"Well? Wot are you looking for?\"\n", "item_merchant.gif");
 Vendor.addCmdText("rm", "\"Ha! That spell doesn't work on everything, you know. I may have forgotten \n" +
 		"to mention that before I sold it to you...\"\n");
@@ -240,6 +240,7 @@ var Boulder = new Item("LargeBoulder", "It's much too big to move. \n", "item_bo
 Boulder.addCmdText("rm", "The boulder disappears with a pop. The way is clear now.\n");
 RockyPath.addItem(Boulder);
 RockyPath.addCommand("rm");
+Boulder.addValidCmd("rm");
 
 //ARTISAN'S SHOP
 var ArtisanShop = new Room("ArtisanShop", "The walls of the shop are covered in clocks, \n" +
