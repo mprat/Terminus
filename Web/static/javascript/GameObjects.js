@@ -397,12 +397,12 @@ var CryingMan = new Item("CryingMan",
     "\"You! You're a magic-user! I can tell, you've got that look. \
 Come to finish the job, have you? Well, go ahead, do your worst there's nothing else you \
 can take from me. Not since the rest of you were here a few days ago.\" \
-\n\
+\n\n\
 \"What happened? You DARE to ask-- you know perfectly well what happened. \
 Your friends, the wizard's minions, destroyed my house and kidnapped my poor \
 daughter, that's what! My wife even went into town to look for help, and I haven't \
 heard from her since!\" \
- \n\
+\n\n\
 \"Hm? Well, I guess it's true that you don't look like one of the wizard's minions. Still, \
 I don't trust you magicfolk. If you really are who you say you are, then prove your \
 good intentions by making me a new House!\"",
@@ -460,7 +460,7 @@ var HideousTroll = new Item("AbsolutelyHideousTroll",
     "item_supertroll.gif");
 HideousTroll.addCmdText("rm", 
     "The troll belches spectacularly, and you could swear he actually smirks. \
-You won't get rid of him that easily, not without admin privileges.");
+You won't get rid of him that easily, not without the PASSWORD.");
 HideousTroll.addCmdText("mv", 
     "If you move him out of the cave, he'll terrorize \
 the countryside. Also he will probably eat you.");
