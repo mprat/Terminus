@@ -113,7 +113,6 @@ Room.prototype.less = function(args){
 
 //only valid for command names
 Room.prototype.man = function(args){
-	console.log(this.commands.indexOf(args[0]));
 	if (args.length < 1){
 		return "Must ask the man about something to receive a response.";
 	} else if (this.commands.indexOf(args[0]) < 0){
@@ -146,8 +145,9 @@ Room.prototype.help = function(args){
 	return "Type 'man' to ask the man for help";
 };
 
+//TODO: for some reason this doesn't close the window
 Room.prototype.exit = function(args){
-
+	window.close();
 };
 
 Room.prototype.pwd = function(args){
