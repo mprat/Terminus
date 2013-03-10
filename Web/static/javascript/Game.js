@@ -22,7 +22,7 @@ var man_pages = {"cd": "The old man's voice echoes in your head as if from a gre
 "location to see what is in it. \n" + 
 "Command Input: less ITEM\n" +
 "Rememberrrrrr...", 
-"man": "I'm the old man dangit! You can't try to get more information about me.", 
+"man": "I'm the old man dangit! You can't try to get more information about me. Here are all the commands you can man: cd, ls, rm, mv, exit, help, man, touch, grep, pwd.", 
 "help": "Type \"man COMMAND\" if you forget how to use a command.", 
 "exit": "The old man's voice echoes in your head as if from a great distance:\n" + 
 "(exit) \n" + 
