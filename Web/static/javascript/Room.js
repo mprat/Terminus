@@ -127,7 +127,7 @@ Room.prototype.cd = function(args){
 				if (this.children[i].commands.indexOf("cd") > -1){
 					current_room = this.children[i];
 	                enterRoom();
-					return "You have moved to " + current_room.toString() + ". \n" + current_room.cmd_text["cd"];
+					return "You have moved to " + current_room.toString() + ".";
 				} else {
 					return this.children[i].cmd_text["cd"];
 				}
