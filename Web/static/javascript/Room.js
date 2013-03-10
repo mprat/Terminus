@@ -74,23 +74,31 @@ Room.prototype.ls = function(args){
 	return other_rooms;
 };
 
+var enterRoom = function(){
+    $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
+}
+
 Room.prototype.cd = function(args){
 	if (args.length > 1){
 		return "You can't move to multiple locations.";
 	} else if (args[0] === "..") {
 		if (this.parents.length >= 1){
+            enterRoom();
 			current_room = this.parents[0];
 			return "You have moved to " + current_room.toString() + ".";
 		} else {
 			return "You are at the first room.";
 		}
 	} else if (args[0] === ".") {
+        enterRoom();
+        $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
 		return "You have moved to " + current_room.toString() + ".";
 	} else {
 		roomname = args[0];
 		for (var i = 0; i < this.children.length; i++){
 			if (roomname === this.children[i].toString()){
 				current_room = this.children[i];
+                enterRoom();
 				return "You have moved to " + current_room.toString() + ".";
 			}
 		}
@@ -105,6 +113,7 @@ Room.prototype.less = function(args){
 		item = args[0];
 		for (var i = 0; i < this.items.length; i++){
 			if (item === this.items[i].toString()){
+                $("#scene").attr("src",this.items[i].itempic); // Display image of item
 				return this.items[i].cmd_text["less"];
 			}
 		}
@@ -152,6 +161,7 @@ Room.prototype.exit = function(args){
 };
 
 Room.prototype.pwd = function(args){
+    $("#scene").attr("src", this.room_pic);
 	return this.cmd_text["pwd"];
 };
 
