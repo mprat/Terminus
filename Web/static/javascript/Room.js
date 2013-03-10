@@ -101,8 +101,8 @@ Room.prototype.ls = function(args){
 		}
 	} else {
 		other_rooms = (this.children.toString()).replaceAll(",", "\n");
+		$("#scene").attr("src",this.room_pic); // Display image of room
 		if (this.items.length > 0){
-			$("#scene").attr("src",this.room_pic); // Display image of item
 			return " Locations: \n" + other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
 		}
 		return " Locations: \n" + other_rooms;
