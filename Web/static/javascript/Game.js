@@ -1,4 +1,4 @@
-var current_room = Home;
+var current_room = RockyPath;
 var man_pages = {"cd": "The old man's voice echoes in your head as if from a great distance: \n"+
 "(Choose Destination) Use \"cd\" to move about the world. \n" +
 "Command Input: cd LOCATION \n" +

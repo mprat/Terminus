@@ -284,10 +284,11 @@ Library.addItem(new Item("HistoryOfTerminus",
 		// "DarkWizard", "...old tales tell of a dark wizard who will fragment the land...\n" +
 		//"...only the world-maker can stop the dark wizard's virus from...\n" +
 		//"...that the power of \"sudo\" may be the dark wizard's only weakness...\n"));
-Library.addItem(new Item("InconspicuousLever", 
-    "You spot an inconspicuous lever behind the shelves.  Curious, you pull it, \
-and a panel slides open to reveal a secret back room.",
-    "item_lever.gif"));
+//add lever back when items when events can be added to items
+//Library.addItem(new Item("InconspicuousLever", 
+//    "You spot an inconspicuous lever behind the shelves.  Curious, you pull it, \
+//and a panel slides open to reveal a secret back room.",
+//    "item_lever.gif"));
 Library.addCommand("grep");
 
 //BACK ROOM

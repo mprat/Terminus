@@ -14,7 +14,7 @@ function Room(roomname, introtext, roompic){
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
 	this.room_pic = (typeof roompic === 'undefined') ? "./static/img/none.gif": "./static/img/" + roompic;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
-	this.cmd_text = {"help": "This is the help text for a room.", "pwd": "You are in " + this.room_name + "."};
+	this.cmd_text = {"pwd": "You are in " + this.room_name + "."};
 	//for event handling
 	this.ev = new EventTarget();
 	EventTarget.call(this);
@@ -48,7 +48,9 @@ Room.prototype.itemStringArray = function(item){
 
 Room.prototype.getItemFromName = function(itemname){
 	itemindex = this.itemStringArray().indexOf(itemname);
-	return this.items[itemindex];
+	if (itemindex > -1)
+		return this.items[itemindex];
+	return -1;
 }
 
 Room.prototype.addChild = function(newchild){
@@ -243,13 +245,17 @@ Room.prototype.rm = function(args){
 	} else {
 		stringtoreturn = "";
 		for (var i = 0; i < args.length; i++){
-			if ("rm" in this.getItemFromName(args[i]).cmd_text){
-				stringtoreturn += this.getItemFromName(args[i]).cmd_text["rm"] + "\n";
+			if (this.getItemFromName(args[i]) != -1){
+				if ("rm" in this.getItemFromName(args[i]).cmd_text){
+					stringtoreturn += this.getItemFromName(args[i]).cmd_text["rm"] + "\n";
+				} else {
+					stringtoreturn += "You just removed " + args[i] + "\n";
+				}
+				if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > 0){
+					this.removeItem(args[i]);
+				}
 			} else {
-				stringtoreturn += "You just removed " + args[i] + "\n";
-			}
-			if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > 0){
-				this.removeItem(args[i]);
+				return "That's not a valid object to remove.";
 			}
 		}
 		return stringtoreturn;
