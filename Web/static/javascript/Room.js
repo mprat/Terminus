@@ -111,8 +111,35 @@ Room.prototype.less = function(args){
 	}
 };
 
+//only valid for command names
 Room.prototype.man = function(args){
-
+	console.log(this.commands.indexOf(args[0]));
+	if (args.length < 1){
+		return "Must ask the man about something to receive a response.";
+	} else if (this.commands.indexOf(args[0]) < 0){
+		return "You cannot do that right now - no need to know about it at the moment.";
+	} else {
+		if (args[0] == "ls"){
+			return "the ls man page";
+		} else if (args[0] == "cd"){
+			return "the cd man page";
+		} else if (args[0] == "less"){
+			return "the less man page";
+		} else if (args[0] == "man"){
+			return "the man man page";
+		} else if (args[0] == "help"){
+			return "the help man page";
+		} else if (args[0] == "exit"){
+			return "the exit man page";
+		} else if (args[0] == "mv"){
+			return "the mv man page";
+		} else if (args[0] == "cp"){
+			return "the cp man page";
+		} else if (args[0] == "pwd"){
+			return "the pwd man page";
+		} 
+		return "there is no man page for that command";
+	}
 };
 
 Room.prototype.help = function(args){
