@@ -27,11 +27,19 @@ Room.prototype.addItem = function(newitem) {
 	}
 };
 
-Room.prototype.removeItem = function(itemtoremove){
-	index = this.items.indexOf(itemtoremove);
+Room.prototype.removeItem = function(itemnametoremove){
+	index = this.itemStringArray().indexOf(itemnametoremove);
 	if (index != -1){
 		this.items.splice(index, 1);
 	}
+};
+
+Room.prototype.itemStringArray = function(item){
+	itemstrarray = []
+	for (var i = 0; i < this.items.length; i++){
+		itemstrarray[itemstrarray.length] = this.items[i].toString();
+	}
+	return itemstrarray;
 };
 
 Room.prototype.addChild = function(newchild){
@@ -47,6 +55,14 @@ Room.prototype.removeChild = function(child){
 	}
 };
 
+Room.prototype.childrenStringArray = function(child){
+	childrenstrarray = []
+	for (var i = 0; i < this.children.length; i++){
+		childrenstrarray[childrenstrarray.length] = this.children[i].toString();
+	}
+	return childrenstrarray;
+};
+
 Room.prototype.addParent = function(parent){
 	this.parents[0] = parent;
 };
@@ -56,10 +72,12 @@ Room.prototype.addCommand = function(cmd){
 };
 
 Room.prototype.removeCommand = function(cmd){
+	console.log(this.commands);
 	index = this.commands.indexOf(cmd);
 	if (index != -1){
 		this.commands.splice(cmd, 1);
 	}
+	console.log(this.commands);
 };
 
 Room.prototype.addCmdText = function(cmd, text) {
@@ -97,9 +115,13 @@ Room.prototype.cd = function(args){
 		roomname = args[0];
 		for (var i = 0; i < this.children.length; i++){
 			if (roomname === this.children[i].toString()){
-				current_room = this.children[i];
-                enterRoom();
-				return "You have moved to " + current_room.toString() + ".";
+				if (this.children[i].commands.indexOf("cd") > -1){
+					current_room = this.children[i];
+	                enterRoom();
+					return "You have moved to " + current_room.toString() + ".";
+				} else {
+					return this.children[i].cmd_text["cd"];
+				}
 			}
 		}
 		return "There is no room called " + args[0] + ".";
@@ -166,5 +188,16 @@ Room.prototype.pwd = function(args){
 };
 
 Room.prototype.mv = function(args){
-	return "BLAH";
+	if (args.length != 2){
+		return "You need to move thing A to place B. Use mov [thingA] [placeB].";
+	} else {
+		if ((this.itemStringArray().indexOf(args[0]) >= 0) && (this.childrenStringArray().indexOf(args[1]) >= 0)){
+			itemtoadd = this.items[this.itemStringArray().indexOf(args[0])];
+			this.children[this.childrenStringArray().indexOf(args[1])].addItem(itemtoadd);
+			this.removeItem(args[0]);
+			return "Moved " + args[0] + " to " + args[1] + ".";
+		} else {
+			return "Must be a valid item and location to move it.";
+		}
+	}
 };

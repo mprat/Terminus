@@ -23,6 +23,8 @@ var spellCastingAcademy = new Room("SpellCastingAcademy", "The halls are filled 
 var practiceRoom = new Room("PracticeRoom", "The room is filled with practice dummies \
 	for students to practice their new spells on.", "loc_practiceroom.gif");
 var box = new Room("Box", "This box is too small for you to fit into.");
+box.removeCommand("cd");
+box.addCmdText("cd", "You are too small to fit into the box.");
 
 /**
 * LINKS BETWEEN ROOMS
