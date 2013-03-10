@@ -1,5 +1,5 @@
 // set the current room
-var current_room = practiceRoom;
+var current_room = NorthernMeadow;
 
 $(document).ready(function() {
     $('#term').terminal(function(input, term) {
@@ -8,6 +8,9 @@ $(document).ready(function() {
         var args = split.splice(1,split.length);
         if( current_room.commands.indexOf(command) > -1 ){ //Could use current_room.hasOwnProperty(command)
             term.echo(current_room[command](args));
+            if (command in current_room.cmd_text){
+                term.echo(current_room.cmd_text[command]);
+            }
         }
         else{
             term.echo("Command '"+command+"' not found in room '"+current_room.room_name+"'");

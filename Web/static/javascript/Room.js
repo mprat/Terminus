@@ -14,7 +14,7 @@ function Room(roomname, introtext, roompic){
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
 	this.room_pic = (typeof roompic === 'undefined') ? "./static/img/none.gif": "./static/img/" + roompic;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
-	this.cmd_text = {"man": "room man text", "less": this.room_name + " is a Room", "help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
+	this.cmd_text = {"man": "room man text", "help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
 };
 
 Room.prototype.toString = function(){
@@ -72,12 +72,11 @@ Room.prototype.addCommand = function(cmd){
 };
 
 Room.prototype.removeCommand = function(cmd){
-	console.log(this.commands);
-	index = this.commands.indexOf(cmd);
+	index = this.commands.indexOf(cmd)
 	if (index != -1){
 		this.commands.splice(cmd, 1);
 	}
-	console.log(this.commands);
+
 };
 
 Room.prototype.addCmdText = function(cmd, text) {
