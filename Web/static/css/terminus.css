@@ -11,5 +11,13 @@
     right:0px;
     top:0px;
     width:50%;
-    background:white;
+    height:100%;
+    background:black
+    ;
+}
+#scene{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 95%;
 }

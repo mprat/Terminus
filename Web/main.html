@@ -8,38 +8,15 @@
     <script type="text/javascript" src="./static/javascript/jquery.terminal-0.5.min.js"></script>
     <script type="text/javascript" src="./static/javascript/Room.js"></script>
     <script type="text/javascript" src="./static/javascript/Item.js"></script>
+    <script type="text/javascript" src="./static/javascript/GameObjects.js"></script>
     <script type="text/javascript" src="./static/javascript/Level.js"></script>
-    <script type="text/javascript" src="./static/javascript/Game.js"></script>
+    <script type="text/javascript" src="./static/javascript/Game.js"></script> <!-- Execute last -->
     <!-- CSS -->
     <link href="./static/css/jquery.terminal.css" rel="stylesheet"/>
     <link href="./static/css/terminus.css" rel="stylesheet"/>
-    
-    <script>        
-        $(document).ready(function() {
-            $('#term').terminal(function(input, term) {
-                var split = input.split(" ");
-                var command = split[0].toString();
-                var args = split.splice(1,split.length);
-                if( current_room.commands.indexOf(command) > -1 ){ //Could use current_room.hasOwnProperty(command)
-                    term.echo(current_room[command](args));
-                }
-                else{
-                    term.echo("Command '"+command+"' not found in room '"+current_room.room_name+"'");
-                }
-            }, { history: true,                     // Keep user's history of commands
-                prompt: '>',                        // Text that prefixes terminal entries
-                name: 'terminus_terminal',          // Name of terminal
-                greetings:"",                       // Signiture to include at top of terminal
-                exit: false,                        // Disable 'exit' command
-                clear: false,                       // Disable 'clear' command
-                });
-        });
-    </script>
   </head>
 <body>
-<div id="term">
-</div>
-<div id="pics">
-</div>
+<div id="term"></div>
+<div id="pics"><img id="scene"></img></div>
 </body>
 </html>

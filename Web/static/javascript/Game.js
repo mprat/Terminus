@@ -1,25 +1,28 @@
-function link(parentRoom, childRoom){
-	if (!(childRoom in parentRoom.children)){
-		parentRoom.addChild(childRoom);
-	}
-	if (!(parentRoom in childRoom.parents)){
-		childRoom.addParent(parentRoom);
-	}
-};
-
-var Home = new Room("home", "You are in the comfort of your own home.");
-
-// TODO: add Level 1 tag here
-
-var Letter = new Item("letter", "Welcome to the game.");
-Home.addItem(Letter);
-var WesternForest = new Room("WesternForest", "You enter and travel deep into the forest. \
-	Eventually, the path leads to a clearing with a large impressive building. A sign \
-	on it reads: Spell Casting Academy: The Elite School of Magic.");
-var TestRoom = new Room("TestRoom", "this is a test");
-
-link(Home, WesternForest);
-link(Home, TestRoom);
-
 // set the current room
 var current_room = Home;
+
+$(document).ready(function() {
+    $('#term').terminal(function(input, term) {
+        var split = input.split(" ");
+        var command = split[0].toString();
+        var args = split.splice(1,split.length);
+        if( current_room.commands.indexOf(command) > -1 ){ //Could use current_room.hasOwnProperty(command)
+            term.echo(current_room[command](args));
+        }
+        else{
+            term.echo("Command '"+command+"' not found in room '"+current_room.room_name+"'");
+        }
+    }, { history: true,                     // Keep user's history of commands
+        prompt: '>',                        // Text that prefixes terminal entries
+        name: 'terminus_terminal',          // Name of terminal
+                                            // Signiture to include at top of terminal
+        greetings:"Welcome! If you are new to the game, here are some tips: \n\n" +
+		"Look at your surroundings with the command \"ls\". \n" +
+		"Move to a new location with the command \"cd LOCATION\" \n" +
+		"You can backtrack with the command \"cd ..\". \n" +
+		"Interact with things in the world with the command \"less ITEM\" \n\n" +
+		"Go ahead, explore. We hope you enjoy what you find. Do ls as your first command.\n",
+        exit: false,                        // Disable 'exit' command
+        clear: false,                       // Disable 'clear' command
+        });
+});
