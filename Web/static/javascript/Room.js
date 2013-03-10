@@ -154,3 +154,7 @@ Room.prototype.exit = function(args){
 Room.prototype.pwd = function(args){
 	return this.cmd_text["pwd"];
 };
+
+Room.prototype.mv = function(args){
+	return "BLAH";
+};

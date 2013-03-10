@@ -1,5 +1,5 @@
 // set the current room
-var current_room = Home;
+var current_room = practiceRoom;
 
 $(document).ready(function() {
     $('#term').terminal(function(input, term) {
