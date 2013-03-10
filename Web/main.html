@@ -6,6 +6,10 @@
     <!-- Scripts -->
     <script type="text/javascript" src="./static/javascript/jquery-1.9.1.min.js" ></script>
     <script type="text/javascript" src="./static/javascript/jquery.terminal-0.5.min.js"></script>
+    <script type="text/javascript" src="./static/javascript/Room.js"></script>
+    <script type="text/javascript" src="./static/javascript/Item.js"></script>
+    <script type="text/javascript" src="./static/javascript/Level.js"></script>
+    <script type="text/javascript" src="./static/javascript/Game.js"></script>
     <!-- CSS -->
     <link href="./static/css/jquery.terminal.css" rel="stylesheet"/>
     <link href="./static/css/terminus.css" rel="stylesheet"/>
@@ -13,6 +17,7 @@
     <script>
         $(document).ready(function() {
             $('#terminal_div').terminal(function(command, term) {
+                CurrentRoom[command]();
                 if (command == 'test') {
                     term.echo("you just typed 'test'");
                 } else {

@@ -1,3 +1,11 @@
+String.prototype.replaceAll = function(replaceThis, withThis){
+	toreturn = this.toString();
+	while (toreturn.indexOf(replaceThis) > 0){
+		toreturn = toreturn.replace(replaceThis, withThis);
+	}
+	return toreturn;
+};
+
 function Room(roomname, introtext){
 	this.parents = new Array();
 	this.children = new Array();
@@ -5,7 +13,12 @@ function Room(roomname, introtext){
 	this.commands = ["cd", "ls", "less", "man", "help", "exit"];
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
-}
+};
+
+Room.prototype.toString = function(){
+	return this.room_name;
+};
+
 Room.prototype.addItem = function(newitem) {
 	if (typeof newitem != 'undefined'){
 		this.items[this.items.length] = newitem;
@@ -32,7 +45,7 @@ Room.prototype.removeChild = function(child){
 	}
 };
 
-Room.prototype.setParent = function(parent){
+Room.prototype.addParent = function(parent){
 	this.parents[this.parents.length] = parent;
 };
 
@@ -45,4 +58,9 @@ Room.prototype.removeCommand = function(cmd){
 	if (index != -1){
 		this.commands.splice(cmd, 1);
 	}
+};
+
+Room.prototype.ls = function(args){
+	console.log(this.children.toString())
+	return (this.children.toString()).replaceAll(",", "\n");
 };
