@@ -124,6 +124,10 @@ DankRoom.addCommand("mv");
 //SMALL HOLE
 var SmallHole = new Room("SmallHole", "There's nothing exciting in the small hole, and it's pretty dirty. There's no real reason to go into the hole.");
 SmallHole.addCmdText("cd", "There's nothing exciting in the small hole, and it's pretty dirty. There's no real reason to go into the hole. I suggest going back out.");
+//add event handler to the "addItem" method of SmallHole to cause the rest of the level to be connected
+SmallHole.ev.addListener("addItem", function(){
+	link_rooms(DankRoom, Tunnel);
+});
 
 //TUNNEL
 var Tunnel = new Room("Tunnel", "It's quite moist in here. \n" +
@@ -183,7 +187,6 @@ link_rooms(EasternMountains, Cave);
 link_rooms(Cave, DarkCorridor);
 link_rooms(Cave, Staircase);
 link_rooms(DarkCorridor, DankRoom);
-//link_rooms(DankRoom, Tunnel); - this link is made when you move the boulder
 link_rooms(DankRoom, SmallHole);
 link_rooms(Tunnel, StoneChamber);
 link_rooms(StoneChamber, Portal);

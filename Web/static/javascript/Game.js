@@ -1,5 +1,5 @@
 // set the current room
-var current_room = NorthernMeadow;
+var current_room = DarkCorridor;
 
 $(document).ready(function() {
     $('#term').terminal(function(input, term) {

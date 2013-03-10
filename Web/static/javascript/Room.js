@@ -15,6 +15,10 @@ function Room(roomname, introtext, roompic){
 	this.room_pic = (typeof roompic === 'undefined') ? "./static/img/none.gif": "./static/img/" + roompic;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
 	this.cmd_text = {"man": "room man text", "help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
+	//for event handling
+	//EventTarget.call(this);
+	this.ev = new EventTarget();
+	EventTarget.call(this);
 };
 
 Room.prototype.toString = function(){
@@ -24,6 +28,7 @@ Room.prototype.toString = function(){
 Room.prototype.addItem = function(newitem) {
 	if (typeof newitem != 'undefined'){
 		this.items[this.items.length] = newitem;
+		this.ev.fire("addItem");
 	}
 };
 
