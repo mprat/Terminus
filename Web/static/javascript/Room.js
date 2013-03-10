@@ -14,7 +14,7 @@ function Room(roomname, introtext, roompic){
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
 	this.room_pic = (typeof roompic === 'undefined') ? "./static/img/none.gif": "./static/img/" + roompic;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
-	this.cmd_text = {"man": "room man text", "help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
+	this.cmd_text = {"help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
 	//for event handling
 	this.ev = new EventTarget();
 	EventTarget.call(this);
