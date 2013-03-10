@@ -11,21 +11,41 @@
     <link href="./static/css/terminus.css" rel="stylesheet"/>
     
     <script>
+        var current_room = new Object();
+        current_room.room_name = "My House";
+        current_room.commands = ["cd", "ls"];
+        current_room.cd = function(args){
+            return "cd "+args.join();
+        }
+        current_room.ls = function(args){
+            return "ls "+args.join();
+        }
+        
         $(document).ready(function() {
-            $('#terminal_div').terminal(function(command, term) {
-                if (command == 'test') {
-                    term.echo("you just typed 'test'");
-                } else {
-                    term.echo('unknown command');
+            $('#term').terminal(function(input, term) {
+                var split = input.split(" ");
+                var command = split[0].toString();
+                var args = split.splice(1,split.length);
+                if( current_room.commands.indexOf(command) > -1 ){ //Could use current_room.hasOwnProperty(command)
+                    term.echo(current_room[command](args));
                 }
-            }, { prompt: '>', name: 'terminus_terminal',greetings:""});
+                else{
+                    term.echo("Command '"+command+"' not found in room '"+current_room.room_name+"'");
+                }
+            }, { history: true,                     // Keep user's history of commands
+                prompt: '>',                        // Text that prefixes terminal entries
+                name: 'terminus_terminal',          // Name of terminal
+                greetings:"",                       // Signiture to include at top of terminal
+                exit: false,                        // Disable 'exit' command
+                clear: false,                       // Disable 'clear' command
+                });
         });
     </script>
   </head>
 <body>
 <div id="term">
-    <div id="terminal_div"></div>
 </div>
-<div id="pics"></div>
+<div id="pics">
+</div>
 </body>
 </html>
