@@ -96,6 +96,8 @@ Room.prototype.ls = function(args){
 	if (args.length > 0){
 		if (this.childrenStringArray().indexOf(args[0]) > -1){
 			return this.children[this.childrenStringArray().indexOf(args[0])].printLS();
+		} else {
+			return "That is not a valid object to look at.";
 		}
 	} else {
 		other_rooms = (this.children.toString()).replaceAll(",", "\n");

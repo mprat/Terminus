@@ -10,10 +10,16 @@
 */
 
 //HOME
-var Home = new Room("home",
+var Home = new Room("Home",
     "You are in the comfort of your own home.",
     "loc_farm.gif");
-Home.addItem(new Item("Letter", "Welcome to the game."));
+Home.addItem(new Item("WelcomeLetter", "Welcome! If you are new to the game, here are some tips: \n\n" +
+		"Look at your surroundings with the command \"ls\". \n" +
+		"Move to a new location with the command \"cd LOCATION\" \n" +
+		"You can backtrack with the command \"cd ..\". \n" +
+		"Interact with things in the world with the command \"less ITEM\" \n\n" +
+        "If you forget where you are, type \"pwd\" \n\n" + 
+		"Go ahead, explore. We hope you enjoy what you find. Do ls as your first command.\n"));
 
 //WESTERN FOREST
 var WesternForest = new Room("WesternForest",
