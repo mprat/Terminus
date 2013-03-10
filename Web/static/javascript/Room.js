@@ -204,7 +204,7 @@ Room.prototype.exit = function(args){
 
 Room.prototype.pwd = function(args){
     $("#scene").attr("src", this.room_pic);
-	return this.cmd_text["pwd"];
+	return "";
 };
 
 Room.prototype.mv = function(args){
@@ -233,7 +233,7 @@ Room.prototype.rm = function(args){
 			} else {
 				stringtoreturn += "You just removed " + args[i] + "\n";
 			}
-			if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > -1){
+			if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > 0){
 				this.removeItem(args[i]);
 			}
 		}
