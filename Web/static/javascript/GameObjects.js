@@ -183,7 +183,6 @@ link_rooms(PracticeRoom, Box);
 link_rooms(Home, NorthernMeadow);
 link_rooms(NorthernMeadow, EasternMountains);
 link_rooms(SpellCastingAcademy, Lessons);
-link_rooms(SpellCastingAcademy, PracticeRoom);
 link_rooms(EasternMountains, Cave);
 link_rooms(Cave, DarkCorridor);
 link_rooms(Cave, Staircase);
