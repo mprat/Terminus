@@ -1,16 +1,59 @@
-// set the current room
-var current_room = Home;
-var man_pages = {"cd": "the cd man pages", 
-"mv": "the mv man pages",
-"ls": "the ls man pages", 
-"less": "the less man pages", 
-"man": "the man man pages", 
-"help": "the help man pages", 
-"exit": "the exit man pages", 
-"cp": "the cp man pages", 
-"pwd": "the pwd man pages",
-"grep": "the grep man pages",
-"touch": "the touch man pages"}
+var current_room = Portal;
+var man_pages = {"cd": "The old man's voice echoes in your head as if from a great distance: \n"+
+"(Choose Destination) Use \"cd\" to move about the world. \n" +
+"Command Input: cd LOCATION \n" +
+ "Rememberrrrrr...", 
+"mv": "The old man's voice echoes in your head as if from a great distance: \n" + 
+"(MoVe). \n Use \"mv\" to move an object to a new location. \n Command Input:" + 
+"mv OBJECT NEWLOCATION \n" + 
+"Rememberrrrrr...",
+"ls": "The old man's voice echoes in your head as if from a great distance: \n" + 
+"(Look at your Surroundings). \n Use \"ls\" to look at what’s in a certain location. " +
+"Either your current location or (rarely) you may have look into a location to see "+
+"what's in it. \n" + 
+" Command Input: \n" + 
+"ls          (for current location) \n" + 
+"-OR- \n" + 
+"ls LOCATION     (for locations you that you cannot \"cd\" into)\n" + 
+"Rememberrrrrr...", 
+"less": "The old man's voice echoes in your head as if from a great distance: \n"+
+"(Look at, Examine, or Speak to Something). \nUse \"less\" to look at what’s in a "+
+"certain location. Either your current location or (rarely) you may have look into a "+
+"location to see what is in it. \n" + 
+"Command Input: less ITEM\n" +
+"Rememberrrrrr...", 
+"man": "I'm the old man dangit! You can't try to get more information about me.", 
+"help": "Type \"man COMMAND\" if you forget how to use a command.", 
+"exit": "The old man's voice echoes in your head as if from a great distance:\n" + 
+"(exit) \n" + 
+"Use \"exit\" to exit the game permanently. \n" + 
+"Command Input: \n" + 
+"exit \n" + 
+"Rememberrrrrr...", 
+"cp": "The old man's voice echoes in your head as if from a great distance:\n" +
+"(CoPy)\n" + 
+"Use \"cp\" to duplicate an item. \n" + 
+"Command Input:\n" + 
+"cp ITEM NEWNAME \n" +
+"Rememberrrrrr...", 
+"pwd": "The old man's voice echoes in your head as if from a great distance: \n" + 
+"(Print Where i Do stuff) \n" +
+"To remind yourself where you currently are.\n" + 
+"Command Input: \n" + 
+"pwd \n" + 
+"Rememberrrrrr...",
+"grep": "The old man's voice echoes in your head as if from a great distance:\n" +
+"(grep) \n" + 
+"Use \"grep\" to command your minion to help search through text for you.\n" + 
+"Command Input: \n" + 
+"grep WORDTOSEARCH PLACETOSEARCH \n" +
+"Rememberrrrrr...",
+"touch": "The old man's voice echoes in your head as if from a great distance:\n"+
+"(Touch) gives you the artisan's touch to create new objects.\n" +
+"Use \"touch\" to create new objects in the world.\n" +
+"Command Input:\n" + 
+"touch OBJECT \n" + 
+"Rememberrrrrr..."}
 
 $(document).ready(function() {
     $('#term').terminal(function(input, term) {

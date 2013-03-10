@@ -14,7 +14,7 @@ function Room(roomname, introtext, roompic){
 	this.room_name = (typeof roomname === 'undefined') ? "Generic Room": roomname;
 	this.room_pic = (typeof roompic === 'undefined') ? "./static/img/none.gif": "./static/img/" + roompic;
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
-	this.cmd_text = {"man": "room man text", "help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
+	this.cmd_text = {"help": "This is the help text for a room.", "pwd": "You are in " + this.room_name + "."};
 	//for event handling
 	this.ev = new EventTarget();
 	EventTarget.call(this);
@@ -45,6 +45,11 @@ Room.prototype.itemStringArray = function(item){
 	}
 	return itemstrarray;
 };
+
+Room.prototype.getItemFromName = function(itemname){
+	itemindex = this.itemStringArray().indexOf(itemname);
+	return this.items[itemindex];
+}
 
 Room.prototype.addChild = function(newchild){
 	if (typeof newchild != 'undefined'){
@@ -122,7 +127,7 @@ Room.prototype.cd = function(args){
 				if (this.children[i].commands.indexOf("cd") > -1){
 					current_room = this.children[i];
 	                enterRoom();
-					return "You have moved to " + current_room.toString() + ".";
+					return "You have moved to " + current_room.toString() + ". \n" + current_room.cmd_text["cd"];
 				} else {
 					return this.children[i].cmd_text["cd"];
 				}
@@ -166,7 +171,7 @@ Room.prototype.less = function(args){
 		item = args[0];
 		for (var i = 0; i < this.items.length; i++){
 			if (item === this.items[i].toString()){
-                $("#scene").attr("src",this.items[i].picturename); // Display image of item
+                $("#scene").attr("src",this.items[i].itempic); // Display image of item
 				return this.items[i].cmd_text["less"];
 			}
 		}
@@ -194,12 +199,13 @@ Room.prototype.help = function(args){
 
 //TODO: for some reason this doesn't close the window
 Room.prototype.exit = function(args){
-	window.close();
+	window.open('', '_self', ''); 
+	window.close(); 
 };
 
 Room.prototype.pwd = function(args){
-    //$("#scene").attr("src", this.room_pic);
-	return this.cmd_text["pwd"];
+    $("#scene").attr("src", this.room_pic);
+	return "";
 };
 
 Room.prototype.mv = function(args){
@@ -217,14 +223,33 @@ Room.prototype.mv = function(args){
 	}
 };
 
+Room.prototype.rm = function(args){
+	if (args.length < 1){
+		return "You must remove a particular item";
+	} else {
+		stringtoreturn = "";
+		for (var i = 0; i < args.length; i++){
+			if ("rm" in this.getItemFromName(args[i]).cmd_text){
+				stringtoreturn += this.getItemFromName(args[i]).cmd_text["rm"] + "\n";
+			} else {
+				stringtoreturn += "You just removed " + args[i] + "\n";
+			}
+			if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > 0){
+				this.removeItem(args[i]);
+			}
+		}
+		return stringtoreturn;
+	}
+};
+
 Room.prototype.grep = function(args){
 	return "NEED TO IMPLEMENT THE GREP COMMAND";
-}
+};
 
 Room.prototype.touch = function(args){
 	return "NEED TO IMPLEMENT THE TOUCH COMMAND";
-}
+};
 
 Room.prototype.cp = function(args){
 	return "NEED TO IMPLEMENT CP FUNCTION";
-}
+};
