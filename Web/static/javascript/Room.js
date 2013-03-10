@@ -91,9 +91,9 @@ Room.prototype.ls = function(args){
 	other_rooms = (this.children.toString()).replaceAll(",", "\n");
 	if (this.items.length > 0){
 		$("#scene").attr("src",this.room_pic); // Display image of item
-		return other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
+		return " Locations: \n" + other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
 	}
-	return other_rooms;
+	return " Locations: \n" + other_rooms;
 };
 
 var enterRoom = function(){
@@ -154,25 +154,9 @@ Room.prototype.man = function(args){
 	} else if (this.commands.indexOf(args[0]) < 0){
 		return "You cannot do that right now - no need to know about it at the moment.";
 	} else {
-		if (args[0] == "ls"){
-			return "the ls man page";
-		} else if (args[0] == "cd"){
-			return "the cd man page";
-		} else if (args[0] == "less"){
-			return "the less man page";
-		} else if (args[0] == "man"){
-			return "the man man page";
-		} else if (args[0] == "help"){
-			return "the help man page";
-		} else if (args[0] == "exit"){
-			return "the exit man page";
-		} else if (args[0] == "mv"){
-			return "the mv man page";
-		} else if (args[0] == "cp"){
-			return "the cp man page";
-		} else if (args[0] == "pwd"){
-			return "the pwd man page";
-		} 
+		if (args[0] in man_pages){
+			return man_pages[args[0]];
+		}
 		return "there is no man page for that command";
 	}
 };
@@ -205,3 +189,15 @@ Room.prototype.mv = function(args){
 		}
 	}
 };
+
+Room.prototype.grep = function(args){
+	return "NEED TO IMPLEMENT THE GREP COMMAND";
+}
+
+Room.prototype.touch = function(args){
+	return "NEED TO IMPLEMENT THE TOUCH COMMAND";
+}
+
+Room.prototype.cp = function(args){
+	return "NEED TO IMPLEMENT CP FUNCTION";
+}

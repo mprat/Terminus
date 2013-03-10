@@ -167,6 +167,191 @@ TownSquare.addItem(new Item("DistraughtLady", "The woman is sobbing uncontrollab
 		"\"My baby,\" she cries, \"They kidnapped my baby! I just know that wizard had \n" +
 		"something to do with it.\"\n", "item_lady.gif"));
 
+//MARKETPLACE
+var Marketplace = new Room("Marketplace", "You are in the marketplace.\n", "loc_market.gif");
+var Vendor = new Item("Vendor", "\" 'Ello there.\" The vendor smiles at you unpleasantly, \n" +
+		"revealing a mouth full of gold teeth. \"Well? Wot are you looking for?\"\n", "item_merchant.gif");
+Vendor.addCmdText("rm", "\"Ha! That spell doesn't work on everything, you know. I may have forgotten \n" +
+		"to mention that before I sold it to you...\"\n");
+Marketplace.addItem(Vendor);
+//var Backpack = new Item("Backpack", "There's a beat-up looking backpack on the table with no price tag.  Its cloth looks \n" +
+//		"frayed, but sturdy. You glance quickly at the vendor, but his attention is elsewhere. \n" +
+//		"Do you take the backpack? y\\n \n", "item_backpack.gif");
+//Marketplace.addItem(Backpack);
+var RmSpell = new Item("rmSpell", "The vendor snatches the gold from your hand and then hands you the scroll,\n" +
+				"leering as he does so. \"Ah, yes, the rm spell,\" he muses. \"Simply say \"rm\" followed by the name of an item or person, \n" +
+				"and they will disappear from this plane... forever. D'you have the guts to use it, I wonder?\"\n", "item_manuscript.gif");
+
+//	"There's a spell scroll on the table labeled \"Remove.\" \n" +
+//		"Do you want to buy it for 15 gold pieces? y/n \n", "item_manuscript.gif")
+//"The vendor snatches the gold from your hand and then hands you the scroll,\n" +
+//				"leering as he does so. \"Ah, yes, the rm spell,\" he muses. \"Simply say \"rm\" followed by the name of an item or person, \n" +
+//				"and they will disappear from this plane... forever. D'you have the guts to use it, I wonder?\"\n" +
+//				"You can now use the \"rm\" spell.\n", "Come back later.\n");
+Marketplace.addItem(RmSpell);
+var MkdirSpell = new Item("mkdirSpell", "Make dreams into reality. Just say \"mkdir\" followed by any name that pleases you, and you can create a new place that never existed there before. Ha! Not very useful, if y'ask me...\"", "item_manuscript.gif");
+//		"Do you want to buy it for 30 gold pieces? y\\n \n"
+//, "The vendor cackles. \"An ambitious one, eh? Very well. \n" +
+//				"Just say \"mkdir\" followed by any name that pleases you, and you can create a new place \n" +
+//				"that never existed there before. Ha! Not very useful, if y'ask me...\"\n" +
+//				"You can now use the \"mkdir\" spell.\n", "You leave the mkdirSpell on the table\n");
+Marketplace.addItem(MkdirSpell);
+
+//LIBRARY
+var Library = new Room("Library", "The Library is dimly lit and smells like mildew. \n" +
+		"Still, it's warm in here and the soft green carpet makes it seem kind of cozy.\n", "loc_library.gif");
+Library.addItem(new Item("TotallyRadSpellbook", "Legends speak of a great word of power that allows the speaker to perform \n" +
+		"any action on any item. \"Sudo\", as the ancients called it, conveys complete mastery over the elements. \n" +
+		"Unfortunately, or perhaps fortunately, the mystical password has been lost \n" +
+		"to the sands of time.\n", "item_radspellbook.gif"));
+Library.addItem(new Item("PaperbackRomance", "You flip the paperback open to a random page. \n" +
+		"\"Oh, Horatio!\" Antonia exclaimed, her bosom heaving as Horatio deftly ripped the \n" +
+		"bodice from her lithe frame. Horatio gave an animalistic growl and he clasped her \n" +
+		"fingers in his strong hands and brought them to rest upon his swollen— You close the \n" +
+		"book, disinterested, and place it back on the shelf. \n", "item_romancenovel.gif"));
+Library.addItem(new Item("HistoryOfTerminus", "It looks like an interesting book, but it's way too \n" +
+		"long and the print is too tiny.\n", "item_historybook.gif"));
+		// "DarkWizard", "...old tales tell of a dark wizard who will fragment the land...\n" +
+		//"...only the world-maker can stop the dark wizard's virus from...\n" +
+		//"...that the power of \"sudo\" may be the dark wizard's only weakness...\n"));
+Library.addItem(new Item("InconspicuousLever", "You spot an inconspicuous lever behind the shelves.  Curious, you pull it, \n" +
+		"and a panel slides open to reveal a secret back room.\n", "item_lever.gif"));
+Library.addCommand("grep");
+
+//BACK ROOM
+var BackRoom = new Room("BackRoom", "You find a mysterious back room. You find a librarian \n" +
+		"alone with a small elf. You hope you're not interrupting.", "loc_backroom.gif");
+BackRoom.addItem(new Item("Grep", "The exceptionally ugly elf turns to you with a sour expression. \n" +
+		"\"Greeeeeep,\" he says sullenly.\n", "grep.gif"));
+var Librarian = new Item("Librarian", "\"Hm? Oh, hello. I apologize for the mess, but I'm very busy \n" +
+		"doing research on the dark wizard. Would you do me a favor? Go look up all \n" +
+		"references to DarkWizard in the History of Terminus. My assistant Grep \n" +
+		"can help you.\" \n" +
+		"Grep eyes you balefully. \"Greeepp.\" \"To search the contents of the book, just type \n" +
+		"\"grep PHRASE DOCUMENT\", where PHRASE is the phrase you want to search for,\n" +
+		"and DOCUMENT is the name of the book you want to search.\"\n", "item_librarian.gif");
+BackRoom.addItem(Librarian);
+BackRoom.addCommand("grep");
+
+//ROCKY PATH
+var RockyPath = new Room("RockyPath", "The weed-choked path leads off into the fields. \n" +
+		"There is an enormous boulder blocking your way, however.\n", "loc_rockypath.gif");
+var Boulder = new Item("LargeBoulder", "It's much too big to move. \n", "item_boulder.gif");
+Boulder.addCmdText("rm", "The boulder disappears with a pop. The way is clear now.\n");
+RockyPath.addItem(Boulder);
+RockyPath.addCommand("rm");
+
+//ARTISAN'S SHOP
+var ArtisanShop = new Room("ArtisanShop", "The walls of the shop are covered in clocks, \n" +
+		"all slightly out of sync. At the workbench, a woman in an enormous pair of goggles \n" +
+		"is wielding a blowtorch with frightening enthusiasm.\n", "loc_artisanshop.gif");
+var StrangeTrinket = new Item("StrangeTrinket", "It looks like a crystal of some sort.  It's very beautiful.", "item_trinket.gif");
+StrangeTrinket.addCmdText("rm", "Didn't your mother ever teach you that it's rude to rease other people's \n" +
+		"things from their plane of existence?\n");
+StrangeTrinket.addCmdText("mv", "You can't take that, it's not yours!\n");
+ArtisanShop.addItem(StrangeTrinket);
+var ClockworkDragon = new Item("ClockworkDragon","A dragon the size of a small dog is frolicking about the room. \n" +
+		"You'd think it was real if it weren't for the wind-up key sticking out of its \n" +
+		"back.","item_clockdragon.gif");
+ClockworkDragon.addCmdText("rm",  "Didn't your mother ever teach you that it's rude to erase other people's \n" + 
+		"things from their plane of existence?\n");
+ClockworkDragon.addCmdText("mv", "You can't take that, it's not yours!\n");
+ArtisanShop.addItem(ClockworkDragon);
+var Artisan = new Item("Artisan", "The Artisan lifts up her goggles and peers at you in " +
+		"surprise. \"Are you the new assistant? You're late! ...  \n You say you aren't my assistant? \n" +
+		"Well, that doesn't mean you can't make yourself useful. I need some gears, quickly! \n" +
+		"... \n" +
+		"You don't even know how to make things? Hmph. Some assistant you are. Just \n" +
+		"say \"touch ITEM\" alright? Where ITEM is the name of the thing you want to create. \n" +
+		"Now make me a Gear! Then come back.\"\n", "item_artisan.gif");
+ArtisanShop.addItem(Artisan);
+ArtisanShop.addCommand("touch");
+
+//FARM
+var Farm = new Room("Farm", "There was once a farm of some sort here, but now the fields are scorched and \n" +
+		"brown.\n", "loc_farm.gif");
+var EarOfCorn = new Item("EarOfCorn","The corn is sad and withered-looking.\n","item_corn.gif");
+EarOfCorn.addCmdText("rm", "Why would you destroy a starving man's only food?\n");
+Farm.addItem(EarOfCorn);
+var Farmer = new Item("Farmer", "\"Ruined! I'm ruined! Look at these crops... almost nothing \n" +
+		"left! The wizard's minions were here last week... they destroyed everything. How \n" +
+		"will I feed my 10 children with just one ear of corn? Can you help me? \" \n", "");
+Farm.addItem(Farmer);
+Farm.addCommand("cp");
+
+//BROKEN BRIDGE
+var Brokenbridge = new Room("BrokenBridge", "A creaky wooden bridges stretches across a chasm. But it's missing a \n" +
+		"Plank, and the gap is too far to jump. \n", "loc_bridge.gif");
+//beforeClearing = new Room("Clearing", "You can't cross the bridge until you've replaced the missing Plank.", "");
+Brokenbridge.addCommand("touch");
+
+//CLEARING
+var Clearing = new Room("Clearing", "There's a small grassy clearing here, with a man sitting on a \n" +
+		"stone and sobbing. Behind him is a pile of rubble. \n", "loc_clearing.gif");
+var CryingMan = new Item("CryingMan", "\"You! You're a magic-user! I can tell, you've got that look. \n" +
+		"Come to finish the job, have you? Well, go ahead, do your worst there's nothing else you \n"+
+		"can take from me. Not since the rest of you were here a few days ago.\"\n"+
+		" \n"+
+		"\"What happened? You DARE to ask-- you know perfectly well what happened.\n"+
+		"Your friends, the wizard's minions, destroyed my house and kidnapped my poor \n"+
+		"daughter, that's what! My wife even went into town to look for help, and I haven't \n"+
+		"heard from her since!\"\n"+
+		" \n"+
+		"\"Hm? Well, I guess it's true that you don't look like one of the wizard's minions. Still, \n"+
+		"I don't trust you magicfolk. If you really are who you say you are, then prove your \n"+
+		"good intentions by making me a new House!\" \n", "item_man.gif");
+Clearing.addItem(CryingMan);
+var House = new Room("House", "You made this house for the man. How thoughtful of you!", "");
+		
+//OMINOUS-LOOKING PATH
+var OminousPath = new Room("OminousLookingPath", "The path leads toward a dark cave. It's an ordinary cobblestone path, but for \n" +
+		"some reason it fills you with a sense of dread.\n", "loc_path.gif");
+var Thornybrambles = new Item("ThornyBrambles", "This thicket of brambles is covered with wicked-looking thorns. You \n" +
+		"can't go around it, and you definitely aren't about to go through it.\n", "");
+Thornybrambles.addCmdText("mv", "You can't touch them because they are covered with thorns. Ouch!\n");
+Thornybrambles.addCmdText("rm", "You speak the words of the Remove spell and the brambles glimmer a \n" +
+		"deep blue. The sparks rearrange themselves into a prompt: 'PASSWORD?' \n");
+OminousPath.addItem(Thornybrambles);
+OminousPath.addCommand("rm");
+
+//CAVE
+//Room beforeCave = new Room("CaveOfDisgruntledTrolls", "A patch of thorny brambles is growing at the mouth of the cave, blocking your way.", "loc_cave");
+var CaveOfTrolls = new Room("CaveOfDisgruntledTrolls", "The cave is dark and smells like... feet? Oh, right, it's probably the trolls. \n" +
+		"There's a scared-looking kid in a cage by the far wall.\n", "loc_cave.gif");
+var UglyTroll = new Item("UglyTroll", "He looks mad, and really ugly.\n", "item_troll1.gif");
+UglyTroll.addCmdText("rm", "The troll looks briefy surprised, then vanishes with an unpleasant squelching sound.\n");
+CaveOfTrolls.addItem(UglyTroll);
+//beforeCave.addItem(uglyTroll);
+var UglierTroll = new Item("UglierTroll", "He looks mad, and really, really ugly.\n", "item_troll2.gif");
+UglierTroll.addCmdText("rm", "The troll looks briefy surprised, then vanishes with an unpleasant \n" +
+		"squelching sound.\n");
+CaveOfTrolls.addItem(UglierTroll);
+//beforeCave.addItem(uglierTroll);
+/*hideousTroll = new MoveableItem("AbsolutelyHideousTroll", "You probably don't want to look at this guy. Oops, too late. \n", "item_supertroll");
+hideousTroll.setRMText("The troll belches spectacularly, and you could swear he actually smirks. \n" +
+		"You won't get rid of him that easily, not without admin privileges.\n");
+hideousTroll.setMVText("If you move him out of the cave, he'll terrorize \n" +
+		"the countryside. Also he will probably eat you. \n");*/
+var HideousTroll = new Item("AbsolutelyHideousTroll", "You probably don't want to look at this guy. Oops, too late. \n", "item_supertroll.gif");
+HideousTroll.addCmdText("rm", "The troll belches spectacularly, and you could swear he actually smirks. \n" +
+		"You won't get rid of him that easily, not without admin privileges.\n");
+HideousTroll.addCmdText("mv", "If you move him out of the cave, he'll terrorize \n" +
+		"the countryside. Also he will probably eat you. \n");
+CaveOfTrolls.addItem(HideousTroll);
+//beforeCave.addItem(hideousTroll);
+CaveOfTrolls.addCommand("rm");
+CaveOfTrolls.addCommand("mv");
+
+//CAGE
+var Cage = new Room("Cage", "There's a scared-looking kid in there.\n", "item_cage.gif");
+var KidnappedChild = new Item("KidnappedChild", "You know it's kind of mean, but you can't help but think that that is one \n" +
+		"funny-looking kid.\n", "item_cagedboy.gif");
+KidnappedChild.addCmdText("mv", "The kid looks around, dazed, surprised to find himself out of the cage. \n" +
+		"You smile at him and speak in a gentle voice. 'You should probably be getting home, \n" +
+		"little boy. Someone is there waiting for you.' \n" +
+		"'I'm a girl,' says the little girl smartly. Then she dashes past you, out of the cave, and \n" +
+		"runs up the ominous path towards home.\n");
+Cage.addItem(KidnappedChild);
 
 /**
 * LINKS BETWEEN ROOMS
@@ -175,11 +360,13 @@ TownSquare.addItem(new Item("DistraughtLady", "The woman is sobbing uncontrollab
 * API: link(parentRoom, childRoom) 
 */
 function link_rooms(parentRoom, childRoom){if (!(childRoom in parentRoom.children)){parentRoom.addChild(childRoom);}if (!(parentRoom in childRoom.parents)){childRoom.addParent(parentRoom);}};
+
+
+// LEVEL 1 LINKS
 link_rooms(Home, WesternForest);
 link_rooms(WesternForest, SpellCastingAcademy);
 link_rooms(SpellCastingAcademy, PracticeRoom);
 link_rooms(PracticeRoom, Box);
-
 link_rooms(Home, NorthernMeadow);
 link_rooms(NorthernMeadow, EasternMountains);
 link_rooms(SpellCastingAcademy, Lessons);
@@ -190,3 +377,19 @@ link_rooms(DarkCorridor, DankRoom);
 link_rooms(DankRoom, SmallHole);
 link_rooms(Tunnel, StoneChamber);
 link_rooms(StoneChamber, Portal);
+
+//level 1 -> level 2
+link_rooms(Portal, TownSquare);
+
+//LEVEL 2 LINKS
+link_rooms(TownSquare, Marketplace);
+link_rooms(TownSquare, Library);
+link_rooms(TownSquare, RockyPath);
+link_rooms(TownSquare, ArtisanShop);
+link_rooms(TownSquare, Brokenbridge);
+//link(library, backRoom); 
+link_rooms(RockyPath, Farm);
+link_rooms(Brokenbridge, Clearing);
+link_rooms(Clearing, OminousPath);
+link_rooms(OminousPath, CaveOfTrolls);
+link_rooms(CaveOfTrolls, Cage);

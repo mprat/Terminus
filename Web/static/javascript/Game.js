@@ -1,5 +1,16 @@
 // set the current room
-var current_room = SpellCastingAcademy;
+var current_room = Portal;
+var man_pages = {"cd": "the cd man pages", 
+"mv": "the mv man pages",
+"ls": "the ls man pages", 
+"less": "the less man pages", 
+"man": "the man man pages", 
+"help": "the help man pages", 
+"exit": "the exit man pages", 
+"cp": "the cp man pages", 
+"pwd": "the pwd man pages",
+"grep": "the grep man pages",
+"touch": "the touch man pages"}
 
 $(document).ready(function() {
     $('#term').terminal(function(input, term) {
