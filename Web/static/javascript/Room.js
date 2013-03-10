@@ -66,7 +66,11 @@ Room.prototype.addCmdText = function(cmd, text) {
 };
 
 Room.prototype.ls = function(args){
-	return (this.children.toString()).replaceAll(",", "\n");
+	other_rooms = (this.children.toString()).replaceAll(",", "\n");
+	if (this.items.length > 0){
+		return other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
+	}
+	return other_rooms;
 };
 
 Room.prototype.cd = function(args){
@@ -94,7 +98,17 @@ Room.prototype.cd = function(args){
 };
 
 Room.prototype.less = function(args){
-
+	if (args.length < 1){
+		return "Pick a different item to less.";
+	} else {
+		item = args[0];
+		for (var i = 0; i < this.items.length; i++){
+			if (item === this.items[i].toString()){
+				return this.items[i].cmd_text["less"];
+			}
+		}
+		return "There is no " + args[0] + " here.";
+	}
 };
 
 Room.prototype.man = function(args){

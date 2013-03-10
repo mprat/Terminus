@@ -6,3 +6,7 @@ function Item(name, text){
 Item.prototype.addCmdText = function(cmd, text) {
 	this.cmd_text[cmd] = text;
 };
+
+Item.prototype.toString = function(){
+	return this.itemname;
+}
