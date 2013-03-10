@@ -132,6 +132,33 @@ Room.prototype.cd = function(args){
 	}
 };
 
+/*Checks if arg can be reached from this room
+* Returns the room if it can
+* Returns false if it cannot
+*
+* 'arg' is a single node, not a path
+* i.e. Home.can_cd("next_room") returns true
+*      Home.can_cd("next_room/another_room") is invalid
+*/
+Room.prototype.can_cd = function(arg){
+    //Don't allow for undefined or multiple paths
+    if (arg == undefined || arg.indexOf("/") > -1){
+        return false;
+    }
+    else if(arg === "..") {
+		return this.parents[0];
+	} else if (arg === ".") {
+        return this;
+	} else {
+		for (var i = 0; i < this.children.length; i++){
+			if (arg === this.children[i].toString()){
+				return this.children[i];
+			}
+		}
+		return false;
+	}
+};
+
 Room.prototype.less = function(args){
 	if (args.length < 1){
 		return "Pick a different item to less.";
