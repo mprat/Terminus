@@ -1,5 +1,5 @@
 // set the current room
-var current_room = Portal;
+var current_room = Home;
 var man_pages = {"cd": "the cd man pages", 
 "mv": "the mv man pages",
 "ls": "the ls man pages", 
@@ -105,11 +105,13 @@ $(document).ready(function() {
                         }
                         //If no match exists
                         else{
-                            //DO NOTHING
+                            //DO NOTHING (except remove TAB)
+                            $("#term").terminal().set_command(command.replace(/\s+$/,""));
                         }
                     }
                     else{
-                        //DO NOTHING
+                        //DO NOTHING (except remove TAB)
+                        $("#term").terminal().set_command(command.replace(/\s+$/,""));
                     }
                 }
             }
