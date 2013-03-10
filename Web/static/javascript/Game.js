@@ -81,12 +81,13 @@ $(document).ready(function() {
         "If you forget where you are, type \"pwd\" \n\n" + 
 		"Go ahead, explore. We hope you enjoy what you find. Do ls as your first command.\n",
         exit: false,                        // Disable 'exit' command
-        clear: false,                       // Disable 'clear' command
+        clear: true,                       // Disable 'clear' command
         });
     
     // Clear history on page reload
     $("#term").terminal().history().clear();
-    
+    //Give term focus (Fixes weird initial draw issue)
+    $("#term").click();
     //Tab Completion FOR LAST ARGUMENT
     $(window).keyup(function(event){
         if(event.keyCode == 9){
