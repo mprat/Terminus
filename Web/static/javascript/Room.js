@@ -93,13 +93,27 @@ Room.prototype.addCmdText = function(cmd, text) {
 };
 
 Room.prototype.ls = function(args){
-	other_rooms = (this.children.toString()).replaceAll(",", "\n");
-	if (this.items.length > 0){
-		$("#scene").attr("src",this.room_pic); // Display image of item
-		return " Locations: \n" + other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
+	if (args.length > 0){
+		if (this.childrenStringArray().indexOf(args[0]) > -1){
+			return this.children[this.childrenStringArray().indexOf(args[0])].printLS();
+		}
+	} else {
+		other_rooms = (this.children.toString()).replaceAll(",", "\n");
+		if (this.items.length > 0){
+			$("#scene").attr("src",this.room_pic); // Display image of item
+			return " Locations: \n" + other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
+		}
+		return " Locations: \n" + other_rooms;
 	}
-	return " Locations: \n" + other_rooms;
 };
+
+Room.prototype.printLS = function(){
+	other_rooms = (this.children.toString()).replaceAll(",", "\n");
+		if (this.items.length > 0){
+			return " Locations: \n" + other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
+		}
+		return " Locations: \n" + other_rooms;
+}
 
 var enterRoom = function(){
     $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
@@ -183,8 +197,6 @@ Room.prototype.less = function(args){
 Room.prototype.man = function(args){
 	if (args.length < 1){
 		return "Must ask the man about something to receive a response.";
-	} else if (this.commands.indexOf(args[0]) < 0){
-		return "You cannot do that right now - no need to know about it at the moment.";
 	} else {
 		if (args[0] in man_pages){
 			return man_pages[args[0]];

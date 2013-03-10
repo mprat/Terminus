@@ -517,4 +517,4 @@ link_rooms(RockyPath, Farm);
 link_rooms(Brokenbridge, Clearing);
 link_rooms(Clearing, OminousPath);
 link_rooms(OminousPath, CaveOfTrolls);
-link_rooms(CaveOfTrolls, Cave);
+//link_rooms(CaveOfTrolls, Cave);
