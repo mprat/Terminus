@@ -1,5 +1,5 @@
 // set the current room
-var current_room = Portal;
+var current_room = Home;
 var man_pages = {"cd": "the cd man pages", 
 "mv": "the mv man pages",
 "ls": "the ls man pages", 
