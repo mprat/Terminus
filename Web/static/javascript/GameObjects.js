@@ -42,9 +42,6 @@ var HurryingStudent = new Item("HurryingStudent", "You to speak to a hurrying st
 	should help you out. See you around.\" The student runs past you. You notice that \
 	the student is pretty cute, and probably around your age. Unfortunately, the \
 	student disappears around a corner before you can ask for a name.\n", "item_student.gif")
-HurryingStudent.ev.addListener("itemLess", function(){
-	console.log("hurrying student lessed");
-});
 SpellCastingAcademy.addItem(HurryingStudent);
 
 //PRACTICE ROOM
