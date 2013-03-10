@@ -389,7 +389,7 @@ link_rooms(TownSquare, RockyPath);
 link_rooms(TownSquare, ArtisanShop);
 link_rooms(TownSquare, Brokenbridge);
 //link(library, backRoom); 
-link_rooms(RockyPath, Farm);
+link_rooms(RockyPath, Farm); //this link is made when you rm the boulder
 link_rooms(Brokenbridge, Clearing);
 link_rooms(Clearing, OminousPath);
 link_rooms(OminousPath, CaveOfTrolls);
