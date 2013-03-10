@@ -16,7 +16,6 @@ function Room(roomname, introtext, roompic){
 	this.intro_text = (typeof introtext === 'undefined') ? "This is a simple room": introtext;
 	this.cmd_text = {"man": "room man text", "help": "room help text", "exit": "room exit text", "pwd": "You are in " + this.room_name + "."};
 	//for event handling
-	//EventTarget.call(this);
 	this.ev = new EventTarget();
 	EventTarget.call(this);
 };
@@ -91,6 +90,7 @@ Room.prototype.addCmdText = function(cmd, text) {
 Room.prototype.ls = function(args){
 	other_rooms = (this.children.toString()).replaceAll(",", "\n");
 	if (this.items.length > 0){
+		$("#scene").attr("src",this.room_pic); // Display image of item
 		return other_rooms + "\n Items: \n" + (this.items.toString()).replaceAll(",", "\n");
 	}
 	return other_rooms;

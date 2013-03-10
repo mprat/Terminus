@@ -1,5 +1,5 @@
 // set the current room
-var current_room = DarkCorridor;
+var current_room = SpellCastingAcademy;
 
 $(document).ready(function() {
     $('#term').terminal(function(input, term) {
@@ -24,6 +24,7 @@ $(document).ready(function() {
 		"Move to a new location with the command \"cd LOCATION\" \n" +
 		"You can backtrack with the command \"cd ..\". \n" +
 		"Interact with things in the world with the command \"less ITEM\" \n\n" +
+        "If you forget where you are, type \"pwd\" \n\n" + 
 		"Go ahead, explore. We hope you enjoy what you find. Do ls as your first command.\n",
         exit: false,                        // Disable 'exit' command
         clear: false,                       // Disable 'clear' command

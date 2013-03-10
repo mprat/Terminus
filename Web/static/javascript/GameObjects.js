@@ -31,7 +31,7 @@ var SpellCastingAcademy = new Room("SpellCastingAcademy", "The halls are filled 
 	and bustle of academy students scurrying to and from classes. The inside of the \
 	academy is as impressive as it is on the outside with a high ceiling and gothic \
 	arches, it seems even larger on the inside.", "loc_academy.gif");
-SpellCastingAcademy.addItem(new Item("HurryingStudent", "You to speak to a hurrying student. \
+var HurryingStudent = new Item("HurryingStudent", "You to speak to a hurrying student. \
 	The student runs into you and falls to the ground. The student quickly gets up \
 	and apologizes to you, asking if you are okay. You are sturdier than you look and \
 	you're undamaged. I'm so sorry, I was in such a hurry that I didn't see you \
@@ -41,7 +41,11 @@ SpellCastingAcademy.addItem(new Item("HurryingStudent", "You to speak to a hurry
 	to go, but I gotta run to class. Just head into the Lessons hall and someone \
 	should help you out. See you around.\" The student runs past you. You notice that \
 	the student is pretty cute, and probably around your age. Unfortunately, the \
-	student disappears around a corner before you can ask for a name.\n", "item_student.gif"));
+	student disappears around a corner before you can ask for a name.\n", "item_student.gif")
+HurryingStudent.ev.addListener("itemLess", function(){
+	console.log("hurrying student lessed");
+});
+SpellCastingAcademy.addItem(HurryingStudent);
 
 //PRACTICE ROOM
 var PracticeRoom = new Room("PracticeRoom", "The room is filled with practice dummies \
