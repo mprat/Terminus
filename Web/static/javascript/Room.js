@@ -246,13 +246,15 @@ Room.prototype.rm = function(args){
 		stringtoreturn = "";
 		for (var i = 0; i < args.length; i++){
 			if (this.getItemFromName(args[i]) != -1){
-				if ("rm" in this.getItemFromName(args[i]).cmd_text){
-					stringtoreturn += this.getItemFromName(args[i]).cmd_text["rm"] + "\n";
-				} else {
-					stringtoreturn += "You just removed " + args[i] + "\n";
-				}
 				if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > 0){
 					this.removeItem(args[i]);
+					if ("rm" in this.getItemFromName(args[i]).cmd_text){
+					stringtoreturn += this.getItemFromName(args[i]).cmd_text["rm"] + "\n";
+					} else {
+						stringtoreturn += "You just removed " + args[i] + "\n";
+					}
+				} else {
+					stringtoreturn += "That item cannot be removed";
 				}
 			} else {
 				return "That's not a valid object to remove.";
