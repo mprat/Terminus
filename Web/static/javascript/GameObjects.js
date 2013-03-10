@@ -124,9 +124,9 @@ You enter the class on the \"Move Spell.\"",
 Lessons.addItem(new Item("Professor", 
     "The professor is difficult to understand, but you pick up just enough to learn 3 things: \
 \n\
-1. You can use 'mv' to move things in the world \
-2. You have to indicate the object and the new location (i.e.: mv OBJECT NEWLOCATION) \
-3. This spell will only work on certain objects, for example the PracticeDummy objects in the PracticeRoom\
+1. You can use 'mv' to move things in the world \n\
+2. You have to indicate the object and the new location (i.e.: mv OBJECT NEWLOCATION) \n\
+3. This spell will only work on certain objects, for example the PracticeDummy objects in the PracticeRoom \n\
 \n\
 You did not pay enough attention to learn which types of objects are unmovable. \
 Oh well, experimenting was always more of your style anyways. But be careful!", 
