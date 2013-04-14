@@ -165,15 +165,15 @@ $(document).ready(function() {
                             var i, ch, memo
                             do {
                                 memo = null
-                                for (i=0; i < candidates.length; i++) {
-                                    ch = candidates[i].charAt(lCSindex)
+                                for (i=0; i < substring_matches.length; i++) {
+                                    ch = substring_matches[i].charAt(lCSindex)
                                     if (!ch) break
                                     if (!memo) memo = ch
                                     else if (ch != memo) break
                                 }
-                            } while (i == candidates.length && ++lCSindex)
+                            } while (i == substring_matches.length && ++lCSindex)
 
-                            var longestCommonSubstring = candidates[0].slice(0, lCSindex)
+                            var longestCommonSubstring = substring_matches[0].slice(0, lCSindex)
                             //If there is a common substring...
                             if(longestCommonSubstring != ""){
                                 //If it already matches the last snippit, then show the options
