@@ -160,10 +160,44 @@ $(document).ready(function() {
                         }
                         //If multiple matches exist
                         else if(substring_matches.length > 1){
-                            split_command.push(last_arg)
-                            $("#term").terminal().echo(">"+split_command.join(" ").replace(/\s+$/,""));
-                            $("#term").terminal().echo(substring_matches.join(" "));
-                            $("#term").terminal().set_command(split_command.join(" ").replace(/\s+$/,""));
+                            //Search for longest common substring (taken from: http://stackoverflow.com/questions/1837555/ajax-autocomplete-or-autosuggest-with-tab-completion-autofill-similar-to-shell/1897480#1897480)
+                            var lCSindex = 0
+                            var i, ch, memo
+                            do {
+                                memo = null
+                                for (i=0; i < candidates.length; i++) {
+                                    ch = candidates[i].charAt(lCSindex)
+                                    if (!ch) break
+                                    if (!memo) memo = ch
+                                    else if (ch != memo) break
+                                }
+                            } while (i == candidates.length && ++lCSindex)
+
+                            var longestCommonSubstring = candidates[0].slice(0, lCSindex)
+                            //If there is a common substring...
+                            if(longestCommonSubstring != ""){
+                                //If it already matches the last snippit, then show the options
+                                if(path_rooms[room_num] == longestCommonSubstring){
+                                    split_command.push(last_arg)                                                    //Join final argument to split_command
+                                    $("#term").terminal().echo(">"+split_command.join(" ").replace(/\s+$/,""));     //Print what the user entered
+                                    $("#term").terminal().echo(substring_matches.join(" "));                        //Print the matches
+                                    $("#term").terminal().set_command(split_command.join(" ").replace(/\s+$/,""));  //Set the text to what the user entered
+                                }
+                                //Otherwise, fill in the longest common substring
+                                else{
+                                    path_rooms.pop();                           //Pop final snippit
+                                    path_rooms.push(longestCommonSubstring);    //Push longest common substring
+                                    split_command.push(path_rooms.join("/"))    //Join room paths
+                                    $("#term").terminal().set_command(split_command.join(" ")); //Set the terminal text to this auto-completion
+                                }
+                            }
+                            //Otherwise, there is no common substring.  Show all of the options.
+                            else{
+                                split_command.push(last_arg)                                                    //Join final argument to split_command
+                                $("#term").terminal().echo(">"+split_command.join(" ").replace(/\s+$/,""));     //Print what the user entered
+                                $("#term").terminal().echo(substring_matches.join(" "));                        //Print the matches
+                                $("#term").terminal().set_command(split_command.join(" ").replace(/\s+$/,""));  //Set the text to what the user entered
+                            }
                         }
                         //If no match exists
                         else{
