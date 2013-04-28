@@ -121,6 +121,7 @@ Room.prototype.printLS = function(){
 
 var enterRoom = function(){
     $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
+    state.setCurrentRoom(current_room);
 }
 
 Room.prototype.cd = function(args){

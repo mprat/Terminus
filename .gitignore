@@ -8,3 +8,6 @@
 *.svn
 
 *.swp
+
+#report files
+*.pdf
