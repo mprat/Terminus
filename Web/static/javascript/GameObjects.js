@@ -503,6 +503,12 @@ little boy. Someone is there waiting for you.' \
 runs up the ominous path towards home.");
 Cage.addItem(KidnappedChild);
 
+//MIT
+var MIT = new Room("MIT", "You have arrived by magic carpet to MIT!", "item_manuscript.gif");
+var AdmissionLetter = new Item("AdmissionLetter", "Congratulations on entering MIT! \
+    Here you will learn special spells that you can only use at MIT. Enjoy!", "item_manuscript.gif")
+MIT.addItem(AdmissionLetter);
+
 /**
 * LINKS BETWEEN ROOMS
 * Fulfill parent/child relationships between rooms
@@ -543,3 +549,6 @@ link_rooms(BrokenBridge, Clearing);
 link_rooms(Clearing, OminousPath);
 link_rooms(OminousPath, CaveOfTrolls);
 //link_rooms(CaveOfTrolls, Cave);
+
+//MIT level links
+link_rooms(Home, MIT);

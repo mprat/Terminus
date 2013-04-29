@@ -177,6 +177,12 @@ digraph level_map{
 	<tr><td align="left" port="r0">AbsolutelyHideousTroll</td></tr>
 	</table>>];
 
+	"MIT" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">MIT</font></td></tr>
+	<tr><td align="left" port="r0">AdmissionsLetter</td></tr>
+	</table>>];
+
 	subgraph cluster_level1{
 		"Home" -> "WesternForest";
 		"Home" -> "NorthernMeadow";
@@ -208,6 +214,11 @@ digraph level_map{
 		"BrokenBridge" -> "Clearing" [style="dashed", label="Touch a Plank."];
 		"Clearing" -> "OminousLookingPath";
 		"OminousLookingPath" -> "CaveOfDisgruntledTrolls";
+	}
+
+	subgraph cluster_mit{
+		label = "MIT community";
+		"Home" -> "MIT";
 	}
 
 	label = "\n\n\nItem and room map for the Terminus game.\nLabeled arrows represent tasks that need to be completed before advancing to the next room.\nDotted arrows are rooms that are connected but that you cannot move into.\nDashed lines mean originally hidden until a task is completed.";
