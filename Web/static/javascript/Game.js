@@ -56,6 +56,11 @@ var man_pages = {"cd": "The old man's voice echoes in your head as if from a gre
 "Use \"touch\" to create new objects in the world.\n" +
 "Command Input:\n" + 
 "touch OBJECT \n" + 
+"Rememberrrrrr...", 
+"tellme": "The old man's voice echoes in your head as if from a great distance:\n"+
+"(tellme combo) tells you the combination for the AthenaCluster rooms at MIT.\n"+
+"Command Input:\n"+
+"tellme combo\n"+
 "Rememberrrrrr..."}
 
 $(document).ready(function() {
