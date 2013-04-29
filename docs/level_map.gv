@@ -183,6 +183,31 @@ digraph level_map{
 	<tr><td align="left" port="r0">AdmissionsLetter</td></tr>
 	</table>>];
 
+	"StataCenter" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">StataCenter</font></td></tr>
+	<tr><td align="left" port="r0">WaryEyeOfTheGradStudent</td></tr>
+	<tr><td align="left" port="r1">HelpfulTA</td></tr>
+	</table>>];
+
+	"AthenaCluster" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">AthenaCluster</font></td></tr>
+	<tr><td align="left" port="r0">Workstation</td></tr>
+	</table>>];
+
+	"ISnT" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">ISnT</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+	"MagicLocker" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">MagicLocker</font></td></tr>
+	<tr><td align="left" port="r0">Inscription</td></tr>
+	</table>>];
+
 	subgraph cluster_level1{
 		"Home" -> "WesternForest";
 		"Home" -> "NorthernMeadow";
@@ -219,7 +244,12 @@ digraph level_map{
 	subgraph cluster_mit{
 		label = "MIT community";
 		"Home" -> "MIT";
+		"MIT" -> "StataCenter";
+		"MIT" -> "AthenaCluster" [style="dashed", label="Can only enter with the right password."];
+		"MIT" -> "ISnT";
 	}
+
+	"Home" -> "MagicLocker";
 
 	label = "\n\n\nItem and room map for the Terminus game.\nLabeled arrows represent tasks that need to be completed before advancing to the next room.\nDotted arrows are rooms that are connected but that you cannot move into.\nDashed lines mean originally hidden until a task is completed.";
 }

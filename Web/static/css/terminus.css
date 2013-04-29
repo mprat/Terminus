@@ -8,12 +8,11 @@
 }
 #pics{
     position:absolute;
-    right:0px;
+    right:-10px;
     top:0px;
     width:50%;
     height:100%;
-    background:black
-    ;
+    background:black;
 }
 #scene{
     position: absolute;

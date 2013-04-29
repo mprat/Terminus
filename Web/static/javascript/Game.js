@@ -103,7 +103,7 @@ $(document).ready(function() {
             
             //Get starting room
             var search_room;
-            if(last_arg.substring(0,1) == "/"){
+            if(last_arg.substring(0,1) == "~/"){
                 search_room = Home;
             }
             else{

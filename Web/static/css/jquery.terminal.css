@@ -17,7 +17,7 @@
 .terminal {
     padding: 10px;
     position: relative;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 .cmd {
     padding: 0;
