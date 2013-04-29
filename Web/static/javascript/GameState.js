@@ -13,7 +13,7 @@ GameState.prototype.getCurrentRoom = function() {
 	if (cookieval){
 		//parse the cookie. right now it is only the current room name
 		console.log(cookieval);
-		newRoomToSet=window['cookieval'];
+		newRoomToSet=window[cookieval];
 	}
 
 	//call setCurrentRoom to reset the expiration date on the cookie
