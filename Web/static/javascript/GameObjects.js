@@ -281,6 +281,10 @@ book, disinterested, and place it back on the shelf.",
 Library.addItem(new Item("HistoryOfTerminus", 
     "It looks like an interesting book, but it's way too long and the print is too tiny.",
     "item_historybook.gif"));
+Library.addItem(new Item("NostalgiaForHome", 
+    "If you ever get lonely for Home, just 'cd ~' and you'll go back there. \
+    But just remember that it will be harder to come back.",
+    "item_historybook.gif"));
 		// "DarkWizard", "...old tales tell of a dark wizard who will fragment the land...\n" +
 		//"...only the world-maker can stop the dark wizard's virus from...\n" +
 		//"...that the power of \"sudo\" may be the dark wizard's only weakness...\n"));

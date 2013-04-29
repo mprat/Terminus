@@ -11,3 +11,6 @@
 
 #report files
 *.pdf
+
+#screenshots
+*.png

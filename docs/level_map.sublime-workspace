@@ -131,8 +131,16 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "level_map.gv",
+			"settings":
+			{
+				"buffer_size": 8926,
+				"line_ending": "Unix"
+			}
+		}
 	],
-	"build_system": "neato",
+	"build_system": "dot",
 	"command_palette":
 	{
 		"height": 54.0,
@@ -196,6 +204,7 @@
 	},
 	"file_history":
 	[
+		"/home/mprat/Documents/Michele/Repos/Terminus/docs/level_map.sublime-project",
 		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.gv",
 		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.sublime-project",
 		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.sublime-build",
@@ -376,8 +385,36 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "level_map.gv",
+					"settings":
+					{
+						"buffer_size": 8926,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

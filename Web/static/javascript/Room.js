@@ -137,6 +137,10 @@ Room.prototype.cd = function(args){
 		} else {
 			return "You are at the first room.";
 		}
+	} else if (args[0] === "~"){
+		current_room = Home;
+		enterRoom();
+		return "You have come Home!";
 	} else if (args[0] === ".") {
         enterRoom();
         $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
