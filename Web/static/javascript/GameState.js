@@ -6,13 +6,13 @@ function GameState(){
 //this function reads from a cookie if one exists
 GameState.prototype.getCurrentRoom = function() {
 	//by default the new room is just the current room
-	var newRoomToSet = this.currentRoom;
+	var newRoomToSet=this.currentRoom;
 
 	//if there is a cookie, the newRoomToSet is read from the cookie
-	var cookieval = this.readCookie();
+	var cookieval=this.readCookie();
 	if (cookieval){
 		//parse the cookie. right now it is only the current room name
-		newRoomToSet = cookieval;
+		newRoomToSet=cookieval;
 		console.log(cookieval);
 	}
 
@@ -22,7 +22,7 @@ GameState.prototype.getCurrentRoom = function() {
 };
 
 GameState.prototype.setCurrentRoom = function(newRoom){
-	this.currentRoom = newRoom;
+	this.currentRoom=newRoom;
 
 	//when you call this function, set the cookie in the browser
 	var date = new Date();
