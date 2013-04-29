@@ -1,0 +1,212 @@
+digraph level_map{
+	//outputorder=nodesfirst;
+	//compound=true;	
+	//splines="true";
+	//K=0.6;
+	overlap=scalexy;
+	nodesep=0.6;
+	//sep="+100, 25";
+	
+	node[shape=box];
+
+	"Home" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Home</font></td></tr><tr>
+	<td align="left" port="r0">WelcomeLetter</td></tr>
+	</table>>];
+
+	"WesternForest" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">WesternForest</font></td></tr><tr>
+	<td align="left" port="r0">Sign</td></tr>
+	</table>>];
+
+	"NorthernMeadow" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">NorthernMeadow</font></td></tr><tr>
+	<td align="left" port="r0">Pony</td></tr>
+	</table>>];
+
+	"SpellCastingAcademy" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">SpellCastingAcademy</font></td></tr><tr>
+	<td align="left" port="r0">HurryingStudent</td></tr>
+	</table>>];
+
+	"Lessons" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Lessons</font></td></tr><tr>
+	<td align="left" port="r0">Professor</td></tr>
+	</table>>];
+
+	"PracticeRoom" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">PracticeRoom</font></td></tr>
+	<tr><td align="left" port="r0">Instructions</td></tr>
+	<tr><td align="left" port="r1">PracticeDummy1</td></tr>
+	<tr><td align="left" port="r2">PracticeDummy2</td></tr>
+	<tr><td align="left" port="r3">PracticeDummy3</td></tr>
+	<tr><td align="left" port="r4">PracticeDummy4</td></tr>
+	<tr><td align="left" port="r5">PracticeDummy5</td></tr>
+	</table>>];
+
+	"EasternMountains" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">EasternMountains</font></td></tr><tr><td align="left" port="r0">OldMan</td></tr>
+	<tr><td align="left" port="r1">OldManuscripts</td></tr>
+	</table>>];
+
+	"Cave" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Cave</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+	"Staircase" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Staircase</font></td></tr>
+	<tr><td align="left" port="r0">Sign</td></tr>
+	</table>>];
+
+	"DarkCorridor" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">DarkCorridor</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+	"DankRoom" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">DankRoom</font></td></tr>
+	<tr><td align="left" port="r0">Boulder</td></tr>
+	</table>>];
+
+	"Tunnel" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Tunnel</font></td></tr>
+	<tr><td align="left" port="r0">Rat</td></tr>
+	</table>>];
+
+	"SmallHole" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">SmallHole</font></td></tr>
+	<tr><td align="left" port="r0">(can move Boulder here)</td></tr>
+	</table>>];
+
+	"StoneChamber" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">StoneChamber</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+	"Portal" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Portal</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+	"TownSquare" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">TownSquare</font></td></tr>
+	<tr><td align="left" port="r0">RandomCitizen1</td></tr>
+	<tr><td align="left" port="r1">RandomCitizen2</td></tr>
+	<tr><td align="left" port="r2">DistraughtLady</td></tr>
+	</table>>];
+
+	"Marketplace" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Marketplace</font></td></tr>
+	<tr><td align="left" port="r0">Vendor</td></tr>
+	<tr><td align="left" port="r1">rmSpell</td></tr>
+	<tr><td align="left" port="r2">mkdirSpell</td></tr>
+	</table>>];
+
+	"Library" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Library</font></td></tr>
+	<tr><td align="left" port="r0">TotallyRadSpellbook</td></tr>
+	<tr><td align="left" port="r1">PaperbackRomance</td></tr>
+	<tr><td align="left" port="r2">HistoryOfTerminus</td></tr>
+	</table>>];
+
+	"RockyPath" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">RockyPath</font></td></tr>
+	<tr><td align="left" port="r0">LargeBoulder</td></tr>
+	</table>>];
+
+	"ArtisanShop" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">ArtisanShop</font></td></tr>
+	<tr><td align="left" port="r0">StrangeTrinket</td></tr>
+	<tr><td align="left" port="r1">ClockworkDragon</td></tr>
+	<tr><td align="left" port="r2">Artisan</td></tr>
+	</table>>];
+
+	"BrokenBridge" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">BrokenBridge</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+	"Farm" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Farm</font></td></tr>
+	<tr><td align="left" port="r0">EarOfCorn</td></tr>
+	<tr><td align="left" port="r1">Farmer</td></tr>
+	</table>>];
+
+	"Clearing" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Clearing</font></td></tr>
+	<tr><td align="left" port="r0">CryingMan</td></tr>
+	</table>>];
+
+	"OminousLookingPath" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">OminousLookingPath</font></td></tr>
+	<tr><td align="left" port="r0">ThornyBrambles</td></tr>
+	</table>>];
+
+	"CaveOfDisgruntledTrolls" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">CaveOfDisgruntledTrolls</font></td></tr>
+	<tr><td align="left" port="r0">UglyTroll</td></tr>
+	<tr><td align="left" port="r0">UglierTroll</td></tr>
+	<tr><td align="left" port="r0">AbsolutelyHideousTroll</td></tr>
+	</table>>];
+
+	subgraph cluster_level1{
+		"Home" -> "WesternForest";
+		"Home" -> "NorthernMeadow";
+		"WesternForest" -> "SpellCastingAcademy";
+		"SpellCastingAcademy" -> "PracticeRoom";
+		"SpellCastingAcademy" -> "Lessons";
+		"PracticeRoom" -> "Box" [style="dotted"];
+		"NorthernMeadow" -> "EasternMountains";
+		"EasternMountains" -> "Cave";
+		"Cave" -> "DarkCorridor";
+		"Cave" -> "Staircase";
+		"DarkCorridor" -> "DankRoom";
+		"DankRoom" -> "SmallHole";
+		"DankRoom" -> "Tunnel" [style="dashed", label="Move Boulder into SmallHole"];
+		"Tunnel" -> "StoneChamber";
+		"StoneChamber" -> "Portal";
+		label = "Level 1";
+	}
+
+	subgraph cluster_level2{
+		label = "Level 2";
+		"Portal" -> "TownSquare";
+		"TownSquare" -> "Marketplace";
+		"TownSquare" -> "Library";
+		"TownSquare" -> "RockyPath";
+		"TownSquare" -> "ArtisanShop";
+		"TownSquare" -> "BrokenBridge";
+		"RockyPath" -> "Farm";
+		"BrokenBridge" -> "Clearing";
+		"Clearing" -> "OminousLookingPath";
+		"OminousLookingPath" -> "CaveOfDisgruntledTrolls";
+	}
+
+	label = "\n\n\nItem and room map for the Terminus game.\nLabeled arrows represent tasks that need to be completed before advancing to the next room.\nDotted arrows are rooms that are connected but that you cannot move into.\nDashed lines mean originally hidden until a task is completed.";
+}

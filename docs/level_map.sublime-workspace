@@ -1,0 +1,522 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cookie",
+				"cookieval"
+			],
+			[
+				"newRoom",
+				"newRoomToSet"
+			],
+			[
+				"get",
+				"getState"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"cur",
+				"current_room"
+			],
+			[
+				"addC",
+				"addCommand"
+			],
+			[
+				"child",
+				"childrenStringArray"
+			],
+			[
+				"items",
+				"items"
+			],
+			[
+				"remove",
+				"removeItem"
+			],
+			[
+				"addc",
+				"addCmdText"
+			],
+			[
+				"add",
+				"addCommand"
+			],
+			[
+				"chil",
+				"childrenStringArray"
+			],
+			[
+				"children",
+				"childrenStringArray"
+			],
+			[
+				"childre",
+				"childrenstrarray"
+			],
+			[
+				"spel",
+				"spellCastingAcademy"
+			],
+			[
+				"prac",
+				"practiceRoom"
+			],
+			[
+				"room",
+				"room_name"
+			],
+			[
+				"roomnam",
+				"room_name"
+			],
+			[
+				"replace",
+				"replaceThis"
+			],
+			[
+				"c",
+				"cmd_text"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"waiver",
+				"waiver_date_chooser"
+			],
+			[
+				"waiv",
+				"waiverdate"
+			],
+			[
+				"datech",
+				"datechooser"
+			],
+			[
+				"dea",
+				"dealerUpCard"
+			],
+			[
+				"command",
+				"commandhistory"
+			],
+			[
+				"printa",
+				"printHandState"
+			],
+			[
+				"printHan",
+				"printHandState"
+			],
+			[
+				"print",
+				"printHand"
+			],
+			[
+				"add-",
+				"add-waiver-form"
+			],
+			[
+				"person",
+				"person_id"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "neato",
+	"command_palette":
+	{
+		"height": 54.0,
+		"selected_items":
+		[
+			[
+				":!",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				":w - Save"
+			],
+			[
+				"package instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":",
+				":w - Save"
+			],
+			[
+				":cl",
+				"File: Close All"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.gv",
+		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.sublime-project",
+		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.sublime-build",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/education_system_2.gv",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/all_system_2.gv",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/education_system_1.gv",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset9.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset6.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/2.008/Homeworks/homework7.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset7.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset8.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/2.008/Homeworks/homework6.tex",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/cpplinearalgebra.sublime-project",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/2.008/Homeworks/homework5.tex",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/static/javascript/GameState.js",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/test.cpp",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/static/javascript/GameObjects.js",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/README.md",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/Makefile",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/.gitignore",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/Matrix4x4.cpp",
+		"/home/mprat/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/cpplinearalgebra.sublime-workspace",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/main.cpp",
+		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/Matrix4x4.h",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/narrative.txt",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset4.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset5.tex",
+		"/home/mprat/.config/sublime-text-2/Packages/LaTeXTools/Wrap in environment.sublime-snippet",
+		"/home/mprat/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Java/src/gameCode/Game.java",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/main.html",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/static/javascript/Game.js",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/static/javascript/Item.js",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/static/javascript/Room.js",
+		"/home/mprat/Documents/Michele/Repos/Terminus/.gitignore",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/static/javascript/EventTarget.js",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/static/javascript/Level.js",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Java/src/gameCode/Item.java",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Java/src/gameCode/Room.java",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/Item.js",
+		"/home/mprat/Documents/Michele/Repos/Terminus/Web/Room.js",
+		"/home/mprat/Dropbox/Between_OS/MEET_app.txt",
+		"/opt/lampp/htdocs/mitoc-gear/people/person/person-profile/person-profile.js.php",
+		"/opt/lampp/htdocs/mitoc-gear/common/person/Person.php",
+		"/opt/lampp/htdocs/mitoc-gear/common/utils.php",
+		"/home/mprat/Documents/Michele/Repos/blackjack-trainer/python/main.py",
+		"/home/mprat/Documents/Michele/Repos/blackjack-trainer/python/deck.py",
+		"/home/mprat/Documents/Michele/Repos/blackjack-trainer/python/player.py",
+		"/opt/lampp/htdocs/mitoc-gear/db/setup/upgrade-waivers.sql",
+		"/opt/lampp/htdocs/mitoc-gear/common/ajax-table/ajax_table.php",
+		"/opt/lampp/htdocs/mitoc-gear/people/people-list/people_table.php",
+		"/opt/lampp/htdocs/mitoc-gear/db/setup/mitoc-gear.sql",
+		"/opt/lampp/htdocs/mitoc-gear/people/person/person-profile/person-profile.htmx.php",
+		"/opt/lampp/htdocs/mitoc-gear/common/person/person-tr.htmx.php",
+		"/opt/lampp/htdocs/mitoc-gear/people/person/person-profile/frequent-flyer.js.php",
+		"/opt/lampp/htdocs/mitoc-gear/db/MitocDb.php",
+		"/opt/lampp/htdocs/mitoc-gear/db/setup/upgrade.sql",
+		"/opt/lampp/htdocs/mitoc-gear/test.php",
+		"/home/mprat/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/opt/lampp/htdocs/mitoc-gear/index.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"toString",
+			"department",
+			"educators",
+			"enterRoom",
+			"setCurrentRoom",
+			"}\n",
+			"TODO",
+			"enterRoom",
+			"det",
+			"minima",
+			"Cave",
+			"indexOf",
+			"Tunnel",
+			"Boulder",
+			"less",
+			"_name",
+			"exit",
+			"\"\";\n",
+			"command_text",
+			"cmd_text",
+			"command_text",
+			"cmd_text",
+			"rockyPath",
+			"};\n",
+			"){\n",
+			"args",
+			"\"\";",
+			"link",
+			"1000",
+			"collect $1000",
+			"1000",
+			"insert_waiver",
+			"insert-waiver",
+			">\n",
+			"waiver",
+			"add-waiver-btn",
+			"hidden",
+			"DateChooser",
+			"datechooser",
+			"add-waiver-form",
+			"waiv",
+			"add-waiver-btn",
+			"wai",
+			"\"submit\"",
+			"waiver",
+			"require_once",
+			"person",
+			"include_once",
+			"waiver",
+			"add",
+			"profile",
+			"waiver",
+			"mysql_insert_id",
+			"insertinto",
+			"insert ",
+			"<?",
+			"endGame",
+			"getHandVal",
+			"print",
+			"toprint",
+			"getHandVal",
+			"add-waiver-form",
+			"frequent",
+			"insert_waiver",
+			"ff-check-number",
+			"strtotime",
+			"add-frequent-flyer-btn",
+			"add-frequent-flyer-form",
+			"waiver.js.php",
+			"no-waiver-found",
+			"Click to add",
+			"get_people",
+			"ajax_table",
+			"get_tr",
+			"frequ",
+			"insert_ff",
+			"waiver",
+			"frequen",
+			"create table people_frequent_flyer",
+			"frequent",
+			"people_frequ",
+			"people_fre",
+			"	\n",
+			"echo"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"person-info",
+				"people/person/person-info.htmx.php"
+			],
+			[
+				"waiver.",
+				"people/person/person-profile/waiver.js.php"
+			],
+			[
+				"person.",
+				"common/person/Person.php"
+			],
+			[
+				"mito",
+				"db/MitocDb.php"
+			],
+			[
+				"person-p",
+				"people/person/person-profile/person-profile.htmx.php"
+			],
+			[
+				"",
+				"common/utils.php"
+			],
+			[
+				"up",
+				"db/setup/upgrade-waivers.sql"
+			],
+			[
+				"freq",
+				"people/person/person-profile/frequent-flyer.js.php"
+			],
+			[
+				"people_",
+				"people/people-list/people_table.php"
+			],
+			[
+				"aja",
+				"common/ajax-table/ajax_table.php"
+			],
+			[
+				"perspn-tr",
+				"common/person/person-tr.htmx.php"
+			],
+			[
+				"per",
+				"common/person/Person.php"
+			],
+			[
+				"aja-",
+				"common/ajax-table/ajax_table.php"
+			],
+			[
+				"person-pr",
+				"people/person/person-profile/person-profile.css"
+			],
+			[
+				"frequ",
+				"people/person/person-profile/frequent-flyer.js.php"
+			],
+			[
+				"mitoc",
+				"db/MitocDb.php"
+			],
+			[
+				"person-in",
+				"people/person/person-info.htmx.php"
+			],
+			[
+				"person",
+				"common/person/Person.php"
+			],
+			[
+				"mitoc-gear",
+				"db/setup/mitoc-gear.sql"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 160.0,
+	"status_bar_visible": true
+}
