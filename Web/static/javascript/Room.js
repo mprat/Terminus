@@ -96,6 +96,10 @@ Room.prototype.addCmdText = function(cmd, text) {
 	this.cmd_text[cmd] = text;
 };
 
+Room.prototype.removeCmdText = function(cmd){
+	delete this.cmd_text["cd"];
+};
+
 Room.prototype.ls = function(args){
 	if (args.length > 0){
 		if (this.childrenStringArray().indexOf(args[0]) > -1){
@@ -281,7 +285,6 @@ Room.prototype.touch = function(args){
 	} else {
 		var createdItemsString = "";
 		for (var i = args.length - 1; i >= 0; i--) {
-			console.log(args[i]);
 			if (args[i].length > 0){
 				this.addItem(new Item(args[i], "This is a " + args[i]));
 				createdItemsString += args[i];

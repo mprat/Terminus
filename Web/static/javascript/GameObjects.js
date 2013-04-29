@@ -387,17 +387,6 @@ will I feed my 10 children with just one ear of corn? Can you help me? \"",
 Farm.addItem(Farmer);
 Farm.addCommand("cp");
 
-//BROKEN BRIDGE
-var BrokenBridge = new Room("BrokenBridge",
-    "A creaky wooden bridges stretches across a chasm. But it's missing a \
-Plank, and the gap is too far to jump.",
-    "loc_bridge.gif");
-//beforeClearing = new Room("Clearing", "You can't cross the bridge until you've replaced the missing Plank.", "");
-BrokenBridge.addCommand("touch");
-BrokenBridge.ev.addListener("touchPlank", function(){
-    link_rooms(BrokenBridge, Clearing);
-});
-
 //CLEARING
 var Clearing = new Room("Clearing", 
     "There's a small grassy clearing here, with a man sitting on a \
@@ -421,6 +410,21 @@ Clearing.addItem(CryingMan);
 var House = new Room("House", 
     "You made this house for the man. How thoughtful of you!", 
     "none.gif");
+Clearing.removeCommand("cd");
+Clearing.addCmdText("cd", "You can’t cross the bridge until you’ve replaced the missing Plank.");
+
+//BROKEN BRIDGE
+var BrokenBridge = new Room("BrokenBridge",
+    "A creaky wooden bridges stretches across a chasm. But it's missing a \
+Plank, and the gap is too far to jump.",
+    "loc_bridge.gif");
+//beforeClearing = new Room("Clearing", "You can't cross the bridge until you've replaced the missing Plank.", "");
+BrokenBridge.addCommand("touch");
+BrokenBridge.ev.addListener("touchPlank", function(){
+    // link_rooms(BrokenBridge, Clearing);
+    Clearing.addCommand("cd");
+    Clearing.removeCmdText("cd");
+});
 		
 //OMINOUS-LOOKING PATH
 var OminousPath = new Room("OminousLookingPath", 
@@ -531,7 +535,7 @@ link_rooms(TownSquare, ArtisanShop);
 link_rooms(TownSquare, BrokenBridge);
 //link(library, backRoom); 
 // link_rooms(RockyPath, Farm);
-// link_rooms(BrokenBridge, Clearing);
+link_rooms(BrokenBridge, Clearing);
 link_rooms(Clearing, OminousPath);
 link_rooms(OminousPath, CaveOfTrolls);
 //link_rooms(CaveOfTrolls, Cave);
