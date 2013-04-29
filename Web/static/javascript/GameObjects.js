@@ -388,12 +388,12 @@ Farm.addItem(Farmer);
 Farm.addCommand("cp");
 
 //BROKEN BRIDGE
-var Brokenbridge = new Room("BrokenBridge",
+var BrokenBridge = new Room("BrokenBridge",
     "A creaky wooden bridges stretches across a chasm. But it's missing a \
 Plank, and the gap is too far to jump.",
     "loc_bridge.gif");
 //beforeClearing = new Room("Clearing", "You can't cross the bridge until you've replaced the missing Plank.", "");
-Brokenbridge.addCommand("touch");
+BrokenBridge.addCommand("touch");
 
 //CLEARING
 var Clearing = new Room("Clearing", 
@@ -528,7 +528,7 @@ link_rooms(TownSquare, ArtisanShop);
 link_rooms(TownSquare, Brokenbridge);
 //link(library, backRoom); 
 // link_rooms(RockyPath, Farm);
-link_rooms(Brokenbridge, Clearing);
+link_rooms(BrokenBridge, Clearing);
 link_rooms(Clearing, OminousPath);
 link_rooms(OminousPath, CaveOfTrolls);
 //link_rooms(CaveOfTrolls, Cave);
