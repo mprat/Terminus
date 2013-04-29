@@ -133,7 +133,7 @@ Room.prototype.cd = function(args){
 		if (this.parents.length >= 1){
             enterRoom();
 			current_room = this.parents[0];
-			return "You have moved to " + current_room.toString() + ".";
+			return "You have moved to " + current_room.toString() + ". " + current_room.intro_text;
 		} else {
 			return "You are at the first room.";
 		}
@@ -144,7 +144,7 @@ Room.prototype.cd = function(args){
 	} else if (args[0] === ".") {
         enterRoom();
         $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
-		return "You have moved to " + current_room.toString() + ".";
+		return "You have moved to " + current_room.toString() + ". " + current_room.intro_text;
 	} else {
 		roomname = args[0];
 		for (var i = 0; i < this.children.length; i++){
@@ -152,7 +152,7 @@ Room.prototype.cd = function(args){
 				if (this.children[i].commands.indexOf("cd") > -1){
 					current_room = this.children[i];
 	                enterRoom();
-					return "You have moved to " + current_room.toString() + ".";
+					return "You have moved to " + current_room.toString() + ". " + current_room.intro_text;
 				} else {
 					return this.children[i].cmd_text["cd"];
 				}
@@ -276,6 +276,26 @@ Room.prototype.grep = function(args){
 };
 
 Room.prototype.touch = function(args){
+	if (args.length < 1){
+		return "You must touch something in particular.";
+	} else {
+		var createdItemsString = "";
+		for (var i = args.length - 1; i >= 0; i--) {
+			console.log(args[i]);
+			if (args[i].length > 0){
+				this.addItem(new Item(args[i], "This is a " + args[i]));
+				createdItemsString += args[i];
+				if (args[i] === "Plank"){
+					this.ev.fire("touchPlank");
+				}
+			}
+		};
+		if (createdItemsString === ""){
+			return "You haven't touched anything. Check your syntax.";
+		} else {
+			return "You have just created " + createdItemsString;
+		}
+	}
 	return "You haven't learned this spell yet.";
 };
 

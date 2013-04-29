@@ -394,6 +394,9 @@ Plank, and the gap is too far to jump.",
     "loc_bridge.gif");
 //beforeClearing = new Room("Clearing", "You can't cross the bridge until you've replaced the missing Plank.", "");
 BrokenBridge.addCommand("touch");
+BrokenBridge.ev.addListener("touchPlank", function(){
+    link_rooms(BrokenBridge, Clearing);
+});
 
 //CLEARING
 var Clearing = new Room("Clearing", 
@@ -525,10 +528,10 @@ link_rooms(TownSquare, Marketplace);
 link_rooms(TownSquare, Library);
 link_rooms(TownSquare, RockyPath);
 link_rooms(TownSquare, ArtisanShop);
-link_rooms(TownSquare, Brokenbridge);
+link_rooms(TownSquare, BrokenBridge);
 //link(library, backRoom); 
 // link_rooms(RockyPath, Farm);
-link_rooms(BrokenBridge, Clearing);
+// link_rooms(BrokenBridge, Clearing);
 link_rooms(Clearing, OminousPath);
 link_rooms(OminousPath, CaveOfTrolls);
 //link_rooms(CaveOfTrolls, Cave);

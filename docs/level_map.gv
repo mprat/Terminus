@@ -146,7 +146,7 @@ digraph level_map{
 	"BrokenBridge" [label = 
 	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
 	<td bgcolor="black" align="center" colspan="2"><font color="white">BrokenBridge</font></td></tr>
-	<tr><td align="left" port="r0"></td></tr>
+	<tr><td align="left" port="r0">(player will touch a Plank)</td></tr>
 	</table>>];
 
 	"Farm" [label = 
@@ -204,7 +204,7 @@ digraph level_map{
 		"TownSquare" -> "ArtisanShop";
 		"TownSquare" -> "BrokenBridge";
 		"RockyPath" -> "Farm" [style="dashed", label="Remove LargeBoulder to reveal Farm."];
-		"BrokenBridge" -> "Clearing";
+		"BrokenBridge" -> "Clearing" [style="dashed", label="Touch a Plank."];
 		"Clearing" -> "OminousLookingPath";
 		"OminousLookingPath" -> "CaveOfDisgruntledTrolls";
 	}
