@@ -12,7 +12,6 @@ GameState.prototype.getCurrentRoom = function() {
 	var cookieval=this.readCookie();
 	if (cookieval){
 		//parse the cookie. right now it is only the current room name
-		console.log(cookieval);
 		newRoomToSet=window[cookieval];
 	}
 
