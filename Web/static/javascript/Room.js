@@ -133,7 +133,11 @@ var enterRoom = function(){
 Room.prototype.cd = function(args){
 	if (args.length > 1){
 		return "You can't move to multiple locations.";
-	} else if (args[0] === "..") {
+	} else if (args.length == 0){
+		current_room = Home;
+		enterRoom();
+		return "You have come Home!";
+	}else if (args[0] === "..") {
 		if (this.parents.length >= 1){
             enterRoom();
 			current_room = this.parents[0];

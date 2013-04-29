@@ -31,6 +31,10 @@ WesternForest.addItem(new Item("Sign",
     "Spell Casting Academy: The Elite School of Magic \
 Today Only: Free Introductory Lessons! Novices welcome!",
     "loc_forest.gif"));
+WesternForest.addItem(new Item("BackSign",
+    "If you ever want to go directly Home, just type 'cd ~' or just plain old `cd' \
+    and you'll come back Home. Getting back might be more difficult though.",
+    "loc_forest.gif"));
 
 //SPELL CASTING ACADEMY
 var SpellCastingAcademy = new Room("SpellCastingAcademy", 

@@ -19,6 +19,7 @@ digraph level_map{
 	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
 	<td bgcolor="black" align="center" colspan="2"><font color="white">WesternForest</font></td></tr><tr>
 	<td align="left" port="r0">Sign</td></tr>
+	<tr><td align="left" port="r1">BackSign</td></tr>
 	</table>>];
 
 	"NorthernMeadow" [label = 
