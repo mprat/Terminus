@@ -1,7 +1,7 @@
 var state = new GameState();
 //read cookie if one exists
 // var current_room = state.getCurrentRoom();
-var current_room = BrokenBridge;
+var current_room = MIT;
 var man_pages = {"cd": "The old man's voice echoes in your head as if from a great distance: \n"+
 "(Choose Destination) Use \"cd\" to move about the world. \n" +
 "Command Input: cd LOCATION \n" +
@@ -64,7 +64,10 @@ $(document).ready(function() {
         var command = split[0].toString();
         var args = split.splice(1,split.length);
         if( current_room.commands.indexOf(command) > -1 ){ //Could use current_room.hasOwnProperty(command)
-            term.echo(current_room[command](args));
+            var text_to_display = current_room[command](args);
+            if (text_to_display){
+                term.echo(text_to_display);
+            }
             if (command in current_room.cmd_text){
                 term.echo(current_room.cmd_text[command]);
             }

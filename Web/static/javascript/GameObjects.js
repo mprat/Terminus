@@ -503,11 +503,48 @@ little boy. Someone is there waiting for you.' \
 runs up the ominous path towards home.");
 Cage.addItem(KidnappedChild);
 
+//Athena cluster
+var AthenaCluster = new Room("AthenaCluster", "None shall pass without the combination. You\
+    have one chance to enter the combination. Enter password:");
+var Workstation = new Item("Workstation", "The Workstation has resources you can use to \
+    access files in a joint Athena locker. It adds new rooms (when they're in your Home we\
+    call them lockers) to your Home, and you can \
+    add them to your collection of lockers if you have permission. If you know what you want to add \
+    to your Home (the name of the locker you want, of course), just 'add LOCKERNAME'. It \
+    gives you extra spells (if you learn them), and gives you more Rooms to explore.")
+AthenaCluster.addItem(Workstation);
+AthenaCluster.removeCommand("ls");
+AthenaCluster.addCmdText("ls", "You must enter the Athena cluster combo first.");
+AthenaCluster.removeCommand("cd");
+AthenaCluster.addCmdText("cd", "None shall pass without the combination. You\
+    have one chance to enter the combination. Enter password:")
+AthenaCluster.ev.addListener("AthenaClusterExited", function(){
+    AthenaCluster.removeCommand("cd");
+});
+
 //MIT
 var MIT = new Room("MIT", "You have arrived by magic carpet to MIT!", "item_manuscript.gif");
 var AdmissionLetter = new Item("AdmissionLetter", "Congratulations on entering MIT! \
     Here you will learn special spells that you can only use at MIT. Enjoy!", "item_manuscript.gif")
 MIT.addItem(AdmissionLetter);
+MIT.ev.addListener("tryEnterAthenaCluster", function(){
+    MIT.addCommand("terminus");
+    MIT.addCmdText("terminus", "You have correctly entered the cluster combo. Entering the AthenaCluster.");
+    AthenaCluster.removeCommand("ls");
+    AthenaCluster.addCmdText("ls", "You must enter the Athena cluster combo first.");
+    // AthenaCluster.removeCommand("cd");
+    // AthenaCluster.addCmdText("cd", "None shall pass without the combination. You\
+    // have one chance to enter the combination. Enter password:");
+});
+MIT.ev.addListener("AthenaComboEntered", function(){
+    AthenaCluster.addCommand("ls");
+    AthenaCluster.removeCmdText("ls");
+    AthenaCluster.addCommand("cd");
+    // AthenaCluster.addCmdText("cd", "You have correctly entered the cluster combo. You may enter.");
+    enterRoom(AthenaCluster);
+    MIT.removeCommand("terminus");
+    MIT.removeCmdText("terminus");
+});
 
 //StataCenter
 var StataCenter = new Room("StataCenter");
@@ -522,17 +559,6 @@ var HelpfulTA = new Item("HelpfulTA", "Ah, welcome to the wonderful land of Stat
     There's one room here that you'll need the combination for. All you have to do is ask:\
     'tellme combo'.");
 StataCenter.addItem(HelpfulTA);
-
-//Athena cluster
-var AthenaCluster = new Room("AthenaCluster", "None shall pass without the combination. You\
-    have one chance to enter the combination. Enter password:");
-var Workstation = new Item("Workstation", "The Workstation has resources you can use to \
-    access files in a joint Athena locker. It adds new rooms (when they're in your Home we\
-    call them lockers) to your Home, and you can \
-    add them to your collection of lockers if you have permission. If you know what you want to add \
-    to your Home (the name of the locker you want, of course), just 'add LOCKERNAME'. It \
-    gives you extra spells (if you learn them), and gives you more Rooms to explore.")
-AthenaCluster.addItem(Workstation);
 
 //Magic locker
 var MagicLocker = new Room("MagicLocker")

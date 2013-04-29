@@ -85,11 +85,10 @@ Room.prototype.addCommand = function(cmd){
 };
 
 Room.prototype.removeCommand = function(cmd){
-	index = this.commands.indexOf(cmd)
+	index = this.commands.indexOf(cmd);
 	if (index != -1){
-		this.commands.splice(cmd, 1);
+		this.commands.splice(index, 1);
 	}
-
 };
 
 Room.prototype.addCmdText = function(cmd, text) {
@@ -97,7 +96,7 @@ Room.prototype.addCmdText = function(cmd, text) {
 };
 
 Room.prototype.removeCmdText = function(cmd){
-	delete this.cmd_text["cd"];
+	delete this.cmd_text[cmd];
 };
 
 Room.prototype.ls = function(args){
@@ -125,8 +124,9 @@ Room.prototype.printLS = function(){
 		return " Locations: \n" + other_rooms;
 }
 
-var enterRoom = function(){
+var enterRoom = function(new_room){
     $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
+ 	current_room = new_room;
     state.setCurrentRoom(current_room);
 }
 
@@ -134,23 +134,23 @@ Room.prototype.cd = function(args){
 	if (args.length > 1){
 		return "You can't move to multiple locations.";
 	} else if (args.length == 0){
-		current_room = Home;
-		enterRoom();
+		enterRoom(Home);
 		return "You have come Home!";
 	}else if (args[0] === "..") {
 		if (this.parents.length >= 1){
-            enterRoom();
-			current_room = this.parents[0];
+			if (this.room_name === "AthenaCluster"){
+				this.ev.fire("AthenaClusterExited");
+			}
+            enterRoom(this.parents[0]);
 			return "You have moved to " + current_room.toString() + ". " + current_room.intro_text;
 		} else {
 			return "You are at the first room.";
 		}
 	} else if (args[0] === "~"){
-		current_room = Home;
-		enterRoom();
+		enterRoom(Home);
 		return "You have come Home!";
 	} else if (args[0] === ".") {
-        enterRoom();
+        enterRoom(current_room);
         $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
 		return "You have moved to " + current_room.toString() + ". " + current_room.intro_text;
 	} else {
@@ -158,10 +158,12 @@ Room.prototype.cd = function(args){
 		for (var i = 0; i < this.children.length; i++){
 			if (roomname === this.children[i].toString()){
 				if (this.children[i].commands.indexOf("cd") > -1){
-					current_room = this.children[i];
-	                enterRoom();
+	                enterRoom(this.children[i]);
 					return "You have moved to " + current_room.toString() + ". " + current_room.intro_text;
 				} else {
+					if (roomname === "AthenaCluster"){
+						this.ev.fire("tryEnterAthenaCluster");
+					} 
 					return this.children[i].cmd_text["cd"];
 				}
 			}
@@ -309,3 +311,9 @@ Room.prototype.touch = function(args){
 Room.prototype.cp = function(args){
 	return "You haven't learned this spell yet.";
 };
+
+Room.prototype.terminus = function(args){
+	var text_to_return = this.cmd_text["terminus"]
+	this.ev.fire("AthenaComboEntered");
+	return text_to_return;
+}
