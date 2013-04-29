@@ -1,4 +1,5 @@
 var state = new GameState();
+//read cookie if one exists
 var current_room = state.getCurrentRoom();
 // var current_room = NorthernMeadow;
 var man_pages = {"cd": "The old man's voice echoes in your head as if from a great distance: \n"+
