@@ -202,7 +202,7 @@ digraph level_map{
 		"TownSquare" -> "RockyPath";
 		"TownSquare" -> "ArtisanShop";
 		"TownSquare" -> "BrokenBridge";
-		"RockyPath" -> "Farm";
+		"RockyPath" -> "Farm" [style="dashed", label="Remove LargeBoulder to reveal Farm."];
 		"BrokenBridge" -> "Clearing";
 		"Clearing" -> "OminousLookingPath";
 		"OminousLookingPath" -> "CaveOfDisgruntledTrolls";
