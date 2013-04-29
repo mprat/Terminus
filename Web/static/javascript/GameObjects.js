@@ -521,6 +521,7 @@ AthenaCluster.addCmdText("cd", "None shall pass without the combination. You\
 AthenaCluster.ev.addListener("AthenaClusterExited", function(){
     AthenaCluster.removeCommand("cd");
 });
+AthenaCluster.addCommand("tellme");
 
 //MIT
 var MIT = new Room("MIT", "You have arrived by magic carpet to MIT!", "item_manuscript.gif");
@@ -545,6 +546,7 @@ MIT.ev.addListener("AthenaComboEntered", function(){
     MIT.removeCommand("terminus");
     MIT.removeCmdText("terminus");
 });
+MIT.addCommand("tellme");
 
 //StataCenter
 var StataCenter = new Room("StataCenter");
@@ -559,6 +561,7 @@ var HelpfulTA = new Item("HelpfulTA", "Ah, welcome to the wonderful land of Stat
     There's one room here that you'll need the combination for. All you have to do is ask:\
     'tellme combo'.");
 StataCenter.addItem(HelpfulTA);
+StataCenter.addCommand("tellme");
 
 //Magic locker
 var MagicLocker = new Room("MagicLocker")

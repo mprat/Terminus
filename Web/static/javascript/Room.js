@@ -317,3 +317,10 @@ Room.prototype.terminus = function(args){
 	this.ev.fire("AthenaComboEntered");
 	return text_to_return;
 }
+
+Room.prototype.tellme = function(args){
+	if (args[0] === "combo"){
+		return "The combination is 'terminus' (without the quotes).";
+	}
+	return "Incorrect syntax. Ask the OldMan for help.";
+}
