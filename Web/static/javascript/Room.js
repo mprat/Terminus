@@ -34,8 +34,10 @@ Room.prototype.addItem = function(newitem) {
 Room.prototype.removeItem = function(itemnametoremove){
 	index = this.itemStringArray().indexOf(itemnametoremove);
 	if (index != -1){
-		this.items.splice(index, 1);
+		this.ev.fire("removeItem");
+		return this.items.splice(index, 1)[0];
 	}
+	return null;
 };
 
 Room.prototype.itemStringArray = function(item){
@@ -248,9 +250,9 @@ Room.prototype.rm = function(args){
 		for (var i = 0; i < args.length; i++){
 			if (this.getItemFromName(args[i]) != -1){
 				if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > 0){
-					this.removeItem(args[i]);
-					if ("rm" in this.getItemFromName(args[i]).cmd_text){
-					stringtoreturn += this.getItemFromName(args[i]).cmd_text["rm"] + "\n";
+					var removedItem = this.removeItem(args[i]);
+					if ("rm" in removedItem.cmd_text){
+						stringtoreturn += removedItem.cmd_text["rm"] + "\n";
 					} else {
 						stringtoreturn += "You just removed " + args[i] + "\n";
 					}

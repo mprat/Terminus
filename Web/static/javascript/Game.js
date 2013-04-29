@@ -1,7 +1,7 @@
 var state = new GameState();
 //read cookie if one exists
-var current_room = state.getCurrentRoom();
-// var current_room = NorthernMeadow;
+// var current_room = state.getCurrentRoom();
+var current_room = TownSquare;
 var man_pages = {"cd": "The old man's voice echoes in your head as if from a great distance: \n"+
 "(Choose Destination) Use \"cd\" to move about the world. \n" +
 "Command Input: cd LOCATION \n" +

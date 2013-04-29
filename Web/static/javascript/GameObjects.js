@@ -322,6 +322,9 @@ Boulder.addCmdText("rm", "The boulder disappears with a pop.");
 RockyPath.addItem(Boulder);
 RockyPath.addCommand("rm");
 Boulder.addValidCmd("rm");
+RockyPath.ev.addListener("removeItem", function(){
+    link_rooms(RockyPath, Farm);
+});
 
 //ARTISAN'S SHOP
 var ArtisanShop = new Room("ArtisanShop", 
@@ -520,7 +523,7 @@ link_rooms(TownSquare, RockyPath);
 link_rooms(TownSquare, ArtisanShop);
 link_rooms(TownSquare, Brokenbridge);
 //link(library, backRoom); 
-link_rooms(RockyPath, Farm);
+// link_rooms(RockyPath, Farm);
 link_rooms(Brokenbridge, Clearing);
 link_rooms(Clearing, OminousPath);
 link_rooms(OminousPath, CaveOfTrolls);
