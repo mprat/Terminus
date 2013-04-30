@@ -33,7 +33,7 @@ Today Only: Free Introductory Lessons! Novices welcome!",
     "loc_forest.gif"));
 WesternForest.addItem(new Item("BackSign",
     "If you ever want to go directly Home, just type 'cd ~' or just plain old `cd' \
-    and you'll come back Home. Getting back might be more difficult though.",
+and you'll come back Home. Getting back might be more difficult though.",
     "loc_forest.gif"));
 
 //SPELL CASTING ACADEMY
@@ -287,7 +287,7 @@ Library.addItem(new Item("HistoryOfTerminus",
     "item_historybook.gif"));
 Library.addItem(new Item("NostalgiaForHome", 
     "If you ever get lonely for Home, just 'cd ~' and you'll go back there. \
-    But just remember that it will be harder to come back.",
+But just remember that it will be harder to come back.",
     "item_historybook.gif"));
 		// "DarkWizard", "...old tales tell of a dark wizard who will fragment the land...\n" +
 		//"...only the world-maker can stop the dark wizard's virus from...\n" +
@@ -313,7 +313,7 @@ BackRoom.addItem(new Item("Grep",
     "grep.gif"));
 BackRoom.addItem(new Item("PracticeBook", 
     "Sally picked a peck\nOf seashelled peppers.\nA seashore of pickled pickles\n\
-    did Peter and Sally pick."));
+did Peter and Sally pick."));
 var Librarian = new Item("Librarian", 
     "\"Hm? Oh, hello. I apologize for the mess, but I'm very busy \
 doing research on the dark wizard. Would you do me a favor? Go look up all \
@@ -494,18 +494,18 @@ var KernelFiles = new Room("KernelFiles", "The KernelFiles hold the sudo-secret 
 var Certificate = new Item("Certificate", "You must read the Certificate with the sudo password.");
 KernelFiles.addItem(Certificate);
 var Instructions = new Item("Instructions", "You've learned how to make use of your friend grep I see.\
-    If you haven't it might be wise for you to go back to the Library again to do some reading.\
-    Because here, you'll need to use him to help you. Here is your task: \n\
-    There are a lot of items in the MoreKernelFiles room and one of them contains the sudo password. This\
-    password is very powerful password that lets you do absolutely anything in the world.\
-    It lets you cast a spell on any item that is protected in any way. You know the password\
-    is contained in one of these .txt items. You know that it appears\
-    on a line that says the word: 'password='. You should find it with grep's help.\
-    Then you'll need to use the sudo spell to find paradide. To do this, just \
-    Type 'sudo' before the command you want to run, like so: \
-    'sudo cp ITEM_A ITEM_B'. You will then be prompted for the sudo password \
-    Type the password, and the spell that comes after sudo will be cast. If you open\
-    the Certificate in Paradise with sudo, you will have truly found Paradise.");
+If you haven't it might be wise for you to go back to the Library again to do some reading.\
+Because here, you'll need to use him to help you. Here is your task: \n\
+There are a lot of items in the MoreKernelFiles room and one of them contains the sudo password. This\
+password is very powerful password that lets you do absolutely anything in the world.\
+It lets you cast a spell on any item that is protected in any way. You know the password\
+is contained in one of these .txt items. You know that it appears\
+on a line that says the word: 'password='. You should find it with grep's help.\
+Then you'll need to use the sudo spell to find paradide. To do this, just \
+Type 'sudo' before the command you want to run, like so: \
+'sudo cp ITEM_A ITEM_B'. You will then be prompted for the sudo password \
+Type the password, and the spell that comes after sudo will be cast. If you open\
+the Certificate in Paradise with sudo, you will have truly found Paradise.");
 var L_txt = new Item("L_txt", "INSERT SOME LONG TEXT");
 var M_txt = new Item("M_txt", "INSERT SOME LONG TEXT");
 // var N_txt = new Item("N_txt", "INSERT SOME LONG TEXT");
@@ -556,7 +556,7 @@ MoreKernelFiles.addCommand("grep");
 KernelFiles.ev.addListener("tryEnterSudo", function(){
     KernelFiles.addCommand("IHTFP");
     KernelFiles.addCmdText("IHTFP", "You have correctly entered the password. You are now in Paradise.\
-    Take a look around, and congratulations.");
+Take a look around, and congratulations.");
 });
 KernelFiles.ev.addListener("sudoComplete", function(){
     KernelFiles.removeCommand("IHTFP");
@@ -589,12 +589,12 @@ UglyTroll.addCmdText("cp", "They're multiplying!");
 CaveOfDisgruntledTrolls.addItem(UglyTroll);
 //beforeCave.addItem(uglyTroll);
 var UglierTroll = new Item("UglierTroll", "He looks mad, and really, really ugly. \
-    But he wants to tell you something. Between his\
-    garbled grunts, you manage to understand the following:\
-    You can cast spells on items that you don't currently see. For example, if you want\
-    to copy an item from this room to the OminousLookingPath from which you came, you can\
-    cp [ITEM_TO_COPY] ../[NEW_ITEM_NAME]. You can do this for most spells and most rooms. \
-    Use this knowledge wisely. Remember.... you can't undo an 'rm' spell.",
+But he wants to tell you something. Between his\
+garbled grunts, you manage to understand the following:\
+You can cast spells on items that you don't currently see. For example, if you want\
+to copy an item from this room to the OminousLookingPath from which you came, you can\
+cp [ITEM_TO_COPY] ../[NEW_ITEM_NAME]. You can do this for most spells and most rooms. \
+Use this knowledge wisely. Remember.... you can't undo an 'rm' spell.",
     "item_troll2.gif");
 UglierTroll.addValidCmd("rm");
 UglierTroll.addCmdText("rm",
@@ -648,19 +648,19 @@ Cage.addItem(KidnappedChild);
 
 //Athena cluster
 var AthenaCluster = new Room("AthenaCluster", "None shall pass without the combination. You\
-    have one chance to enter the combination. Enter password:");
+have one chance to enter the combination. Enter password:");
 var Workstation = new Item("Workstation", "The Workstation has resources you can use to \
-    access files in a joint Athena locker. It adds new rooms (when they're in your Home we\
-    call them lockers) to your Home, and you can \
-    add them to your collection of lockers if you have permission. If you know what you want to add \
-    to your Home (the name of the locker you want, of course), just 'add LOCKERNAME'. It \
-    gives you extra spells (if you learn them), and gives you more Rooms to explore.")
+access files in a joint Athena locker. It adds new rooms (when they're in your Home we\
+call them lockers) to your Home, and you can \
+add them to your collection of lockers if you have permission. If you know what you want to add \
+to your Home (the name of the locker you want, of course), just 'add LOCKERNAME'. It \
+gives you extra spells (if you learn them), and gives you more Rooms to explore.")
 AthenaCluster.addItem(Workstation);
 AthenaCluster.removeCommand("ls");
 AthenaCluster.addCmdText("ls", "You must enter the Athena cluster combo first.");
 AthenaCluster.removeCommand("cd");
 AthenaCluster.addCmdText("cd", "None shall pass without the combination. You\
-    have one chance to enter the combination. Enter password:")
+have one chance to enter the combination. Enter password:")
 AthenaCluster.ev.addListener("AthenaClusterExited", function(){
     AthenaCluster.removeCommand("cd");
 });
@@ -669,7 +669,7 @@ AthenaCluster.addCommand("tellme");
 //MIT
 var MIT = new Room("MIT", "You have arrived by magic carpet to MIT!", "item_manuscript.gif");
 var AdmissionLetter = new Item("AdmissionLetter", "Congratulations on entering MIT! \
-    Here you will learn special spells that you can only use at MIT. Enjoy!", "item_manuscript.gif")
+Here you will learn special spells that you can only use at MIT. Enjoy!", "item_manuscript.gif")
 MIT.addItem(AdmissionLetter);
 MIT.ev.addListener("tryEnterAthenaCluster", function(){
     MIT.addCommand("terminus");
@@ -694,15 +694,15 @@ MIT.addCommand("tellme");
 //StataCenter
 var StataCenter = new Room("StataCenter");
 var WaryEyeOfGradStudent = new Item("WaryEyeOfGradStudent", "If you so desire, you can add \
-    a new MagicLocker outside your Home. In this MagicLocker you can find some tools that \
-    will be useful in your time at MIT (and beyond). There you can find portals to \
-    other places, you can write notes, and you can store various items you collect in \
-    your travels in the MagicLocker. But first you need to go to the AthenaCluster and \
-    learn how.");
+a new MagicLocker outside your Home. In this MagicLocker you can find some tools that \
+will be useful in your time at MIT (and beyond). There you can find portals to \
+other places, you can write notes, and you can store various items you collect in \
+your travels in the MagicLocker. But first you need to go to the AthenaCluster and \
+learn how.");
 StataCenter.addItem(WaryEyeOfGradStudent);
 var HelpfulTA = new Item("HelpfulTA", "Ah, welcome to the wonderful land of Stata.\
-    There's one room here that you'll need the combination for. All you have to do is ask:\
-    'tellme combo'.");
+There's one room here that you'll need the combination for. All you have to do is ask:\
+'tellme combo'.");
 StataCenter.addItem(HelpfulTA);
 StataCenter.addCommand("tellme");
 
