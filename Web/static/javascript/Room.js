@@ -172,18 +172,17 @@ Room.prototype.cd = function(args){
         enterRoom(current_room);
         $("#scene").attr("src", "./static/img/none.gif"); //Always show blank image when moving into a room
 		return "You have moved to " + current_room.toString() + ". " + current_room.intro_text;
-	} else if (args[0].indexOf("/") > 0){
-		var rooms_in_order = args[0].split("/");
-		var cur_room_to_test = this;
-		for (var i = 0; i < rooms_in_order.length; i++){
-			console.log(cur_room_to_test);
-			cur_room_to_test = cur_room_to_test.can_cd(rooms_in_order[i]);
-			if (cur_room_to_test === false){
-				return "That is not reachable from here.";
-			}
-		}
-		enterRoom(cur_room_to_test);
-		return "You  have moved to " + cur_room_to_test.toString() + ". " + current_room.intro_text;
+	// } else if (args[0].indexOf("/") > 0){
+	// 	var rooms_in_order = args[0].split("/");
+	// 	var cur_room_to_test = this;
+	// 	for (var i = 0; i < rooms_in_order.length; i++){
+	// 		cur_room_to_test = cur_room_to_test.can_cd(rooms_in_order[i]);
+	// 		if (cur_room_to_test === false){
+	// 			return "That is not reachable from here.";
+	// 		}
+	// 	}
+	// 	enterRoom(cur_room_to_test);
+	// 	return "You  have moved to " + cur_room_to_test.toString() + ". " + current_room.intro_text;
 	} else {
 		roomname = args[0];
 		for (var i = 0; i < this.children.length; i++){

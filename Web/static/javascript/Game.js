@@ -68,13 +68,31 @@ $(document).ready(function() {
         var split = input.split(" ");
         var command = split[0].toString();
         var args = split.splice(1,split.length);
+        var exec = true;
         if( current_room.commands.indexOf(command) > -1 ){ //Could use current_room.hasOwnProperty(command)
-            var text_to_display = current_room[command](args);
-            if (text_to_display){
-                term.echo(text_to_display);
+            if (args.length > 0 && args[0].indexOf("/") > 0){
+                var rooms_in_order = args[0].split("/");
+                var cur_room_to_test = current_room;
+                var prev_room_to_test = current_room;
+                for (var i = 0; i < rooms_in_order.length; i++){
+                    prev_room_to_test = cur_room_to_test;
+                    cur_room_to_test = cur_room_to_test.can_cd(rooms_in_order[i]);
+                    if (cur_room_to_test === false){
+                        term.echo("That is not reachable from here.");
+                        exec = false;
+                    }
+                }
+                args[0] = cur_room_to_test.room_name;
+                current_room = prev_room_to_test;
             }
-            if (command in current_room.cmd_text){
-                term.echo(current_room.cmd_text[command]);
+            if (exec){
+                var text_to_display = current_room[command](args);
+                if (text_to_display){
+                    term.echo(text_to_display);
+                }
+                if (command in current_room.cmd_text){
+                    term.echo(current_room.cmd_text[command]);
+                }
             }
         }
         else{
