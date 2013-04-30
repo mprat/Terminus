@@ -428,11 +428,16 @@ I don't trust you magicfolk. If you really are who you say you are, then prove y
 good intentions by making me a new House!\"",
     "item_man.gif");
 Clearing.addItem(CryingMan);
-var House = new Room("House", 
-    "You made this house for the man. How thoughtful of you!", 
-    "none.gif");
 Clearing.removeCommand("cd");
 Clearing.addCmdText("cd", "You can’t cross the bridge until you’ve replaced the missing Plank.");
+Clearing.addCommand("mkdir");
+Clearing.ev.addListener("HouseMade", function(){
+    Clearing.getChildFromName("House").addCmdText("cd", "You are entering the House that you made.");
+    Clearing.getChildFromName("House").addCmdText("ls", "You made this house for the man. How thoughtful of you!");
+    Clearing.removeCmdText("cd");
+    Clearing.changeIntroText("There's a small grassy clearing here, with a man sitting on a \
+stone and sobbing. Behind him is a pile of rubble. Behind him is a small white house.");
+});
 
 //BROKEN BRIDGE
 var BrokenBridge = new Room("BrokenBridge",
@@ -445,6 +450,8 @@ BrokenBridge.ev.addListener("touchPlank", function(){
     // link_rooms(BrokenBridge, Clearing);
     Clearing.addCommand("cd");
     Clearing.removeCmdText("cd");
+    BrokenBridge.removeCmdText("cd");
+    BrokenBridge.changeIntroText("A creaky rope bridges stretches across a chasm.");
 });
 		
 //OMINOUS-LOOKING PATH

@@ -24,6 +24,10 @@ Room.prototype.toString = function(){
 	return this.room_name;
 };
 
+Room.prototype.changeIntroText = function(new_text){
+	this.intro_text = new_text;
+};
+
 Room.prototype.addItem = function(newitem) {
 	if (typeof newitem != 'undefined'){
 		this.items[this.items.length] = newitem;
@@ -48,10 +52,25 @@ Room.prototype.itemStringArray = function(item){
 	return itemstrarray;
 };
 
+Room.prototype.childStringArray = function(child){
+	childstrarray = []
+	for (var i = 0; i < this.children.length; i++){
+		childstrarray[childstrarray.length] = this.children[i].toString();
+	}
+	return childstrarray;
+};
+
 Room.prototype.getItemFromName = function(itemname){
 	itemindex = this.itemStringArray().indexOf(itemname);
 	if (itemindex > -1)
 		return this.items[itemindex];
+	return -1;
+}
+
+Room.prototype.getChildFromName = function(childname){
+	childindex = this.childStringArray().indexOf(childname);
+	if (childindex > -1)
+		return this.children[childindex];
 	return -1;
 }
 
@@ -344,11 +363,24 @@ Room.prototype.terminus = function(args){
 	var text_to_return = this.cmd_text["terminus"]
 	this.ev.fire("AthenaComboEntered");
 	return text_to_return;
-}
+};
 
 Room.prototype.tellme = function(args){
 	if (args[0] === "combo"){
 		return "The combination is 'terminus' (without the quotes).";
 	}
 	return "Incorrect syntax. Ask the OldMan for help.";
-}
+};
+
+Room.prototype.mkdir = function(args){
+	if (args.length === 1){
+		var room_name_to_make = args[0];
+		var new_room = new Room(args[0]);
+		link_rooms(this, new_room);
+		if (this.room_name === "Clearing" && room_name_to_make === "House"){
+			this.ev.fire("HouseMade");
+		}
+		return "New room " + args[0] + " created";
+	}
+	return "Incorrect syntax. Ask the OldMan for help.";
+};
