@@ -311,14 +311,18 @@ BackRoom.addItem(new Item("Grep",
     "The exceptionally ugly elf turns to you with a sour expression. \
 \"Greeeeeep,\" he says sullenly.",
     "grep.gif"));
+BackRoom.addItem(new Item("PracticeBook", 
+    "Sally picked a peck\nOf seashelled peppers.\nA seashore of pickled pickles\n\
+    did Peter and Sally pick."));
 var Librarian = new Item("Librarian", 
     "\"Hm? Oh, hello. I apologize for the mess, but I'm very busy \
 doing research on the dark wizard. Would you do me a favor? Go look up all \
 references to DarkWizard in the History of Terminus. My assistant Grep \
 can help you.\" \
 Grep eyes you balefully. \"Greeepp.\" \"To search the contents of the book, just type \
-\"grep PHRASE DOCUMENT\", where PHRASE is the phrase you want to search for, \
-and DOCUMENT is the name of the book you want to search.\"",
+\"grep PHRASE ITEM\", where PHRASE is the phrase you want to search for, \
+and ITEM is the name of the book you want to search. Try it with the PracticeBook here\
+- see if you can find the line with the word 'peppers' in it.\"",
     "item_librarian.gif");
 BackRoom.addItem(Librarian);
 BackRoom.addCommand("grep");

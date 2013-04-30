@@ -314,6 +314,17 @@ Room.prototype.rm = function(args){
 };
 
 Room.prototype.grep = function(args){
+	if (this.commands.indexOf("grep") > 0){
+		var word_to_find = args[0];
+		if (this.getItemFromName(args[1]) != -1){
+			var item_to_find_in_text = this.getItemFromName(args[1]).cmd_text["less"];
+			var line_array = item_to_find_in_text.split("\n");
+			var return_arr = jQuery.grep(line_array, function(line){ return (line.indexOf(word_to_find) > 0)});
+			return return_arr.join("\n");
+		} else {
+			return "Not a valid item to search in.";
+		}
+	}
 	return "You haven't learned this spell yet.";
 };
 

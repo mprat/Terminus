@@ -142,6 +142,7 @@ digraph level_map{
 	<td bgcolor="black" align="center" colspan="2"><font color="white">BackRoom</font></td></tr>
 	<tr><td align="left" port="r0">Grep</td></tr>
 	<tr><td align="left" port="r1">Librarian</td></tr>
+	<tr><td align="left" port="r2">PracticeBook</td></tr>
 	</table>>];
 
 	"ArtisanShop" [label = 
