@@ -372,6 +372,16 @@ Now make me a Gear! Then come back.\"",
     "item_artisan.gif");
 ArtisanShop.addItem(Artisan);
 ArtisanShop.addCommand("touch");
+ArtisanShop.ev.addListener("touchGear", function(){
+    Artisan.addCmdText("less", "Well that’s lovely, thank you, but you can’t expect me to make\
+anything with just one gear! Can’t you copy it?\n\
+...\n\
+*sigh* I can see you are going to need a lot of training. Just say “cp [ITEM] [NEWITEM]”.\
+[ITEM]’s the name of the item that you want copy, and [NEWITEM]’s the new name of the\
+copy, got it? Then poof! You’ll have shiny new item. I need five more gears so you’d better\
+get started! Just call them gear1, gear2, gear3, gear4, and gear5, please.");
+    ArtisanShop.addCommand("cp");
+});
 
 //FARM
 var Farm = new Room("Farm",

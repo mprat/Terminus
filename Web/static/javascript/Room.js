@@ -296,19 +296,26 @@ Room.prototype.touch = function(args){
 				createdItemsString += args[i];
 				if (args[i] === "Plank"){
 					this.ev.fire("touchPlank");
+				} else if (args[i] === "Gear"){
+					this.ev.fire("touchGear");
 				}
 			}
 		};
 		if (createdItemsString === ""){
 			return "You haven't touched anything. Check your syntax.";
-		} else {
-			return "You have just created " + createdItemsString;
 		}
+		return "You have just created " + createdItemsString;
 	}
 	return "You haven't learned this spell yet.";
 };
 
 Room.prototype.cp = function(args){
+	if (args.length != 2){
+		return "Incorrect syntax. Ask the OldMan for help.";
+	} else {
+		var item_to_copy_name = args[0];
+		var item
+	}
 	return "You haven't learned this spell yet.";
 };
 
