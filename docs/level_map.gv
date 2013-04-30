@@ -236,11 +236,17 @@ digraph level_map{
 	<tr><td align="left" port="r0"></td></tr>
 	</table>>];
 
-
 	"KernelFiles" [label = 
 	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
 	<td bgcolor="black" align="center" colspan="2"><font color="white">KernelFiles</font></td></tr>
-	<tr><td align="left" port="r0"></td></tr>
+	<tr><td align="left" port="r0">Certificate</td></tr>
+	<tr><td align="left" port="r0">Instructions</td></tr>
+	</table>>];
+
+	"MoreKernelFiles" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">MoreKernelFiles</font></td></tr>
+	<tr><td align="left" port="r0">(lots of files)</td></tr>
 	</table>>];
 
 	subgraph cluster_level1{
@@ -279,6 +285,7 @@ digraph level_map{
 		"CaveOfDisgruntledTrolls" -> "Slide" [style="dashed", label="After either rm or mv the UglyTroll"];
 		"Library" -> "BackRoom" [style="dashed", label="Must less the lever."];
 		"KernelFiles" -> "Paradise" [style="dashed", label="sudo su with the correct password"];
+		"KernelFiles" -> "MoreKernelFiles";
 	}
 
 	subgraph cluster_mit{

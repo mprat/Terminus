@@ -397,14 +397,41 @@ Room.prototype.tellme = function(args){
 };
 
 Room.prototype.mkdir = function(args){
-	if (args.length === 1){
-		var room_name_to_make = args[0];
-		var new_room = new Room(args[0]);
-		link_rooms(this, new_room);
-		if (this.room_name === "Clearing" && room_name_to_make === "House"){
-			this.ev.fire("HouseMade");
+	if (this.commands.indexOf("mkdir") > 0){
+		if (args.length === 1){
+			var room_name_to_make = args[0];
+			var new_room = new Room(args[0]);
+			link_rooms(this, new_room);
+			if (this.room_name === "Clearing" && room_name_to_make === "House"){
+				this.ev.fire("HouseMade");
+			}
+			return "New room " + args[0] + " created";
 		}
-		return "New room " + args[0] + " created";
+		return "Incorrect syntax. Ask the OldMan for help.";
 	}
-	return "Incorrect syntax. Ask the OldMan for help.";
+	return "You have not learned this spell yet";
 };
+
+Room.prototype.sudo = function(args){
+	if (this.commands.indexOf("sudo") > 0){
+		if (args[0] === "less" && args[1] === "Certificate"){
+			this.ev.fire("tryEnterSudo");
+			return;
+		} else {
+			return "Wrong syntax. Read the instructions again.";
+		}
+	} 
+	return "You cannot cast this spell here.";
+}
+
+Room.prototype.IHTFP = function(args){
+	if (this.commands.indexOf("IHTFP") > 0){
+		if (args.length === 0){
+			var text_to_return = this.cmd_text["IHTFP"]
+			this.ev.fire("sudoComplete");
+			return text_to_return;
+		}
+		return "Wrong password.";
+	}
+	return "This is not a valid spell.";
+}
