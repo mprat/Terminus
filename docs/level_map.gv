@@ -142,6 +142,7 @@ digraph level_map{
 	<tr><td align="left" port="r0">StrangeTrinket</td></tr>
 	<tr><td align="left" port="r1">ClockworkDragon</td></tr>
 	<tr><td align="left" port="r2">Artisan</td></tr>
+	<tr><td align="left" port="r3">(user adds Gears)</td></tr>
 	</table>>];
 
 	"BrokenBridge" [label = 

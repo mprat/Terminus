@@ -322,9 +322,15 @@ Room.prototype.cp = function(args){
 			newItem.cmd_text = item_to_copy.cmd_text;
 			newItem.valid_cmds = item_to_copy.valid_cmds;
 			this.addItem(newItem);
-			if (new_item_name === "gear1" || new_item_name === "gear2" || new_item_name === "gear3" || new_item_name === "gear4" || new_item_name === "gear5"){
-				if (this.getItemFromName("gear1") != -1 && this.getItemFromName("gear2") != -1 && this.getItemFromName("gear3") != -1 && this.getItemFromName("gear4") != -1 && this.getItemFromName("gear5") != -1){
-					this.ev.fire("FiveGearsCopied");
+			if (this.room_name === "ArtisanShop"){
+				if (new_item_name === "gear1" || new_item_name === "gear2" || new_item_name === "gear3" || new_item_name === "gear4" || new_item_name === "gear5"){
+					if (this.getItemFromName("gear1") != -1 && this.getItemFromName("gear2") != -1 && this.getItemFromName("gear3") != -1 && this.getItemFromName("gear4") != -1 && this.getItemFromName("gear5") != -1){
+						this.ev.fire("FiveGearsCopied");
+					}
+				}
+			} else if (this.room_name === "Farm"){
+				if (item_to_copy_name === "EarOfCorn" && new_item_name === "AnotherEarOfCorn"){
+					this.ev.fire("CornCopied");
 				}
 			}
 			return "Just copied " + item_to_copy_name + " into " + new_item_name + ".";

@@ -383,7 +383,6 @@ get started! Just call them gear1, gear2, gear3, gear4, and gear5, please.");
     ArtisanShop.addCommand("cp");
 });
 ArtisanShop.ev.addListener("FiveGearsCopied", function(){
-    console.log("FiveGearsCopied");
     Artisan.addCmdText("less", "Ha, finished already? I guess you learn fast. Well, thanks for your \
         assistance.");
 });
@@ -401,10 +400,13 @@ Farm.addItem(EarOfCorn);
 var Farmer = new Item("Farmer", 
     "\"Ruined! I'm ruined! Look at these crops... almost nothing \
 left! The wizard's minions were here last week... they destroyed everything. How \
-will I feed my 10 children with just one ear of corn? Can you help me? \"",
+will I feed my 3 children with just one ear of corn? I could really use AnotherEarOfCorn! \"",
     "item_farmer.gif");
 Farm.addItem(Farmer);
 Farm.addCommand("cp");
+Farm.ev.addListener("CornCopied", function(){
+    Farmer.addCmdText("less", "It’s a miracle! Thank you, friend. May the Admin bless you.");
+});
 
 //CLEARING
 var Clearing = new Room("Clearing", 
