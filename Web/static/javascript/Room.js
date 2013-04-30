@@ -284,6 +284,9 @@ Room.prototype.rm = function(args){
 			if (this.getItemFromName(args[i]) != -1){
 				if (this.getItemFromName(args[i]).valid_cmds.indexOf("rm") > 0){
 					var removedItem = this.removeItem(args[i]);
+					if (removedItem.itemname === "ThornyBrambles" && this.room_name === "OminousLookingPath"){
+						this.ev.fire("rmBrambles")
+					}
 					if ("rm" in removedItem.cmd_text){
 						stringtoreturn += removedItem.cmd_text["rm"] + "\n";
 					} else {

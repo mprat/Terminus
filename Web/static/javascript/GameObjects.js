@@ -455,21 +455,25 @@ BrokenBridge.ev.addListener("touchPlank", function(){
 });
 		
 //OMINOUS-LOOKING PATH
-var OminousPath = new Room("OminousLookingPath", 
+var OminousLookingPath = new Room("OminousLookingPath", 
     "The path leads toward a dark cave. It's an ordinary cobblestone path, but for \
 some reason it fills you with a sense of dread.",
     "loc_path.gif");
-var Thornybrambles = new Item("ThornyBrambles", 
+var ThornyBrambles = new Item("ThornyBrambles", 
     "This thicket of brambles is covered with wicked-looking thorns. You \
 can't go around it, and you definitely aren't about to go through it.",
     "item_brambles.gif");
-Thornybrambles.addCmdText("mv", 
+ThornyBrambles.addCmdText("mv", 
     "You can't touch them because they are covered with thorns. Ouch!");
-Thornybrambles.addCmdText("rm", 
+ThornyBrambles.addCmdText("rm", 
     "You speak the words of the Remove spell and the brambles glimmer a \
-deep blue. The sparks rearrange themselves into a prompt: 'PASSWORD?'");
-OminousPath.addItem(Thornybrambles);
-OminousPath.addCommand("rm");
+deep blue. After fizzling for a minute, they disappear with a puff of smoke.");
+ThornyBrambles.addValidCmd("rm");
+OminousLookingPath.addItem(ThornyBrambles);
+OminousLookingPath.addCommand("rm");
+OminousLookingPath.ev.addListener("rmBrambles", function(){
+    link_rooms(OminousLookingPath, CaveOfTrolls);
+});
 
 //CAVE
 //Room beforeCave = new Room("CaveOfDisgruntledTrolls", "A patch of thorny brambles is growing at the mouth of the cave, blocking your way.", "loc_cave");
@@ -627,8 +631,8 @@ link_rooms(TownSquare, BrokenBridge);
 //link(library, backRoom); 
 // link_rooms(RockyPath, Farm);
 link_rooms(BrokenBridge, Clearing);
-link_rooms(Clearing, OminousPath);
-link_rooms(OminousPath, CaveOfTrolls);
+link_rooms(Clearing, OminousLookingPath);
+// link_rooms(OminousLookingPath, CaveOfTrolls);
 //link_rooms(CaveOfTrolls, Cave);
 
 //MIT level links

@@ -164,6 +164,12 @@ digraph level_map{
 	<tr><td align="left" port="r0">CryingMan</td></tr>
 	</table>>];
 
+	"House" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">House</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
 	"OminousLookingPath" [label = 
 	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
 	<td bgcolor="black" align="center" colspan="2"><font color="white">OminousLookingPath</font></td></tr>
@@ -238,7 +244,8 @@ digraph level_map{
 		"TownSquare" -> "BrokenBridge";
 		"RockyPath" -> "Farm" [style="dashed", label="Remove LargeBoulder to reveal Farm."];
 		"BrokenBridge" -> "Clearing" [style="dashed", label="Touch a Plank."];
-		"Clearing" -> "OminousLookingPath";
+		"Clearing" -> "OminousLookingPath" [style="dashed", label="rm the ThornyBrambles"];
+		"Clearing" -> "House" [style="dashed", label="Player mkdir the House"];
 		"OminousLookingPath" -> "CaveOfDisgruntledTrolls";
 	}
 
