@@ -483,7 +483,68 @@ Slide.addCmdText("cd", "You have to get past the UglyTroll first.");
 
 //KERNEL FILES
 var KernelFiles = new Room("KernelFiles", "The KernelFiles hold the sudo-secret (no, not\
-    pseudo).")
+    pseudo). You'd better read the Instructions.")
+var Instructions = new Item("Instructions", "You've learned how to make use of your friend grep I see.\
+    If you haven't it might be wise for you to go back to the Library again to do some reading.\
+    Because here, you'll need to use him to help you. Here is your task: \n\
+    There are a lot of KernelFiles and one of them contains the sudo password. This\
+    password is very powerful password that lets you do absolutely anything in the world.\
+    You know the password is contained in one of these .txt items. You know that it appears\
+    on a line that says the word: 'password='. Once you find it, all you need to do is type\
+    'sudo su' and you will be prompted for a password. Type the password, and you will have\
+    truly found Paradise.");
+var L_txt = new Item("L_txt", "INSERT SOME LONG TEXT");
+var M_txt = new Item("M_txt", "INSERT SOME LONG TEXT");
+var N_txt = new Item("N_txt", "INSERT SOME LONG TEXT");
+var O_txt = new Item("O_txt", "INSERT SOME LONG TEXT");
+var P_txt = new Item("P_txt", "INSERT SOME LONG TEXT");
+var Q_txt = new Item("Q_txt", "INSERT SOME LONG TEXT");
+var R_txt = new Item("R_txt", "INSERT SOME LONG TEXT");
+var S_txt = new Item("S_txt", "INSERT SOME LONG TEXT");
+var T_txt = new Item("T_txt", "INSERT SOME LONG TEXT");
+var U_txt = new Item("U_txt", "INSERT SOME LONG TEXT\npassword=IHTFP");
+var V_txt = new Item("V_txt", "INSERT SOME LONG TEXT");
+var W_txt = new Item("W_txt", "INSERT SOME LONG TEXT");
+var X_txt = new Item("X_txt", "INSERT SOME LONG TEXT");
+var Y_txt = new Item("Y_txt", "INSERT SOME LONG TEXT");
+var Z_txt = new Item("Z_txt", "INSERT SOME LONG TEXT");
+var AA_txt = new Item("AA_txt", "INSERT SOME LONG TEXT");
+var BB_txt = new Item("BB_txt", "INSERT SOME LONG TEXT");
+var CC_txt = new Item("CC_txt", "INSERT SOME LONG TEXT");
+var DD_txt = new Item("DD_txt", "INSERT SOME LONG TEXT");
+var EE_txt = new Item("EE_txt", "INSERT SOME LONG TEXT");
+var FF_txt = new Item("FF_txt", "INSERT SOME LONG TEXT");
+KernelFiles.addItem(L_txt);
+KernelFiles.addItem(M_txt);
+KernelFiles.addItem(N_txt);
+KernelFiles.addItem(O_txt);
+KernelFiles.addItem(P_txt);
+KernelFiles.addItem(Q_txt);
+KernelFiles.addItem(R_txt);
+KernelFiles.addItem(S_txt);
+KernelFiles.addItem(T_txt);
+KernelFiles.addItem(U_txt);
+KernelFiles.addItem(V_txt);
+KernelFiles.addItem(W_txt);
+KernelFiles.addItem(X_txt);
+KernelFiles.addItem(Y_txt);
+KernelFiles.addItem(Z_txt);
+KernelFiles.addItem(AA_txt);
+KernelFiles.addItem(BB_txt);
+KernelFiles.addItem(CC_txt);
+KernelFiles.addItem(DD_txt);
+KernelFiles.addItem(EE_txt);
+KernelFiles.addItem(FF_txt);
+KernelFiles.addItem(Instructions);
+KernelFiles.addCommand("sudo");
+KernelFiles.addCommand("grep");
+KernelFiles.ev.addListener("sudoComplete", function(){
+    link_rooms(KernelFiles, Paradise);
+    enterRoom(Paradise);
+});
+
+//PARADISE (end game screen)
+var Paradise = new Room("Paradise", "You have truly found Paradise with the sudo password. Congratulations.");
 
 //CAVE
 //Room beforeCave = new Room("CaveOfDisgruntledTrolls", "A patch of thorny brambles is growing at the mouth of the cave, blocking your way.", "loc_cave");
