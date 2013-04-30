@@ -264,9 +264,13 @@ Room.prototype.mv = function(args){
 	if (args.length != 2){
 		return "You need to move thing A to place B. Use mov [thingA] [placeB].";
 	} else {
-		if ((this.itemStringArray().indexOf(args[0]) >= 0) && (this.childrenStringArray().indexOf(args[1]) >= 0)){
+		var item_name_to_move = this.itemStringArray().indexOf(args[0]);
+		if ((item_name_to_move >= 0) && (this.childrenStringArray().indexOf(args[1]) >= 0)){
 			itemtoadd = this.items[this.itemStringArray().indexOf(args[0])];
 			this.children[this.childrenStringArray().indexOf(args[1])].addItem(itemtoadd);
+			if ((this.itemStringArray().indexOf(args[0]) === "UglyTroll") && (this.room_name === "CaveOfDisgruntledTrolls")){
+				this.ev.fire("openSlide");
+			}
 			this.removeItem(args[0]);
 			return "Moved " + args[0] + " to " + args[1] + ".";
 		} else {
@@ -286,6 +290,9 @@ Room.prototype.rm = function(args){
 					var removedItem = this.removeItem(args[i]);
 					if (removedItem.itemname === "ThornyBrambles" && this.room_name === "OminousLookingPath"){
 						this.ev.fire("rmBrambles")
+					}
+					if (removedItem.itemname === "UglyTroll" && this.room_name === "CaveOfDisgruntledTrolls"){
+						this.ev.fire("openSlide");
 					}
 					if ("rm" in removedItem.cmd_text){
 						stringtoreturn += removedItem.cmd_text["rm"] + "\n";

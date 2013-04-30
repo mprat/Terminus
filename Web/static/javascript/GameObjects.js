@@ -461,9 +461,10 @@ some reason it fills you with a sense of dread.",
     "loc_path.gif");
 var ThornyBrambles = new Item("ThornyBrambles", 
     "This thicket of brambles is covered with wicked-looking thorns. You \
-can't go around it, and you definitely aren't about to go through it.",
+can't go around it, and you definitely aren't about to go through it. And yet something\
+tells you that you really want to.",
     "item_brambles.gif");
-ThornyBrambles.addCmdText("mv", 
+ThornyBrambles.addCmdText("mv",
     "You can't touch them because they are covered with thorns. Ouch!");
 ThornyBrambles.addCmdText("rm", 
     "You speak the words of the Remove spell and the brambles glimmer a \
@@ -472,12 +473,21 @@ ThornyBrambles.addValidCmd("rm");
 OminousLookingPath.addItem(ThornyBrambles);
 OminousLookingPath.addCommand("rm");
 OminousLookingPath.ev.addListener("rmBrambles", function(){
-    link_rooms(OminousLookingPath, CaveOfTrolls);
+    link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
 });
+
+//SLIDE
+var Slide = new Room("Slide", "The slides is long. At the end, you see the KernelFiles.");
+Slide.removeCommand("cd");
+Slide.addCmdText("cd", "You have to get past the UglyTroll first.");
+
+//KERNEL FILES
+var KernelFiles = new Room("KernelFiles", "The KernelFiles hold the sudo-secret (no, not\
+    pseudo).")
 
 //CAVE
 //Room beforeCave = new Room("CaveOfDisgruntledTrolls", "A patch of thorny brambles is growing at the mouth of the cave, blocking your way.", "loc_cave");
-var CaveOfTrolls = new Room("CaveOfDisgruntledTrolls", 
+var CaveOfDisgruntledTrolls = new Room("CaveOfDisgruntledTrolls", 
     "The cave is dark and smells like... feet? Oh, right, it's probably the trolls. \
 There's a scared-looking kid in a cage by the far wall.",
     "loc_cave.gif");
@@ -486,15 +496,26 @@ var UglyTroll = new Item("UglyTroll",
     "item_troll1.gif");
 UglyTroll.addCmdText("rm",
     "The troll looks briefy surprised, then vanishes with an unpleasant squelching sound.");
-Boulder.addValidCmd("rm");
-CaveOfTrolls.addItem(UglyTroll);
+UglyTroll.addValidCmd("rm");
+UglyTroll.addValidCmd("mv");
+UglyTroll.addCmdText("mv", "The troll looks briefly surprised, then moves away. He's mostly\
+    harmless anyway.")
+UglyTroll.addValidCmd("cp");
+UglyTroll.addCmdText("cp", "They're multiplying!");
+CaveOfDisgruntledTrolls.addItem(UglyTroll);
 //beforeCave.addItem(uglyTroll);
-var UglierTroll = new Item("UglierTroll", 
-    "He looks mad, and really, really ugly.",
+var UglierTroll = new Item("UglierTroll", "He looks mad, and really, really ugly. \
+    But he wants to tell you something. Between his\
+    garbled grunts, you manage to understand the following:\
+    You can cast spells on items that you don't currently see. For example, if you want\
+    to copy an item from this room to the OminousLookingPath from which you came, you can\
+    cp [ITEM_TO_COPY] ../[NEW_ITEM_NAME]. You can do this for most spells and most rooms. \
+    Use this knowledge wisely. Remember.... you can't undo an 'rm' spell.",
     "item_troll2.gif");
+UglierTroll.addValidCmd("rm");
 UglierTroll.addCmdText("rm",
     "The troll looks briefy surprised, then vanishes with an unpleasant squelching sound.");
-CaveOfTrolls.addItem(UglierTroll);
+CaveOfDisgruntledTrolls.addItem(UglierTroll);
 //beforeCave.addItem(uglierTroll);
 /*hideousTroll = new MoveableItem("AbsolutelyHideousTroll", "You probably don't want to look at this guy. Oops, too late. \n", "item_supertroll");
 hideousTroll.setRMText("The troll belches spectacularly, and you could swear he actually smirks. \n" +
@@ -506,14 +527,21 @@ var HideousTroll = new Item("AbsolutelyHideousTroll",
     "item_supertroll.gif");
 HideousTroll.addCmdText("rm", 
     "The troll belches spectacularly, and you could swear he actually smirks. \
-You won't get rid of him that easily, not without the PASSWORD.");
+You won't get rid of him that easily, not without the 'sudo password'. It's not\
+'pseudo', it's 'sudo'. You'll find that in KernelFiles. But first you have to\
+get past the UglyTroll to the Slide.");
 HideousTroll.addCmdText("mv", 
     "If you move him out of the cave, he'll terrorize \
 the countryside. Also he will probably eat you.");
-CaveOfTrolls.addItem(HideousTroll);
+CaveOfDisgruntledTrolls.addItem(HideousTroll);
 //beforeCave.addItem(hideousTroll);
-CaveOfTrolls.addCommand("rm");
-CaveOfTrolls.addCommand("mv");
+CaveOfDisgruntledTrolls.addCommand("rm");
+CaveOfDisgruntledTrolls.addCommand("mv");
+CaveOfDisgruntledTrolls.addCommand("cp");
+CaveOfDisgruntledTrolls.ev.addListener("openSlide", function(){
+    Slide.addCommand("cd");
+    Slide.addCmdText("cd", "It's just a Slide. Keep going. You're almost at the KernelFiles.");
+});
 
 //CAGE
 var Cage = new Room("Cage", 
@@ -523,6 +551,9 @@ var KidnappedChild = new Item("KidnappedChild",
     "You know it's kind of mean, but you can't help but think that that is one \
 funny-looking kid.",
     "item_cagedboy.gif");
+Cage.removeCommand("cd");
+Cage.addCmdText("cd", "You can’t squeeze through the bars. Anyway, are you crazy? \
+    Why would you want to go into a cage?");
 KidnappedChild.addCmdText("mv", 
     "The kid looks around, dazed, surprised to find himself out of the cage. \
 You smile at him and speak in a gentle voice. 'You should probably be getting home, \
@@ -632,8 +663,10 @@ link_rooms(TownSquare, BrokenBridge);
 // link_rooms(RockyPath, Farm);
 link_rooms(BrokenBridge, Clearing);
 link_rooms(Clearing, OminousLookingPath);
-// link_rooms(OminousLookingPath, CaveOfTrolls);
-//link_rooms(CaveOfTrolls, Cave);
+// link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
+link_rooms(CaveOfDisgruntledTrolls, Cage);
+link_rooms(Slide, KernelFiles);
+link_rooms(CaveOfDisgruntledTrolls, Slide);
 
 //MIT level links
 link_rooms(Home, MIT);

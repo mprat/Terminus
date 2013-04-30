@@ -215,6 +215,18 @@ digraph level_map{
 	<tr><td align="left" port="r0">Inscription</td></tr>
 	</table>>];
 
+	"Slide" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Slide</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+	"KernelFiles" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">KernelFiles</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
 	subgraph cluster_level1{
 		"Home" -> "WesternForest";
 		"Home" -> "NorthernMeadow";
@@ -247,6 +259,8 @@ digraph level_map{
 		"Clearing" -> "OminousLookingPath" [style="dashed", label="rm the ThornyBrambles"];
 		"Clearing" -> "House" [style="dashed", label="Player mkdir the House"];
 		"OminousLookingPath" -> "CaveOfDisgruntledTrolls";
+		"Slide" -> "KernelFiles";
+		"CaveOfDisgruntledTrolls" -> "Slide" [style="dashed", label="After either rm or mv the UglyTroll"];
 	}
 
 	subgraph cluster_mit{
