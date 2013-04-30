@@ -67,8 +67,7 @@ for students to practice their new spells on.",
 PracticeRoom.addItem(new Item("Instructions", 
     "Welcome to the Practice Room. Here \
 you will find practice dummies try your new spells on. Go ahead, give it a go! \
-Practice dummies will respawn in their original location once you leave the \
-Practice Room. If you don't know any spells yet, go back and check out some Lessons.", 
+If you don't know any spells yet, go back and check out some Lessons.", 
     "item_manuscript.gif"));
 PracticeRoom.addItem(new Item("PracticeDummy1", "It's a practice dummy", "item_dummy.gif"));
 PracticeRoom.addItem(new Item("PracticeDummy2", "It's a practice dummy", "item_dummy.gif"));
