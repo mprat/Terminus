@@ -128,12 +128,20 @@ digraph level_map{
 	<tr><td align="left" port="r3">NostalgiaForHome</td></tr>
 	<tr><td align="left" port="r0">TotallyRadSpellbook</td></tr>
 	<tr><td align="left" port="r1">PaperbackRomance</td></tr>
+	<tr><td align="left" port="r4">InconscpicuousLever</td></tr>
 	</table>>];
 
 	"RockyPath" [label = 
 	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
 	<td bgcolor="black" align="center" colspan="2"><font color="white">RockyPath</font></td></tr>
 	<tr><td align="left" port="r0">LargeBoulder</td></tr>
+	</table>>];
+
+	"BackRoom" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">BackRoom</font></td></tr>
+	<tr><td align="left" port="r0">Grep</td></tr>
+	<tr><td align="left" port="r1">Librarian</td></tr>
 	</table>>];
 
 	"ArtisanShop" [label = 
@@ -221,6 +229,13 @@ digraph level_map{
 	<tr><td align="left" port="r0"></td></tr>
 	</table>>];
 
+	"Paradise" [label = 
+	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
+	<td bgcolor="black" align="center" colspan="2"><font color="white">Paradise</font></td></tr>
+	<tr><td align="left" port="r0"></td></tr>
+	</table>>];
+
+
 	"KernelFiles" [label = 
 	<<table border="0" cellborder="0" cellpadding="3" bgcolor="white"><tr>
 	<td bgcolor="black" align="center" colspan="2"><font color="white">KernelFiles</font></td></tr>
@@ -261,6 +276,8 @@ digraph level_map{
 		"OminousLookingPath" -> "CaveOfDisgruntledTrolls";
 		"Slide" -> "KernelFiles";
 		"CaveOfDisgruntledTrolls" -> "Slide" [style="dashed", label="After either rm or mv the UglyTroll"];
+		"Library" -> "BackRoom" [style="dashed", label="Must less the lever."];
+		"KernelFiles" -> "Paradise" [style="dashed", label="sudo su with the correct password"];
 	}
 
 	subgraph cluster_mit{

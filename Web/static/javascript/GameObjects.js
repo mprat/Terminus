@@ -293,11 +293,14 @@ Library.addItem(new Item("NostalgiaForHome",
 		//"...only the world-maker can stop the dark wizard's virus from...\n" +
 		//"...that the power of \"sudo\" may be the dark wizard's only weakness...\n"));
 //add lever back when items when events can be added to items
-//Library.addItem(new Item("InconspicuousLever", 
-//    "You spot an inconspicuous lever behind the shelves.  Curious, you pull it, \
-//and a panel slides open to reveal a secret back room.",
-//    "item_lever.gif"));
+Library.addItem(new Item("InconspicuousLever", 
+   "You spot an inconspicuous lever behind the shelves.  Curious, you pull it, \
+and a panel slides open to reveal a secret back room.",
+   "item_lever.gif"));
 Library.addCommand("grep");
+Library.ev.addListener("pullLever", function(){
+    link_rooms(Library, BackRoom);
+});
 
 //BACK ROOM
 var BackRoom = new Room("BackRoom", 

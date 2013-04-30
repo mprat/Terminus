@@ -226,6 +226,9 @@ Room.prototype.less = function(args){
 		for (var i = 0; i < this.items.length; i++){
 			if (item === this.items[i].toString()){
                 $("#scene").attr("src",this.items[i].picturename); // Display image of item
+                if (this.room_name === "Library" && (item === "InconspicuousLever")){
+                	this.ev.fire("pullLever");
+                }
 				return this.items[i].cmd_text["less"];
 			}
 		}
