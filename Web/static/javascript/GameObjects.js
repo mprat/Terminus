@@ -382,6 +382,11 @@ copy, got it? Then poof! You’ll have shiny new item. I need five more gears so
 get started! Just call them gear1, gear2, gear3, gear4, and gear5, please.");
     ArtisanShop.addCommand("cp");
 });
+ArtisanShop.ev.addListener("FiveGearsCopied", function(){
+    console.log("FiveGearsCopied");
+    Artisan.addCmdText("less", "Ha, finished already? I guess you learn fast. Well, thanks for your \
+        assistance.");
+});
 
 //FARM
 var Farm = new Room("Farm",
