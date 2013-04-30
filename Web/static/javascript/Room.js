@@ -294,9 +294,9 @@ Room.prototype.touch = function(args){
 			if (args[i].length > 0){
 				this.addItem(new Item(args[i], "This is a " + args[i]));
 				createdItemsString += args[i];
-				if (args[i] === "Plank"){
+				if (args[i] === "Plank" && this.room_name === "BrokenBridge"){
 					this.ev.fire("touchPlank");
-				} else if (args[i] === "Gear"){
+				} else if (args[i] === "Gear" && this.room_name === "ArtisanShop"){
 					this.ev.fire("touchGear");
 				}
 			}
