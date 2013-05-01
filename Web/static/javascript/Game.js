@@ -170,7 +170,8 @@ $(document).ready(function() {
                             first_arg == "less" ||
                             first_arg == "grep" ||
                             first_arg == "touch" ||
-                            first_arg == "rm")
+                            first_arg == "rm" ||
+                            first_arg == "sudo")
                         {
                             for(item_num = 0; item_num<search_room.items.length; item_num++){
                                 if(search_room.items[item_num].itemname.match("^"+path_rooms[room_num])){
