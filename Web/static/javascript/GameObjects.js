@@ -216,7 +216,7 @@ coast.  You should be careful!\"",
 TownSquare.addItem(new Item("RandomCitizen2", 
     "The man looks up from his newspaper when he notices you staring. \
 \"Have you read this?\" he exclaims, shaking the latest edition of \"The Last \
-Word\" in your face. \"It says here the wizard's corruption has spread as far\
+Word\" in your face. \"It says here the wizard's corruption has spread as far \
 as Oston to the south, and New Console is completely unrecoverable! These are \
 dangerous times,\" he mutters, shaking his head and turning back to his reading.",
     "item_citizen2.gif"));
