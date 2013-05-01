@@ -450,3 +450,19 @@ Room.prototype.IHTFP = function(args){
 	}
 	return "This is not a valid spell.";
 }
+
+Room.prototype.add = function(args){
+	if (this.commands.indexOf("add") > 0){
+		if (args[0] === "MagicLocker"){
+			this.ev.fire("addMagicLocker");
+			if (typeof this.cmd_text["add"] === 'undefined'){
+				return "You just added the " + args[0] + " locker";
+			}
+			return this.cmd_text["add"];
+		}
+		else {
+			return "No valid locker of that name.";
+		}
+	}
+	return "This is not a valid spell.";
+}

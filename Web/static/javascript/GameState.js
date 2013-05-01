@@ -170,6 +170,9 @@ stone, weeping. Behind him is a pile of rubble and a small white house.");
 		    MIT.removeCommand("terminus");
 		    MIT.removeCmdText("terminus");
 		    break;
+		case "addMagicLocker": 
+			link_rooms(Home, MagicLocker);
+			break;
 		default: 
 			break;
 	};

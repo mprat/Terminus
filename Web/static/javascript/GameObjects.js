@@ -1796,6 +1796,11 @@ AthenaCluster.ev.addListener("AthenaClusterExited", function(){
     AthenaCluster.removeCommand("cd");
 });
 AthenaCluster.addCommand("tellme");
+AthenaCluster.addCommand("add");
+var add_locker_func = function(){
+    state.applyState("addMagicLocker");
+};
+AthenaCluster.ev.addListener("addMagicLocker", add_locker_func);
 
 //MIT
 var MIT = new Room("MIT", "You have arrived by magic carpet to MIT!", "loc_MIT.gif");
@@ -1815,6 +1820,8 @@ MIT.ev.addListener("AthenaComboEntered", function(){
     state.applyState("AthenaComboEntered");
 });
 MIT.addCommand("tellme");
+MIT.addCommand("add");
+MIT.ev.addListener("addMagicLocker", add_locker_func);
 
 //StataCenter
 var StataCenter = new Room("StataCenter",
@@ -1834,9 +1841,16 @@ There's one room here that you'll need the combination for. All you have to do i
 "item_TA.gif");
 StataCenter.addItem(HelpfulTA);
 StataCenter.addCommand("tellme");
+StataCenter.addCommand("add");
+StataCenter.ev.addListener("addMagicLocker", add_locker_func);
 
 //Magic locker
-var MagicLocker = new Room("MagicLocker")
+var MagicLocker = new Room("MagicLocker");
+var MoreComing = new Item("MoreComing", "The MagicLocker contains Items that can be \
+used (and spells that can be used) anywhere else in the game once you add \
+the locker. MIT is making updates to the locker at all times, so check back \
+frequently.");
+MagicLocker.addItem("MoreComing");
 
 /**
 * LINKS BETWEEN ROOMS
