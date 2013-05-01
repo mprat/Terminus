@@ -327,7 +327,7 @@ references to DarkWizard in the History of Terminus. My assistant Grep \
 can help you.\" \
 Grep eyes you balefully. \"Greeepp.\" \"To search the contents of the book, just type \
 \"grep PHRASE ITEM\", where PHRASE is the phrase you want to search for, \
-and ITEM is the name of the book you want to search. Try it with the PracticeBook here\
+and ITEM is the name of the book you want to search. Try it with the PracticeBook here \
 - see if you can find the line with the word 'peppers' in it.\"",
     "item_librarian.gif");
 BackRoom.addItem(Librarian);
@@ -353,7 +353,7 @@ var ArtisanShop = new Room("ArtisanShop",
 all slightly out of sync. At the workbench, a woman in an enormous pair of goggles \
 is wielding a blowtorch with frightening enthusiasm.",
     "loc_artisanshop.gif");
-var StrangeTrinket = new Item("StrangeTrinket", "It looks like a crystal of some sort.  It's very beautiful.", "item_trinket.gif");
+var StrangeTrinket = new Item("StrangeTrinket", "It looks like a crystal of some sort. It's very beautiful.", "item_trinket.gif");
 StrangeTrinket.addCmdText("rm", 
     "Didn't your mother ever teach you that it's rude to rease other people's \
 things from their plane of existence?");
@@ -459,7 +459,7 @@ some reason it fills you with a sense of dread.",
     "loc_path.gif");
 var ThornyBrambles = new Item("ThornyBrambles", 
     "This thicket of brambles is covered with wicked-looking thorns. You \
-can't go around it, and you definitely aren't about to go through it. And yet something\
+can't go around it, and you definitely aren't about to go through it. And yet something \
 tells you that you really want to.",
     "item_brambles.gif");
 ThornyBrambles.addCmdText("mv",
@@ -480,22 +480,22 @@ Slide.removeCommand("cd");
 Slide.addCmdText("cd", "You have to get past the UglyTroll first.");
 
 //KERNEL FILES
-var KernelFiles = new Room("KernelFiles", "The KernelFiles hold the sudo-secret (no, not\
+var KernelFiles = new Room("KernelFiles", "The KernelFiles hold the sudo-secret (no, not \
     pseudo). You'd better read the Instructions.")
 var Certificate = new Item("Certificate", "You must read the Certificate with the sudo password.");
 KernelFiles.addItem(Certificate);
-var Instructions = new Item("Instructions", "You've learned how to make use of your friend grep I see.\
-If you haven't it might be wise for you to go back to the Library again to do some reading.\
+var Instructions = new Item("Instructions", "You've learned how to make use of your friend grep I see. \
+If you haven't it might be wise for you to go back to the Library again to do some reading. \
 Because here, you'll need to use him to help you. Here is your task: \n\
-There are a lot of items in the MoreKernelFiles room and one of them contains the sudo password. This\
-password is very powerful password that lets you do absolutely anything in the world.\
-It lets you cast a spell on any item that is protected in any way. You know the password\
-is contained in one of these .txt items. You know that it appears\
-on a line that says the word: 'password='. You should find it with grep's help.\
-Then you'll need to use the sudo spell to find paradide. To do this, just \
+There are a lot of items in the MoreKernelFiles room and one of them contains the sudo password. This \
+password is very powerful password that lets you do absolutely anything in the world. \
+It lets you cast a spell on any item that is protected in any way. You know the password \
+is contained in one of these .txt items. You know that it appears \
+on a line that says the word: 'password='. You should find it with grep's help. \
+Then you'll need to use the sudo spell to find Paradise. To do this, just \
 Type 'sudo' before the command you want to run, like so: \
 'sudo cp ITEM_A ITEM_B'. You will then be prompted for the sudo password \
-Type the password, and the spell that comes after sudo will be cast. If you open\
+Type the password, and the spell that comes after sudo will be cast. If you open \
 the Certificate in Paradise with sudo, you will have truly found Paradise.");
 var L_txt = new Item("L_txt", "INSERT SOME LONG TEXT");
 var M_txt = new Item("M_txt", "INSERT SOME LONG TEXT");
@@ -546,7 +546,7 @@ KernelFiles.addCmdText("sudo", "Password:");
 MoreKernelFiles.addCommand("grep");
 KernelFiles.ev.addListener("tryEnterSudo", function(){
     KernelFiles.addCommand("IHTFP");
-    KernelFiles.addCmdText("IHTFP", "You have correctly entered the password. You are now in Paradise.\
+    KernelFiles.addCmdText("IHTFP", "You have correctly entered the password. You are now in Paradise. \
 Take a look around, and congratulations.");
 });
 KernelFiles.ev.addListener("sudoComplete", function(){
@@ -570,17 +570,17 @@ UglyTroll.addCmdText("rm",
     "The troll looks briefy surprised, then vanishes with an unpleasant squelching sound.");
 UglyTroll.addValidCmd("rm");
 UglyTroll.addValidCmd("mv");
-UglyTroll.addCmdText("mv", "The troll looks briefly surprised, then moves away. He's mostly\
+UglyTroll.addCmdText("mv", "The troll looks briefly surprised, then moves away. He's mostly \
     harmless anyway.")
 UglyTroll.addValidCmd("cp");
 UglyTroll.addCmdText("cp", "They're multiplying!");
 CaveOfDisgruntledTrolls.addItem(UglyTroll);
 //beforeCave.addItem(uglyTroll);
 var UglierTroll = new Item("UglierTroll", "He looks mad, and really, really ugly. \
-But he wants to tell you something. Between his\
-garbled grunts, you manage to understand the following:\
-You can cast spells on items that you don't currently see. For example, if you want\
-to copy an item from this room to the OminousLookingPath from which you came, you can\
+But he wants to tell you something. Between his \
+garbled grunts, you manage to understand the following: \
+You can cast spells on items that you don't currently see. For example, if you want \
+to copy an item from this room to the OminousLookingPath from which you came, you can \
 cp [ITEM_TO_COPY] ../[NEW_ITEM_NAME]. You can do this for most spells and most rooms. \
 Use this knowledge wisely. Remember.... you can't undo an 'rm' spell.",
     "item_troll2.gif");
@@ -599,8 +599,8 @@ var HideousTroll = new Item("AbsolutelyHideousTroll",
     "item_supertroll.gif");
 HideousTroll.addCmdText("rm", 
     "The troll belches spectacularly, and you could swear he actually smirks. \
-You won't get rid of him that easily, not without the 'sudo password'. It's not\
-'pseudo', it's 'sudo'. You'll find that in KernelFiles. But first you have to\
+You won't get rid of him that easily, not without the 'sudo password'. It's not \
+'pseudo', it's 'sudo'. You'll find that in KernelFiles. But first you have to \
 get past the UglyTroll to the Slide.");
 HideousTroll.addCmdText("mv", 
     "If you move him out of the cave, he'll terrorize \
@@ -634,10 +634,10 @@ runs up the ominous path towards home.");
 Cage.addItem(KidnappedChild);
 
 //Athena cluster
-var AthenaCluster = new Room("AthenaCluster", "None shall pass without the combination. You\
+var AthenaCluster = new Room("AthenaCluster", "None shall pass without the combination. You \
 have one chance to enter the combination. Enter password:");
 var Workstation = new Item("Workstation", "The Workstation has resources you can use to \
-access files in a joint Athena locker. It adds new rooms (when they're in your Home we\
+access files in a joint Athena locker. It adds new rooms (when they're in your Home we \
 call them lockers) to your Home, and you can \
 add them to your collection of lockers if you have permission. If you know what you want to add \
 to your Home (the name of the locker you want, of course), just 'add LOCKERNAME'. It \
@@ -681,8 +681,8 @@ other places, you can write notes, and you can store various items you collect i
 your travels in the MagicLocker. But first you need to go to the AthenaCluster and \
 learn how.");
 StataCenter.addItem(WaryEyeOfGradStudent);
-var HelpfulTA = new Item("HelpfulTA", "Ah, welcome to the wonderful land of Stata.\
-There's one room here that you'll need the combination for. All you have to do is ask:\
+var HelpfulTA = new Item("HelpfulTA", "Ah, welcome to the wonderful land of Stata. \
+There's one room here that you'll need the combination for. All you have to do is ask:\n \
 'tellme combo'.");
 StataCenter.addItem(HelpfulTA);
 StataCenter.addCommand("tellme");
