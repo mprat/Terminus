@@ -168,7 +168,7 @@ There's no real reason to go into the hole.",
 SmallHole.addCmdText("cd", 
     "There's nothing exciting in the small hole, and it's pretty dirty. There's no real reason to go into the hole. I suggest going back out.");
 //add event handler to the "addItem" method of SmallHole to cause the rest of the level to be connected
-SmallHole.ev.addListener("mvBoulder", function(){
+DankRoom.ev.addListener("mvBoulder", function(){
 	// link_rooms(DankRoom, Tunnel);
     state.applyState("mvBoulder");
 });

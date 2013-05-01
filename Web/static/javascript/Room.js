@@ -280,10 +280,11 @@ Room.prototype.mv = function(args){
 		if ((item_name_to_move >= 0) && (this.childrenStringArray().indexOf(args[1]) >= 0)){
 			itemtoadd = this.items[this.itemStringArray().indexOf(args[0])];
 			this.children[this.childrenStringArray().indexOf(args[1])].addItem(itemtoadd);
-			if ((this.itemStringArray().indexOf(args[0]) === "UglyTroll") && (this.room_name === "CaveOfDisgruntledTrolls")){
+			console.log(args[0]);
+			if ((args[0] === "UglyTroll") && (this.room_name === "CaveOfDisgruntledTrolls")){
 				this.ev.fire("openSlide");
 			}
-			if ((this.itemStringArray().indexOf(args[0]) === "Boulder") && (this.room_name === "DankRoom")){
+			if ((args[0] === "Boulder") && (this.room_name === "DankRoom")){
 				this.ev.fire("mvBoulder");
 			}
 			this.removeItem(args[0]);
