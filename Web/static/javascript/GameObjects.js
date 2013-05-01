@@ -100,11 +100,12 @@ cave is an old man.",
     "loc_mountains.gif");
 EasternMountains.addItem(new Item("OldMan", 
     "You speak with the old man. He greets \
-you warmly as if you were old friends. You feel at ease with him. Hello \
-adventurer! Top of the morning to you! You seem like a young and energetic \
+you warmly as if you were old friends. You feel at ease with him. \n\
+\"Hello adventurer! Top of the morning to you! You seem like a young and energetic \
 explorer. If you're brave enough, your destiny awaits within this cave. That \
 destiny will manifest itself as a portal. Enter this portal and begin the next \
-chapter of your life. The old man sees the shock on your face and smiles \
+chapter of your life.\"\n\
+The old man sees the shock on your face and smiles a \
 comforting smile, \"I am but a fragile old man, and cannot accompany you through \
 this cave, but what I can provide are a few simple spells that will help you \
 along your way. Just read my old manuscripts and tryout those spells.\"", 
