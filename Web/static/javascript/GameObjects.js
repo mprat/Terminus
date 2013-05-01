@@ -1696,7 +1696,8 @@ KernelFiles.ev.addListener("sudoComplete", function(){
 });
 
 //PARADISE (end game screen)
-var Paradise = new Room("Paradise", "You have truly found Paradise with the sudo password. Congratulations.");
+var Paradise = new Room("Paradise", "You have truly found Paradise with the sudo password. \
+Congratulations.", "loc_theend.gif");
 Paradise.addCmdText("ls", "There's really nothing interesting in Paradise.");
 
 //CAVE
