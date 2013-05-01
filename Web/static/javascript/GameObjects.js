@@ -1845,12 +1845,13 @@ StataCenter.addCommand("add");
 StataCenter.ev.addListener("addMagicLocker", add_locker_func);
 
 //Magic locker
-var MagicLocker = new Room("MagicLocker");
+var MagicLocker = new Room("MagicLocker", "This contains items and spells that can be used \
+anywhere in the world after you add the locker. More is coming.", "item_locker.gif");
 var MoreComing = new Item("MoreComing", "The MagicLocker contains Items that can be \
 used (and spells that can be used) anywhere else in the game once you add \
 the locker. MIT is making updates to the locker at all times, so check back \
-frequently.");
-MagicLocker.addItem("MoreComing");
+frequently.", "item_comingsoon.gif");
+MagicLocker.addItem(MoreComing);
 
 /**
 * LINKS BETWEEN ROOMS
