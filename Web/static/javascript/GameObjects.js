@@ -733,5 +733,3 @@ link_rooms(KernelFiles, MoreKernelFiles);
 link_rooms(Home, MIT);
 link_rooms(MIT, StataCenter);
 link_rooms(MIT, AthenaCluster);
-
-var current_room = state.getCurrentRoom();

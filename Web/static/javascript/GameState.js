@@ -94,14 +94,14 @@ GameState.prototype.applyState = function(param_name, replay){
 		case "mvBoulder": 
 			link_rooms(DankRoom, Tunnel);
 			SmallHole.addItem(Boulder);
-			if (re) DankRoom.removeItem(Boulder);
+			if (re) DankRoom.removeItem("Boulder");
 			break;
 		case "pullLever":
 			link_rooms(Library, BackRoom);
     		break;
     	case "rmLargeBoulder":
     		link_rooms(RockyPath, Farm);
-    		if (re) RockyPath.removeItem(LargeBoulder);
+    		if (re) RockyPath.removeItem("LargeBoulder");
     		break;
     	case "touchGear":
     		Artisan.addCmdText("less", "Well that’s lovely, thank you, but you can’t expect me to make\
@@ -146,7 +146,7 @@ stone and sobbing. Behind him is a pile of rubble. Behind him is a small white h
     		break;
     	case "rmBrambles":
     		link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
-    		if (re) OminousLookingPath.removeItem(ThornyBrambles);
+    		if (re) OminousLookingPath.removeItem("ThornyBrambles");
     		break;
     	case "sudoComplete":
     		KernelFiles.removeCommand("IHTFP");
@@ -157,7 +157,7 @@ stone and sobbing. Behind him is a pile of rubble. Behind him is a small white h
     	case "openSlide":
     		Slide.addCommand("cd");
     		Slide.addCmdText("cd", "It's just a Slide. Keep going. You're almost at the KernelFiles.");
-    		if (re) CaveOfDisgruntledTrolls.removeItem(UglyTroll);
+    		if (re) CaveOfDisgruntledTrolls.removeItem("UglyTroll");
     		break;
     	case "AthenaComboEntered":
     		AthenaCluster.addCommand("ls");
