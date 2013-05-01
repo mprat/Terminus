@@ -168,7 +168,8 @@ SmallHole.addCmdText("cd",
     "There's nothing exciting in the small hole, and it's pretty dirty. There's no real reason to go into the hole. I suggest going back out.");
 //add event handler to the "addItem" method of SmallHole to cause the rest of the level to be connected
 SmallHole.ev.addListener("addItem", function(){
-	link_rooms(DankRoom, Tunnel);
+	// link_rooms(DankRoom, Tunnel);
+    state.applyState("Tunnel");
 });
 
 //TUNNEL
@@ -298,7 +299,7 @@ and a panel slides open to reveal a secret back room.",
    "item_lever.gif"));
 Library.addCommand("grep");
 Library.ev.addListener("pullLever", function(){
-    link_rooms(Library, BackRoom);
+    state.applyState("pullLever");
 });
 
 //BACK ROOM
@@ -337,7 +338,7 @@ RockyPath.addItem(Boulder);
 RockyPath.addCommand("rm");
 Boulder.addValidCmd("rm");
 RockyPath.ev.addListener("removeItem", function(){
-    link_rooms(RockyPath, Farm);
+    state.applyState("Farm");
 });
 
 //ARTISAN'S SHOP
@@ -379,18 +380,10 @@ Now make me a Gear! Then come back.\"",
 ArtisanShop.addItem(Artisan);
 ArtisanShop.addCommand("touch");
 ArtisanShop.ev.addListener("touchGear", function(){
-    Artisan.addCmdText("less", "Well that’s lovely, thank you, but you can’t expect me to make\
-anything with just one gear! Can’t you copy it?\n\
-...\n\
-*sigh* I can see you are going to need a lot of training. Just say “cp [ITEM] [NEWITEM]”.\
-[ITEM]’s the name of the item that you want copy, and [NEWITEM]’s the new name of the\
-copy, got it? Then poof! You’ll have shiny new item. I need five more gears so you’d better\
-get started! Just call them gear1, gear2, gear3, gear4, and gear5, please.");
-    ArtisanShop.addCommand("cp");
+    state.applyState("touchGear");
 });
 ArtisanShop.ev.addListener("FiveGearsCopied", function(){
-    Artisan.addCmdText("less", "Ha, finished already? I guess you learn fast. Well, thanks for your \
-        assistance.");
+    state.applyState("FiveGearsCopied");
 });
 
 //FARM
@@ -411,7 +404,7 @@ will I feed my 3 children with just one ear of corn? I could really use AnotherE
 Farm.addItem(Farmer);
 Farm.addCommand("cp");
 Farm.ev.addListener("CornCopied", function(){
-    Farmer.addCmdText("less", "It’s a miracle! Thank you, friend. May the Admin bless you.");
+    state.applyState("CornCopied");
 });
 
 //CLEARING
@@ -438,11 +431,7 @@ Clearing.removeCommand("cd");
 Clearing.addCmdText("cd", "You can’t cross the bridge until you’ve replaced the missing Plank.");
 Clearing.addCommand("mkdir");
 Clearing.ev.addListener("HouseMade", function(){
-    Clearing.getChildFromName("House").addCmdText("cd", "You are entering the House that you made.");
-    Clearing.getChildFromName("House").addCmdText("ls", "You made this house for the man. How thoughtful of you!");
-    Clearing.removeCmdText("cd");
-    Clearing.changeIntroText("There's a small grassy clearing here, with a man sitting on a \
-stone and sobbing. Behind him is a pile of rubble. Behind him is a small white house.");
+    state.applyState("HouseMade");    
 });
 
 //BROKEN BRIDGE
@@ -454,10 +443,7 @@ Plank, and the gap is too far to jump.",
 BrokenBridge.addCommand("touch");
 BrokenBridge.ev.addListener("touchPlank", function(){
     // link_rooms(BrokenBridge, Clearing);
-    Clearing.addCommand("cd");
-    Clearing.removeCmdText("cd");
-    BrokenBridge.removeCmdText("cd");
-    BrokenBridge.changeIntroText("A creaky rope bridges stretches across a chasm.");
+    state.applyState("touchPlank");
 });
 		
 //OMINOUS-LOOKING PATH
@@ -479,7 +465,7 @@ ThornyBrambles.addValidCmd("rm");
 OminousLookingPath.addItem(ThornyBrambles);
 OminousLookingPath.addCommand("rm");
 OminousLookingPath.ev.addListener("rmBrambles", function(){
-    link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
+    state.applyState("rmBrambles");
 });
 
 //SLIDE
@@ -558,10 +544,7 @@ KernelFiles.ev.addListener("tryEnterSudo", function(){
 Take a look around, and congratulations.");
 });
 KernelFiles.ev.addListener("sudoComplete", function(){
-    KernelFiles.removeCommand("IHTFP");
-    KernelFiles.removeCmdText("IHTFP");
-    link_rooms(KernelFiles, Paradise);
-    enterRoom(Paradise);
+    state.applyState("sudoComplete");
 });
 
 //PARADISE (end game screen)
@@ -622,8 +605,7 @@ CaveOfDisgruntledTrolls.addCommand("rm");
 CaveOfDisgruntledTrolls.addCommand("mv");
 CaveOfDisgruntledTrolls.addCommand("cp");
 CaveOfDisgruntledTrolls.ev.addListener("openSlide", function(){
-    Slide.addCommand("cd");
-    Slide.addCmdText("cd", "It's just a Slide. Keep going. You're almost at the KernelFiles.");
+    state.applyState("openSlide");
 });
 
 //CAGE
@@ -680,13 +662,7 @@ MIT.ev.addListener("tryEnterAthenaCluster", function(){
     // have one chance to enter the combination. Enter password:");
 });
 MIT.ev.addListener("AthenaComboEntered", function(){
-    AthenaCluster.addCommand("ls");
-    AthenaCluster.removeCmdText("ls");
-    AthenaCluster.addCommand("cd");
-    // AthenaCluster.addCmdText("cd", "You have correctly entered the cluster combo. You may enter.");
-    enterRoom(AthenaCluster);
-    MIT.removeCommand("terminus");
-    MIT.removeCmdText("terminus");
+    state.applyState("AthenaComboEntered");
 });
 MIT.addCommand("tellme");
 

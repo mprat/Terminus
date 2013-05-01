@@ -1,6 +1,27 @@
+/*
+ * Here are the parameters and values:
+ * Tunnel -- 1 means DankRoom and Tunnel are connected. Also means that the 
+ 			Boulder is in the SmallHole
+ * pullLever -- Library and BackRoom are connected
+ * AthenaComboEntered -- currently in Athena cluster
+ * Farm -- RockyPath and Farm are connected. Also means that the LargeBoulder
+ 			has been removed
+ * HouseMade -- Clearing and House are connected (user has made a House)
+ * rmBrambles -- Clearing and OminousLookingPath are connected. Also means that 
+ 			ThornyBrambles have been removed
+ * openSlide -- CaveOfDisgtruntledTrolls and Slide are connected. Also means that the
+ 			UglyTroll has been rm'ed or mv'ed
+ * touchGear -- Gear was made in ArtisanShop, Artisan text changed
+ * FiveGearsCopied -- five Gears copied in ArtisanShop, Artisan text changed
+ * CornCopied -- corn copied in Farm
+ * touchPlank -- Plank made in BrokenBridge
+ * sudoComplete -- entered paradise (current location is paradise)
+ */
+
 function GameState(){
 	//game starts at home unless loaded from cookie
 	this.currentRoom = Home; 
+	this.params = {};
 };
 
 //this function reads from a cookie if one exists
@@ -31,7 +52,20 @@ GameState.prototype.setCurrentRoom = function(newRoom){
 };
 
 GameState.prototype.getState = function(){
+	//for anything in the state, if it is not written in the cookie explicitly, it's value is 0
+	var param_string = "";
+	for (var key in this.params){
+		if (this.params.hasOwnProperty(key)){
+			param_string += key + ":" + this.params[key];
+		}
+		console.log(param_string);
+	}
+	console.log(this.currentRoom.toString());
 	return this.currentRoom.toString();
+};
+
+GameState.prototype.update = function(name_prop, val){
+	this.params[name_prop] = val;
 };
 
 GameState.prototype.readCookie = function(){
@@ -43,4 +77,73 @@ GameState.prototype.readCookie = function(){
 		if (c.indexOf(nameCookie) == 0) return c.substring(nameCookie.length + 1,c.length);
 	}
 	return null;
+};
+
+GameState.prototype.applyState = function(param_name){
+	state.update(param_name, "1");
+	switch(param_name){
+		case "Tunnel": 
+			link_rooms(DankRoom, Tunnel);
+			break;
+		case "pullLever":
+			link_rooms(Library, BackRoom);
+    		break;
+    	case "Farm":
+    		link_rooms(RockyPath, Farm);
+    		break;
+    	case "touchGear":
+    		Artisan.addCmdText("less", "Well that’s lovely, thank you, but you can’t expect me to make\
+anything with just one gear! Can’t you copy it?\n\
+...\n\
+*sigh* I can see you are going to need a lot of training. Just say “cp [ITEM] [NEWITEM]”.\
+[ITEM]’s the name of the item that you want copy, and [NEWITEM]’s the new name of the\
+copy, got it? Then poof! You’ll have shiny new item. I need five more gears so you’d better\
+get started! Just call them gear1, gear2, gear3, gear4, and gear5, please.");
+    		ArtisanShop.addCommand("cp");
+    		break;
+    	case "FiveGearsCopied":
+    		Artisan.addCmdText("less", "Ha, finished already? I guess you learn fast. Well, \
+thanks for your assistance.");
+    		break;
+    	case "CornCopied":
+    	    Farmer.addCmdText("less", "It’s a miracle! Thank you, friend. May the Admin bless you.");
+    	    break;
+    	case "HouseMade":
+    		Clearing.getChildFromName("House").addCmdText("cd", "You are entering the House that you made.");
+  	 		Clearing.getChildFromName("House").addCmdText("ls", "You made this house for the man. How thoughtful of you!");
+  		  	Clearing.removeCmdText("cd");
+    		Clearing.changeIntroText("There's a small grassy clearing here, with a man sitting on a \
+stone and sobbing. Behind him is a pile of rubble. Behind him is a small white house.");
+    		break;
+    	case "touchPlank":
+    		Clearing.addCommand("cd");
+    		Clearing.removeCmdText("cd");
+    		BrokenBridge.removeCmdText("cd");
+    		BrokenBridge.changeIntroText("A creaky rope bridges stretches across a chasm.");
+    		break;
+    	case "rmBrambles":
+    		link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
+    		break;
+    	case "sudoComplete":
+    		KernelFiles.removeCommand("IHTFP");
+    		KernelFiles.removeCmdText("IHTFP");
+    		link_rooms(KernelFiles, Paradise);
+    		enterRoom(Paradise);
+    		break;
+    	case "openSlide":
+    		Slide.addCommand("cd");
+    		Slide.addCmdText("cd", "It's just a Slide. Keep going. You're almost at the KernelFiles.");
+    		break;
+    	case "AthenaComboEntered":
+    		AthenaCluster.addCommand("ls");
+    		AthenaCluster.removeCmdText("ls");
+		    AthenaCluster.addCommand("cd");
+		    // AthenaCluster.addCmdText("cd", "You have correctly entered the cluster combo. You may enter.");
+		    enterRoom(AthenaCluster);
+		    MIT.removeCommand("terminus");
+		    MIT.removeCmdText("terminus");
+		    break;
+		default: 
+			break;
+	};
 };
