@@ -229,7 +229,7 @@ something to do with it.\"",
 
 //MARKETPLACE
 var Marketplace = new Room("Marketplace", 
-    "You are in the marketplace.",
+    "Vendors and their goods line the streets.",
     "loc_market.gif");
 var Vendor = new Item("Vendor", 
     "\" 'Ello there.\" The vendor smiles at you unpleasantly, \
@@ -244,7 +244,7 @@ Marketplace.addItem(Vendor);
 //		"Do you take the backpack? y\\n \n", "item_backpack.gif");
 //Marketplace.addItem(Backpack);
 var RmSpell = new Item("rmSpell", 
-    "\"Ah, yes, the rm spell,\" he muses. \"Simply say \"rm\" followed by the name of an item or person, \
+    "\"Ah, yes, the rm spell,\" the Vendor muses. \"Simply say \"rm\" followed by the name of an item or person, \
 and they will disappear from this plane... forever. D'you have the guts to use it, I wonder?\"",
     "item_manuscript.gif");
 
@@ -256,8 +256,8 @@ and they will disappear from this plane... forever. D'you have the guts to use i
 //				"You can now use the \"rm\" spell.\n", "Come back later.\n");
 Marketplace.addItem(RmSpell);
 var MkdirSpell = new Item("mkdirSpell",
-    "Make dreams into reality. Just say \"mkdir\" followed by any name that pleases you, and you can create a new place that \
-never existed there before. Ha! Not very useful, if y'ask me...\"",
+    "\"Make dreams into reality. Just say \"mkdir\" followed by any name that pleases you, and you can create a new place that \
+never existed there before. A little finicky, though...\" the Vendor mumbles.",
     "item_manuscript.gif");
 //		"Do you want to buy it for 30 gold pieces? y\\n \n"
 //, "The vendor cackles. \"An ambitious one, eh? Very well. \n" +
@@ -335,10 +335,9 @@ BackRoom.addCommand("grep");
 
 //ROCKY PATH
 var RockyPath = new Room("RockyPath",
-    "The weed-choked path leads off into the fields. \
-There is an enormous boulder blocking your way, however.",
+    "The weed-choked path leads off into the fields.",
     "loc_rockypath.gif");
-var LargeBoulder = new Item("LargeBoulder", "It's much too big to move.", "item_boulder.gif");
+var LargeBoulder = new Item("LargeBoulder", "There is an enormous boulder blocking your way.  It's much too big to move.", "item_boulder.gif");
 LargeBoulder.addCmdText("rm", "The boulder disappears with a pop.");
 RockyPath.addItem(LargeBoulder);
 RockyPath.addCommand("rm");
@@ -416,7 +415,7 @@ Farm.ev.addListener("CornCopied", function(){
 //CLEARING
 var Clearing = new Room("Clearing", 
     "There's a small grassy clearing here, with a man sitting on a \
-stone and sobbing. Behind him is a pile of rubble.",
+stone, weeping. Behind him is a pile of rubble.",
     "loc_clearing.gif");
 var CryingMan = new Item("CryingMan", 
     "\"You! You're a magic-user! I can tell, you've got that look. \
@@ -481,7 +480,7 @@ Slide.addCmdText("cd", "You have to get past the UglyTroll first.");
 
 //KERNEL FILES
 var KernelFiles = new Room("KernelFiles", "The KernelFiles hold the sudo-secret (no, not \
-    pseudo). You'd better read the Instructions.")
+pseudo). You'd better read the Instructions.")
 var Certificate = new Item("Certificate", "You must read the Certificate with the sudo password.");
 KernelFiles.addItem(Certificate);
 var Instructions = new Item("Instructions", "You've learned how to make use of your friend grep I see. \
@@ -494,7 +493,7 @@ is contained in one of these .txt items. You know that it appears \
 on a line that says the word: 'password='. You should find it with grep's help. \
 Then you'll need to use the sudo spell to find Paradise. To do this, just \
 Type 'sudo' before the command you want to run, like so: \
-'sudo cp ITEM_A ITEM_B'. You will then be prompted for the sudo password \
+'sudo cp ITEM_A ITEM_B'. You will then be prompted for the sudo password. \
 Type the password, and the spell that comes after sudo will be cast. If you open \
 the Certificate in Paradise with sudo, you will have truly found Paradise.");
 var L_txt = new Item("L_txt", "INSERT SOME LONG TEXT");
