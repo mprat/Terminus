@@ -33,7 +33,16 @@ GameState.prototype.getCurrentRoom = function() {
 	var cookieval=this.readCookie();
 	if (cookieval){
 		//parse the cookie. right now it is only the current room name
-		newRoomToSet=window[cookieval];
+		var cookieargs = cookieval.split("=");
+		var room_name_to_set = cookieargs.splice(0, 1);
+		var cookie_params = cookieargs;
+		for (var i = 0; i < cookie_params.length; i++){
+			var param_pair = cookie_params[i].split(":");
+			console.log(param_pair);
+			this.params[param_pair[0]] = param_pair[1];
+			this.applyState(param_pair[0]);
+		}
+		newRoomToSet=window[room_name_to_set];
 	}
 
 	//call setCurrentRoom to reset the expiration date on the cookie
@@ -56,12 +65,10 @@ GameState.prototype.getState = function(){
 	var param_string = "";
 	for (var key in this.params){
 		if (this.params.hasOwnProperty(key)){
-			param_string += key + ":" + this.params[key];
+			param_string += key + ":" + this.params[key] + "=";
 		}
-		console.log(param_string);
 	}
-	console.log(this.currentRoom.toString());
-	return this.currentRoom.toString();
+	return this.currentRoom.toString() + "=" + param_string;
 };
 
 GameState.prototype.update = function(name_prop, val){
@@ -74,7 +81,8 @@ GameState.prototype.readCookie = function(){
 	for(var i=0;i < ca.length;i++) {
 		var c = ca[i];
 		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameCookie) == 0) return c.substring(nameCookie.length + 1,c.length);
+		if (c.indexOf(nameCookie) == 0) 
+			return c.substring(nameCookie.length + 1,c.length);
 	}
 	return null;
 };
