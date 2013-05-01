@@ -40,7 +40,7 @@ GameState.prototype.getCurrentRoom = function() {
 			var param_pair = cookie_params[i].split(":");
 			console.log(param_pair);
 			this.params[param_pair[0]] = param_pair[1];
-			this.applyState(param_pair[0]);
+			this.applyState(param_pair[0], true);
 		}
 		newRoomToSet=window[room_name_to_set];
 	}
@@ -87,17 +87,21 @@ GameState.prototype.readCookie = function(){
 	return null;
 };
 
-GameState.prototype.applyState = function(param_name){
+GameState.prototype.applyState = function(param_name, replay){
+	var re = replay || false;
 	state.update(param_name, "1");
 	switch(param_name){
 		case "Tunnel": 
 			link_rooms(DankRoom, Tunnel);
+			SmallHole.addItem(Boulder);
+			(re) ? DankRoom.removeItem(Boulder);
 			break;
 		case "pullLever":
 			link_rooms(Library, BackRoom);
     		break;
     	case "Farm":
     		link_rooms(RockyPath, Farm);
+    		(re) ? RockyPath.removeItem(LargeBoulder);
     		break;
     	case "touchGear":
     		Artisan.addCmdText("less", "Well that’s lovely, thank you, but you can’t expect me to make\
@@ -108,15 +112,25 @@ anything with just one gear! Can’t you copy it?\n\
 copy, got it? Then poof! You’ll have shiny new item. I need five more gears so you’d better\
 get started! Just call them gear1, gear2, gear3, gear4, and gear5, please.");
     		ArtisanShop.addCommand("cp");
+    		(re) ? ArtisanShop.addItem(new Item("Gear", "This is a Gear");
     		break;
     	case "FiveGearsCopied":
     		Artisan.addCmdText("less", "Ha, finished already? I guess you learn fast. Well, \
 thanks for your assistance.");
+    		if (re){
+	    		ArtisanShop.addItem(new Item("gear1", "This is a Gear");
+	    		ArtisanShop.addItem(new Item("gear2", "This is a Gear");
+	    		ArtisanShop.addItem(new Item("gear3", "This is a Gear");
+	    		ArtisanShop.addItem(new Item("gear4", "This is a Gear");
+	    		ArtisanShop.addItem(new Item("gear5", "This is a Gear");
+    		}
     		break;
     	case "CornCopied":
     	    Farmer.addCmdText("less", "It’s a miracle! Thank you, friend. May the Admin bless you.");
+    	    (re) ? Farm.addItem(new Item("AnotherEarOfCorn", "This is AnotherEarOfCorn"));
     	    break;
     	case "HouseMade":
+    		(re) ? Clearing.addChild(new Room("House", "This is a House"));
     		Clearing.getChildFromName("House").addCmdText("cd", "You are entering the House that you made.");
   	 		Clearing.getChildFromName("House").addCmdText("ls", "You made this house for the man. How thoughtful of you!");
   		  	Clearing.removeCmdText("cd");
@@ -128,9 +142,11 @@ stone and sobbing. Behind him is a pile of rubble. Behind him is a small white h
     		Clearing.removeCmdText("cd");
     		BrokenBridge.removeCmdText("cd");
     		BrokenBridge.changeIntroText("A creaky rope bridges stretches across a chasm.");
+    		(re) ? BrokenBridge.addItem(new Item("Plank", "This is a Plank."));
     		break;
     	case "rmBrambles":
     		link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
+    		(re) ? OminousLookingPath.removeItem(ThornyBrambles);
     		break;
     	case "sudoComplete":
     		KernelFiles.removeCommand("IHTFP");
@@ -141,6 +157,7 @@ stone and sobbing. Behind him is a pile of rubble. Behind him is a small white h
     	case "openSlide":
     		Slide.addCommand("cd");
     		Slide.addCmdText("cd", "It's just a Slide. Keep going. You're almost at the KernelFiles.");
+    		(re) ? CaveOfDisgruntledTrolls.removeItem(UglyTroll);
     		break;
     	case "AthenaComboEntered":
     		AthenaCluster.addCommand("ls");

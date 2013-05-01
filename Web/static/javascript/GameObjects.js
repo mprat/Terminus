@@ -153,10 +153,11 @@ Staircase.addItem(new Item("Sign", "DEAD END", "item_sign.gif"));
 var DankRoom = new Room("DankRoom", 
     "It's a musty dank room. A round boulder sits to the right side of the room.",
     "loc_darkroom.gif");
-DankRoom.addItem(new Item("Boulder",
+var Boulder = new Item("Boulder",
     "You feel a slight breeze coming from behind the boulder. \
 Maybe move it out of your way?",
-    "item_boulder.gif"));
+    "item_boulder.gif")
+DankRoom.addItem(Boulder);
 DankRoom.addCommand("mv");
 
 //SMALL HOLE
@@ -332,11 +333,11 @@ var RockyPath = new Room("RockyPath",
     "The weed-choked path leads off into the fields. \
 There is an enormous boulder blocking your way, however.",
     "loc_rockypath.gif");
-var Boulder = new Item("LargeBoulder", "It's much too big to move.", "item_boulder.gif");
-Boulder.addCmdText("rm", "The boulder disappears with a pop.");
-RockyPath.addItem(Boulder);
+var LargeBoulder = new Item("LargeBoulder", "It's much too big to move.", "item_boulder.gif");
+LargeBoulder.addCmdText("rm", "The boulder disappears with a pop.");
+RockyPath.addItem(LargeBoulder);
 RockyPath.addCommand("rm");
-Boulder.addValidCmd("rm");
+LargeBoulder.addValidCmd("rm");
 RockyPath.ev.addListener("removeItem", function(){
     state.applyState("Farm");
 });
