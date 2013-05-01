@@ -16,3 +16,7 @@ Item.prototype.addValidCmd = function(cmd){
 Item.prototype.toString = function(){
 	return this.itemname;
 }
+
+Item.prototype.changePicName = function(newpicname){
+	this.picturename = "./static/img/" + newpicname;
+};

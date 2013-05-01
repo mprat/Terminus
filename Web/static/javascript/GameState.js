@@ -112,6 +112,7 @@ copy, got it? Then poof! You’ll have shiny new item. I need five more gears so
 get started! Just call them gear1, gear2, gear3, gear4, and gear5, please.");
     		ArtisanShop.addCommand("cp");
     		if (re) ArtisanShop.addItem(new Item("Gear", "This is a Gear","item_gear.gif"));
+    		else ArtisanShop.getItemFromName("Gear").changePicName("item_gear.gif");
     		break;
     	case "FiveGearsCopied":
     		Artisan.addCmdText("less", "Ha, finished already? I guess you learn fast. Well, \
@@ -143,6 +144,7 @@ stone, weeping. Behind him is a pile of rubble and a small white house.");
     		BrokenBridge.removeCmdText("cd");
     		BrokenBridge.changeIntroText("A creaky rope bridges stretches across a chasm.");
     		if (re) BrokenBridge.addItem(new Item("Plank","This is a Plank.","item_plank.gif"));
+    		else BrokenBridge.getItemFromName("Plank").changePicName("item_plank.gif");
     		break;
     	case "rmBrambles":
     		link_rooms(OminousLookingPath, CaveOfDisgruntledTrolls) ;
