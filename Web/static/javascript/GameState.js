@@ -38,6 +38,7 @@ GameState.prototype.getCurrentRoom = function() {
 		var cookie_params = cookieargs;
 		for (var i = 0; i < cookie_params.length; i++){
 			var param_pair = cookie_params[i].split(":");
+			console.log(param_pair);
 			this.params[param_pair[0]] = param_pair[1];
 			this.applyState(param_pair[0], true);
 		}
@@ -87,7 +88,9 @@ GameState.prototype.readCookie = function(){
 };
 
 GameState.prototype.applyState = function(param_name, replay){
+	console.log("param_name = " + param_name)
 	var re = (typeof replay === 'undefined') ? false : replay;
+	console.log("re = " + re);
 	state.update(param_name, "1");
 	switch(param_name){
 		case "mvBoulder": 
