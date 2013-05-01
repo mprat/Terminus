@@ -129,8 +129,8 @@ $(document).ready(function() {
             
             //Get starting room
             var search_room;
-            if(last_arg.substring(0,1) == "~/"){
-                search_room = Home;
+            if(last_arg.substring(0,1) == "~"){
+                search_room = jQuery.extend(true, {}, Home);
             }
             else{
                 search_room = jQuery.extend(true, {}, current_room);
