@@ -634,13 +634,15 @@ Cage.addItem(KidnappedChild);
 
 //Athena cluster
 var AthenaCluster = new Room("AthenaCluster", "None shall pass without the combination. You \
-have one chance to enter the combination. Enter password:");
+have one chance to enter the combination. Enter password:",
+"loc_cluster.gif");
 var Workstation = new Item("Workstation", "The Workstation has resources you can use to \
 access files in a joint Athena locker. It adds new rooms (when they're in your Home we \
 call them lockers) to your Home, and you can \
 add them to your collection of lockers if you have permission. If you know what you want to add \
 to your Home (the name of the locker you want, of course), just 'add LOCKERNAME'. It \
-gives you extra spells (if you learn them), and gives you more Rooms to explore.")
+gives you extra spells (if you learn them), and gives you more Rooms to explore.",
+"item_workstation.gif")
 AthenaCluster.addItem(Workstation);
 AthenaCluster.removeCommand("ls");
 AthenaCluster.addCmdText("ls", "You must enter the Athena cluster combo first.");
@@ -653,7 +655,7 @@ AthenaCluster.ev.addListener("AthenaClusterExited", function(){
 AthenaCluster.addCommand("tellme");
 
 //MIT
-var MIT = new Room("MIT", "You have arrived by magic carpet to MIT!", "item_manuscript.gif");
+var MIT = new Room("MIT", "You have arrived by magic carpet to MIT!", "loc_MIT.gif");
 var AdmissionLetter = new Item("AdmissionLetter", "Congratulations on entering MIT! \
 Here you will learn special spells that you can only use at MIT. Enjoy!", "item_manuscript.gif")
 MIT.addItem(AdmissionLetter);
@@ -672,17 +674,21 @@ MIT.ev.addListener("AthenaComboEntered", function(){
 MIT.addCommand("tellme");
 
 //StataCenter
-var StataCenter = new Room("StataCenter");
+var StataCenter = new Room("StataCenter",
+"The center of computer science and artificial intelligence research at MIT.",
+"loc_stata.gif");
 var WaryEyeOfGradStudent = new Item("WaryEyeOfGradStudent", "If you so desire, you can add \
 a new MagicLocker outside your Home. In this MagicLocker you can find some tools that \
 will be useful in your time at MIT (and beyond). There you can find portals to \
 other places, you can write notes, and you can store various items you collect in \
 your travels in the MagicLocker. But first you need to go to the AthenaCluster and \
-learn how.");
+learn how.",
+"item_grad.gif");
 StataCenter.addItem(WaryEyeOfGradStudent);
 var HelpfulTA = new Item("HelpfulTA", "Ah, welcome to the wonderful land of Stata. \
 There's one room here that you'll need the combination for. All you have to do is ask:\n \
-'tellme combo'.");
+'tellme combo'.",
+"item_TA.gif");
 StataCenter.addItem(HelpfulTA);
 StataCenter.addCommand("tellme");
 
