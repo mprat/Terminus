@@ -88,9 +88,7 @@ GameState.prototype.readCookie = function(){
 };
 
 GameState.prototype.applyState = function(param_name, replay){
-	console.log("param_name = " + param_name)
 	var re = (typeof replay === 'undefined') ? false : replay;
-	console.log("re = " + re);
 	state.update(param_name, "1");
 	switch(param_name){
 		case "mvBoulder": 
