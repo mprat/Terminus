@@ -153,8 +153,7 @@ $(document).ready(function() {
                         //Compare to this room's children
                         if(first_arg == "cd" ||
                             first_arg == "ls" ||
-                            first_arg == "mv" ||
-                            first_arg == "less")
+                            first_arg == "mv")
                         {
                             for(child_num = 0; child_num<search_room.children.length; child_num++){
                                 if(search_room.children[child_num].room_name.match("^"+path_rooms[room_num])){
