@@ -135,6 +135,7 @@ thanks for your assistance.");
   		  	Clearing.removeCmdText("cd");
     		Clearing.changeIntroText("There's a small grassy clearing here, with a man sitting on a \
 stone and sobbing. Behind him is a pile of rubble. Behind him is a small white house.");
+    		CryingMan.addCmdText("less", "Thank you for making me the House!");
     		break;
     	case "touchPlank":
     		Clearing.addCommand("cd");
