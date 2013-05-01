@@ -1825,7 +1825,8 @@ MIT.ev.addListener("addMagicLocker", add_locker_func);
 
 //StataCenter
 var StataCenter = new Room("StataCenter",
-"The center of computer science and artificial intelligence research at MIT.",
+"The center of computer science and artificial intelligence research at MIT. Lots of \
+magic happens here, including TAs, grad students, etc.",
 "loc_stata.gif");
 var WaryEyeOfGradStudent = new Item("WaryEyeOfGradStudent", "If you so desire, you can add \
 a new MagicLocker outside your Home. In this MagicLocker you can find some tools that \
