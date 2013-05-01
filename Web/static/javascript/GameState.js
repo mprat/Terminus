@@ -1,10 +1,10 @@
 /*
  * Here are the parameters and values:
- * Tunnel -- 1 means DankRoom and Tunnel are connected. Also means that the 
+ * mvBoulder -- 1 means DankRoom and Tunnel are connected. Also means that the 
  			Boulder is in the SmallHole
  * pullLever -- Library and BackRoom are connected
  * AthenaComboEntered -- currently in Athena cluster
- * Farm -- RockyPath and Farm are connected. Also means that the LargeBoulder
+ * rmLargeBoulder -- RockyPath and Farm are connected. Also means that the LargeBoulder
  			has been removed
  * HouseMade -- Clearing and House are connected (user has made a House)
  * rmBrambles -- Clearing and OminousLookingPath are connected. Also means that 
@@ -90,7 +90,7 @@ GameState.prototype.applyState = function(param_name, replay){
 	var re = (typeof replay === 'undefined') ? false : replay;
 	state.update(param_name, "1");
 	switch(param_name){
-		case "Tunnel": 
+		case "mvBoulder": 
 			link_rooms(DankRoom, Tunnel);
 			SmallHole.addItem(Boulder);
 			if (re) DankRoom.removeItem(Boulder);
@@ -98,7 +98,7 @@ GameState.prototype.applyState = function(param_name, replay){
 		case "pullLever":
 			link_rooms(Library, BackRoom);
     		break;
-    	case "Farm":
+    	case "rmLargeBoulder":
     		link_rooms(RockyPath, Farm);
     		if (re) RockyPath.removeItem(LargeBoulder);
     		break;

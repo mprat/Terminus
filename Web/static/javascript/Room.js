@@ -31,14 +31,12 @@ Room.prototype.changeIntroText = function(new_text){
 Room.prototype.addItem = function(newitem) {
 	if (typeof newitem != 'undefined'){
 		this.items[this.items.length] = newitem;
-		this.ev.fire("addItem");
 	}
 };
 
 Room.prototype.removeItem = function(itemnametoremove){
 	index = this.itemStringArray().indexOf(itemnametoremove);
 	if (index != -1){
-		this.ev.fire("removeItem");
 		return this.items.splice(index, 1)[0];
 	}
 	return null;
@@ -285,6 +283,9 @@ Room.prototype.mv = function(args){
 			if ((this.itemStringArray().indexOf(args[0]) === "UglyTroll") && (this.room_name === "CaveOfDisgruntledTrolls")){
 				this.ev.fire("openSlide");
 			}
+			if ((this.itemStringArray().indexOf(args[0]) === "Boulder") && (this.room_name === "DankRoom")){
+				this.ev.fire("mvBoulder");
+			}
 			this.removeItem(args[0]);
 			return "Moved " + args[0] + " to " + args[1] + ".";
 		} else {
@@ -306,6 +307,9 @@ Room.prototype.rm = function(args){
 						this.ev.fire("rmBrambles")
 					}
 					if (removedItem.itemname === "UglyTroll" && this.room_name === "CaveOfDisgruntledTrolls"){
+						this.ev.fire("openSlide");
+					}
+					if (removedItem.itemname === "LargeBoulder" && this.room_name === "RockyPath"){
 						this.ev.fire("openSlide");
 					}
 					if ("rm" in removedItem.cmd_text){

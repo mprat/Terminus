@@ -168,9 +168,9 @@ There's no real reason to go into the hole.",
 SmallHole.addCmdText("cd", 
     "There's nothing exciting in the small hole, and it's pretty dirty. There's no real reason to go into the hole. I suggest going back out.");
 //add event handler to the "addItem" method of SmallHole to cause the rest of the level to be connected
-SmallHole.ev.addListener("addItem", function(){
+SmallHole.ev.addListener("mvBoulder", function(){
 	// link_rooms(DankRoom, Tunnel);
-    state.applyState("Tunnel");
+    state.applyState("mvBoulder");
 });
 
 //TUNNEL
@@ -338,8 +338,8 @@ LargeBoulder.addCmdText("rm", "The boulder disappears with a pop.");
 RockyPath.addItem(LargeBoulder);
 RockyPath.addCommand("rm");
 LargeBoulder.addValidCmd("rm");
-RockyPath.ev.addListener("removeItem", function(){
-    state.applyState("Farm");
+RockyPath.ev.addListener("rmLargeBoulder", function(){
+    state.applyState("rmLargeBoulder");
 });
 
 //ARTISAN'S SHOP
