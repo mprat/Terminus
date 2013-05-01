@@ -166,7 +166,7 @@ var SmallHole = new Room("SmallHole",
 There's no real reason to go into the hole.",
     "none.gif");
 SmallHole.addCmdText("cd", 
-    "There's nothing exciting in the small hole, and it's pretty dirty. There's no real reason to go into the hole. I suggest going back out.");
+    "There's nothing exciting in the small hole, and it's pretty dirty. I suggest going back out.");
 //add event handler to the "addItem" method of SmallHole to cause the rest of the level to be connected
 DankRoom.ev.addListener("mvBoulder", function(){
 	// link_rooms(DankRoom, Tunnel);
