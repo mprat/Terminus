@@ -76,7 +76,14 @@ $(document).ready(function() {
                 var cur_room_to_test = current_room;
                 for (var i = 0; i < rooms_in_order.length; i++){
                     prev_room_to_test = cur_room_to_test;
-                    cur_room_to_test = cur_room_to_test.can_cd(rooms_in_order[i]);
+                    var room_to_cd = rooms_in_order[i];
+                    if (i > 0 && rooms_in_order[i-1] === "~"){
+                        cur_room_to_test = Home.can_cd(room_to_cd)
+                    } else if (room_to_cd === "~"){
+                        cur_room_to_test = Home;
+                    } else {
+                        cur_room_to_test = cur_room_to_test.can_cd(room_to_cd);
+                    }
                     if ((command === "cd" || command === "ls") && cur_room_to_test === false){
                         term.echo("That is not reachable from here.");
                         exec = false;
