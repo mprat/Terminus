@@ -310,7 +310,7 @@ Room.prototype.rm = function(args){
 						this.ev.fire("openSlide");
 					}
 					if (removedItem.itemname === "LargeBoulder" && this.room_name === "RockyPath"){
-						this.ev.fire("openSlide");
+						this.ev.fire("rmLargeBoulder");
 					}
 					if ("rm" in removedItem.cmd_text){
 						stringtoreturn += removedItem.cmd_text["rm"] + "\n";
