@@ -5,15 +5,4 @@
 			 "path": "."
 		}
 	],
-	"build_systems":
-	[
-		{
-			"name": "dot",
-			"cmd": ["dot", "-Tpng", "level_map.gv", "-o", "level_map.png"]
-		},
-		{
-			"name": "neato",
-			"cmd": ["neato", "-Tpng", "level_map.gv", "-o", "level_map.png"]
-		}
-	]
 }

@@ -131,16 +131,8 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "level_map.gv",
-			"settings":
-			{
-				"buffer_size": 8926,
-				"line_ending": "Unix"
-			}
-		}
 	],
-	"build_system": "dot",
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"command_palette":
 	{
 		"height": 54.0,
@@ -204,6 +196,13 @@
 	},
 	"file_history":
 	[
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset11.tex",
+		"/home/mprat/Dropbox/Resumes, etc./resume_complete.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset5.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset7.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset9.tex",
+		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset9.txt",
+		"/home/mprat/Documents/Michele/Repos/Terminus/docs/level_map.gv",
 		"/home/mprat/Documents/Michele/Repos/Terminus/docs/level_map.sublime-project",
 		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.gv",
 		"/home/mprat/Documents/Michele/Repos/Terminus/level_map.sublime-project",
@@ -211,10 +210,8 @@
 		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/education_system_2.gv",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/all_system_2.gv",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/education_system_1.gv",
-		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset9.tex",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset6.tex",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/2.008/Homeworks/homework7.tex",
-		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset7.tex",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset8.tex",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/2.008/Homeworks/homework6.tex",
 		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/cpplinearalgebra.sublime-project",
@@ -232,7 +229,6 @@
 		"/home/mprat/Documents/Michele/Repos/cpplinearalgebra/Matrix4x4.h",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/CMS.631/narrative.txt",
 		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset4.tex",
-		"/home/mprat/Documents/Michele/MIT/Spring2013/6.011/pset5.tex",
 		"/home/mprat/.config/sublime-text-2/Packages/LaTeXTools/Wrap in environment.sublime-snippet",
 		"/home/mprat/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
 		"/home/mprat/Documents/Michele/Repos/Terminus/Java/src/gameCode/Game.java",
@@ -284,6 +280,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"map",
+			"MAP",
+			"P_error",
+			"lambda_1",
+			":\n",
+			"equation",
+			"fracz",
+			"\\int",
+			"KernelFiles",
+			"backroom",
+			"Slide",
+			"ISnT",
+			"Shed",
+			"white",
+			"MIT",
+			"library",
 			"toString",
 			"department",
 			"educators",
@@ -385,36 +397,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "level_map.gv",
-					"settings":
-					{
-						"buffer_size": 8926,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								220,
-								220
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
