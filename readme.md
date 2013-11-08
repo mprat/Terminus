@@ -1,1 +1,1 @@
-To play, go to: http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html
+To play, go to: http://mprat.github.io/Terminus/
