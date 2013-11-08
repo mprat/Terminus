@@ -1,0 +1,22 @@
+#term{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50%;
+    height:97%;
+    background:black;
+}
+#pics{
+    position:absolute;
+    right:-10px;
+    top:0px;
+    width:50%;
+    height:100%;
+    background:black;
+}
+#scene{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 95%;
+}

@@ -1,0 +1,16 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.svn
+
+*.swp
+
+#report files
+*.pdf
+
+#screenshots
+*.png
