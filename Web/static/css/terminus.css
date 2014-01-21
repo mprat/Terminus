@@ -1,22 +1,24 @@
 #term{
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:50%;
-    height:97%;
+    /*position:relative;*/
+    float: left;
+    /*left:0px;*/
+    /*top:0px;*/
+    width:49%;
+    height:500px;
     background:black;
 }
 #pics{
-    position:absolute;
-    right:-10px;
-    top:0px;
-    width:50%;
-    height:100%;
+    /*position:absolute;*/
+    /*right:-10px;*/
+    /*top:0px;*/
+    width:49%;
+    height:500px;
     background:black;
+    float: right;
 }
-#scene{
+/*#scene{
     position: absolute;
     top: 0px;
     left: 20px;
     width: 95%;
-}
+}*/
