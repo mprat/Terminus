@@ -36,9 +36,9 @@
 
 .terminal {
     font-family: FreeMono, monospace;
-    color: #aaa;
+    color: #cccccc;
     background-color: #000;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 14px;
 }
 .terminal-output > div {
