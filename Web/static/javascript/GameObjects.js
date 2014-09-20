@@ -111,7 +111,7 @@ this cave, but what I can provide are a few simple spells that will help you \
 along your way. Just read my old manuscripts and tryout those spells.\"", 
 	"item_mysteryman.gif"));
 EasternMountains.addItem(new Item("OldManuscripts", 
-    "If you ever forget a spell just use\
+    "If you ever forget a spell just use \
 \"help\" and a list of available spells will appear. If you need details on how \
 to use a specific spell, use 'man' followed by spell command. For example, \
 if you were interested in details on how to use the \"mv\" spell you would use: \
