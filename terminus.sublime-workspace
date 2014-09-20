@@ -1,0 +1,845 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"item",
+				"begin{enumerate}\\item	latex-document"
+			],
+			[
+				"begin",
+				"begin{list}{label}{spacing}	latex-document"
+			],
+			[
+				"subse",
+				"subsection{title}	latex-document"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"border-bottom",
+				"border-bottom-width"
+			],
+			[
+				"border-top",
+				"border-top-width"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"bl",
+				"inline-block"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"border-width",
+				"border-bottom-width"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"cate",
+				"category_name"
+			],
+			[
+				"Gear",
+				"GearTypes"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"check",
+				"checkoutbtn"
+			],
+			[
+				"num",
+				"numapples"
+			],
+			[
+				"appl",
+				"apple_rec"
+			],
+			[
+				"banaa",
+				"banana_rec"
+			],
+			[
+				"app",
+				"apple_sq"
+			],
+			[
+				"csadv",
+				"csadv3"
+			],
+			[
+				"cluster_we",
+				"cluster_web_master"
+			],
+			[
+				"co",
+				"coin_flips"
+			],
+			[
+				"palind",
+				"palindrome1"
+			],
+			[
+				"ro",
+				"rownum"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"border-bo",
+				"border-bottom-width"
+			],
+			[
+				"border-bot",
+				"border-bottom-style"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"5px",
+				"5px"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"list-",
+				"list-style-type"
+			],
+			[
+				"visible",
+				"visible_detail"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"home_",
+				"home_height"
+			],
+			[
+				"detail",
+				"detail-display"
+			],
+			[
+				"rand",
+				"randBetween"
+			],
+			[
+				"chek",
+				"checkDists"
+			],
+			[
+				"concept",
+				"concept_width"
+			],
+			[
+				"home",
+				"home_height"
+			],
+			[
+				"pair",
+				"pairDistances"
+			],
+			[
+				"proj",
+				"project_width"
+			],
+			[
+				"is",
+				"isdigit"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"o",
+				"offsetLeft"
+			],
+			[
+				"of",
+				"offsetTop"
+			],
+			[
+				"cir",
+				"circle1"
+			],
+			[
+				"circles",
+				"circles_string_list"
+			],
+			[
+				"circle",
+				"circle2"
+			],
+			[
+				"off",
+				"offsetTop"
+			],
+			[
+				"circl",
+				"circle2"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"getE",
+				"getElementsByClassName"
+			],
+			[
+				"proje",
+				"project_string_list"
+			],
+			[
+				"project",
+				"project_string_list"
+			],
+			[
+				"pro",
+				"projects"
+			],
+			[
+				"for",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"fo",
+				"for	for (…) {…}"
+			],
+			[
+				"geTel",
+				"getElementsByClassName"
+			],
+			[
+				"posi",
+				"position_main_circles"
+			],
+			[
+				"ext_link",
+				"ext_links_collection"
+			],
+			[
+				"cu",
+				"custom-list-item"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"posit",
+				"position_main_concepts"
+			],
+			[
+				"dtea",
+				"detail-container"
+			],
+			[
+				"projec",
+				"project_centers"
+			],
+			[
+				"offset",
+				"offsetLeft"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"font",
+				"font-variant"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/LaTeXing/LaTeX (TikZ).sublime-build",
+	"command_palette":
+	{
+		"height": 54.0,
+		"selected_items":
+		[
+			[
+				"sidebar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"latexing",
+				"Preferences: LaTeXing Settings - User"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"set syntax: late",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"latextool",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"latex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"markdo",
+				"Markdown Preview: Python Markdown: Preview in Browser"
+			],
+			[
+				"snipp",
+				"Tools: New Snippet"
+			],
+			[
+				"spell",
+				"View: Toggle Spell Check"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"open file",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"lay",
+				"Layout: Columns: 2"
+			],
+			[
+				"layut",
+				"Layout: Single"
+			],
+			[
+				"markd",
+				"Markdown Preview: Python Markdown: Preview in Browser"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"colum",
+				"Layout: Columns: 2"
+			],
+			[
+				"console",
+				"View: Toggle Console"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Markdown Preview: Python Markdown: Preview in Browser"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"view",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"",
+				":$ - EOF"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/mprat/Documents/repos/Terminus"
+	],
+	"file_history":
+	[
+		"/Users/mprat/Dropbox/Zim/MEng/Calendar/2014/09/16.txt",
+		"/Users/mprat/Dropbox/Zim/MEng/Calendar/2014/09/17.txt",
+		"/Users/mprat/Documents/repos/meng-work/thesis-proposal/thesis-proposal.sublime-project",
+		"/Users/mprat/Documents/repos/meng-work/thesis-proposal/thesis-proposal.tex",
+		"/home/mprat/.config/zim/dates.list",
+		"/home/mprat/Dropbox/MEng/thesis-proposal/thesis-proposal.tex",
+		"/home/mprat/Dropbox/MEng/thesis-proposal/thesis-proposal.sublime-project",
+		"/home/mprat/Dropbox/Zim/thoughts/AI/9.660-6.804.txt",
+		"/home/mprat/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
+		"/home/mprat/.config/sublime-text-3/Packages/LaTeXing/LaTeX.sublime-build",
+		"/home/mprat/Dropbox/MEng/thesis-proposal.tex",
+		"/home/mprat/.config/sublime-text-3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/home/mprat/.config/sublime-text-3/Packages/User/DjangoCommands.sublime-settings",
+		"/home/mprat/.config/sublime-text-3/Packages/User/LaTeX.sublime-settings",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/requirements.txt",
+		"/home/mprat/Documents/Michele/Repos/teachhtmlandcss/test.html",
+		"/home/mprat/Documents/Michele/Repos/teachhtmlandcss/style.css",
+		"/home/mprat/Documents/Michele/MEET/summer2014/Y2/test.html",
+		"/home/mprat/Documents/Michele/Repos/collabostory/collabostory.sublime-project",
+		"/home/mprat/Documents/Michele/Repos/collabostory/collabostory/posts/models.py",
+		"/home/mprat/Documents/Michele/Repos/collabostory/collabostory/collabostory/urls.py",
+		"/home/mprat/Documents/Michele/Repos/collabostory/collabostory/posts/urls.py",
+		"/home/mprat/Documents/Michele/Repos/collabostory/collabostory/posts/admin.py",
+		"/home/mprat/Documents/Michele/Repos/practicepython/css/main.css",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-02-09-guessing-game-1.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-28-16-password-generator.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_includes/submit.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-05-02-odd-or-even.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/index.html",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_includes/header.html",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_layouts/default.html",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_config.yml",
+		"/home/mprat/Documents/Michele/Repos/practicepython/how-it-works/index.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_includes/footer.html",
+		"/home/mprat/Documents/Michele/Repos/practicepython/why-practice-python/index.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/css/syntax.css",
+		"/home/mprat/Documents/Michele/Repos/practicepython/why-practice-python/index.html",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-28-15-reverse-word-order-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-15-14-list-remove-duplicates.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-15-12-list-ends-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-16-11-check-primality-functions-solution.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-10-09-guessing-game-1-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-26-07-list-comprehensions-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-06-06-17-decode-a-web-page.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-06-06-16-password-generator-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-21-15-reverse-word-order.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-21-14-list-remove-duplicates-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-30-13-fibonacci.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-25-12-list-ends.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-16-11-check-primality-functions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-10-10-list-overlap-comprehensions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-16-10-list-overlap-comprehensions-solution.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-02-08-rock-paper-scissors-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-26-08-rock-paper-scissors.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-19-07-list-comprehensions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-19-06-string-lists-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-19-05-list-overlap-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-12-06-string-lists.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-05-05-list-overlap.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-05-04-divisors-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-15-02-odd-or-even-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-26-04-divisors.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-26-03-list-less-than-10-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-15-03-list-less-than-10.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_drafts/character-input-solution-datetime.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_drafts/all-exercises.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-05-01-character-input-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-01-29-01-character-input.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_layouts/post.html",
+		"/home/mprat/.config/sublime-text-3/Packages/User/pygment-highlight.sublime-snippet",
+		"/home/mprat/Documents/Michele/Repos/practicepython/practicepython.sublime-project",
+		"/home/mprat/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_layouts/exercise.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_layouts/exercise.html",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-01-29-1-character-input.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-05-1-character-input-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-15-3-list-less-than-10.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-19-7-list-comprehensions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/Gemfile",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-15-odd-or-even-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-02-rock-paper-scissors-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-16-check-primality-functions-solution.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-16-list-overlap-comprehensions-solution.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-06-06-password-generator-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-28-reverse-word-order-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-28-reversewords-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-21-list-remove-duplicates-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-15-lst-ends-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-10-guessing-game-1-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-26-list-comprehensions-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-19-string-lists-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-19-list-overlap-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-21-reverse-word-order.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-06-06-decode-a-web-page.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-28-password-generator.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-21-reversewordorder.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-05-15-list-remove-duplicates.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-30-fibonacci.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-25-list-ends.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-16-check-primality-functions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-10-list-overlap-comprehensions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-02-guessing-game-1.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-26-rock-paper-scissors.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-19-list-comprehensions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-12-string-lists.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-05-list-overlap.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-03-05-divisors-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-26-list-less-than-10-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-26-divisors.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-15-list-less-than-10.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-05-character-input-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-02-05-odd-or-even.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-01-29-character-input.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/2014-04-30-list-ends-solutions.md",
+		"/home/mprat/Documents/Michele/Repos/practicepython/_posts/output.html",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/README.md",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/settings_local.py",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/.gitignore",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/.buildozer/android/platform/python-for-android/src/jni/sdl_image/IMG_gif.c",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/.buildozer/android/platform/python-for-android/src/jni/mad/global.h",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/.buildozer/android/platform/python-for-android/.gitignore",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/__init__.py",
+		"/home/mprat/Documents/Michele/Repos/kivy_test_app/buildozer.spec",
+		"/home/mprat/Documents/Michele/MEET/y1groupprojs/willie-yl1-2014/view.py",
+		"/home/mprat/Documents/Michele/MEET/y1groupprojs/willie-yl1-2014/button.py",
+		"/home/mprat/Documents/Michele/MEET/y1groupprojs/willie-yl1-2014/main.py",
+		"/home/mprat/Documents/Michele/MEET/y1groupprojs/willie-yl1-2014/michele_feedback.md",
+		"/home/mprat/Documents/Michele/MEET/y1groupprojs/willie-yl1-2014/pWillieOL.py"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"pdf",
+			"Introduction",
+			"work",
+			"Introduction",
+			"game",
+			" ",
+			"https",
+			"site.url",
+			"code",
+			"pre",
+			"')",
+			"infoObject",
+			"auth_pro",
+			"auth",
+			"person",
+			"UserProfile",
+			"AUTH",
+			"people",
+			"user_id",
+			"ForeignKey(People",
+			"People",
+			"all_people",
+			"people",
+			"People",
+			"User",
+			"geartype",
+			"gear",
+			"GearType",
+			")\n",
+			"data_list",
+			"Gear",
+			"gear",
+			"unique=True",
+			"People",
+			"GearMessages",
+			"GearTypes",
+			"include",
+			"em",
+			"print",
+			"terminal",
+			"signature",
+			"signatures",
+			"border",
+			" \n",
+			"monospace",
+			"pre",
+			"detail-te",
+			"detail-list",
+			"detail-text",
+			"em",
+			"code",
+			"detail-list",
+			"btn-container",
+			"width",
+			"project",
+			"resume-li",
+			"hover",
+			"ext-logo",
+			"vertical",
+			"center",
+			"vert",
+			"ver",
+			"vertical",
+			"header h1",
+			"header a",
+			"header h1",
+			"spacing",
+			"text",
+			"header h1",
+			"project",
+			"h1",
+			"project-con",
+			"h2",
+			"terminus",
+			"links-l",
+			"Athena",
+			"pic",
+			"meet",
+			"img",
+			"pre",
+			"detail-list",
+			"1.2em",
+			"detail-list",
+			"ul",
+			"terminus",
+			"terminu",
+			"bold",
+			"float:right",
+			"font-f",
+			"font-style",
+			"h1",
+			"h4",
+			"/imgs/",
+			"border-radius",
+			"font-si",
+			"font-fa",
+			"font-style",
+			"all_posts",
+			"detail-text",
+			"detail-display",
+			"h3",
+			"list-sty",
+			"project-",
+			"detail-dis",
+			"h2",
+			"nav > ul",
+			"background",
+			"h3",
+			"text-",
+			"text",
+			"h3",
+			"nav > ul",
+			"text-deco",
+			".project",
+			"background",
+			"pointer",
+			"display",
+			"font",
+			"text",
+			"links-list",
+			"ul",
+			"color",
+			"project",
+			".project-detail",
+			"color",
+			"project",
+			"h2",
+			"000000"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "terminus.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"git",
+				".gitignore"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

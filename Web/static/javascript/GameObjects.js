@@ -44,7 +44,7 @@ academy is as impressive as it is on the outside with a high ceiling and gothic 
 arches, it seems even larger on the inside.", 
     "loc_academy.gif");
 var HurryingStudent = new Item("HurryingStudent", 
-    "You to speak to a hurrying student. \
+    "You speak to a hurrying student. \
 The student runs into you and falls to the ground. \
 The student quickly gets up \
 and apologizes to you, asking if you are okay. You are sturdier than you look and \
