@@ -279,9 +279,9 @@ to the sands of time.",
     "item_radspellbook.gif"));
 Library.addItem(new Item("PaperbackRomance", 
     "You flip the paperback open to a random page. \
-\"Oh, Horatio!\" Antonia exclaimed, her bosom heaving as Horatio deftly ripped the \
-bodice from her lithe frame. Horatio gave an animalistic growl and he clasped her \
-fingers in his strong hands and brought them to rest upon ... — You close the \
+\"Oh, Horatio, don't worry my love! I will save you!\" Antonia exclaimed as she \
+brandished her sword and deftly stabbed the dragon. Horatio, astounded that he hadn't died a fiery death,\
+ collapsed on the ground sobbing and  ... — You close the \
 book, disinterested, and place it back on the shelf.",
     "item_romancenovel.gif"));
 Library.addItem(new Item("HistoryOfTerminus", 
