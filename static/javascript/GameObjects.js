@@ -44,7 +44,7 @@ academy is as impressive as it is on the outside with a high ceiling and gothic 
 arches, it seems even larger on the inside.", 
     "loc_academy.gif");
 var HurryingStudent = new Item("HurryingStudent", 
-    "You to speak to a hurrying student. \
+    "You speak to a hurrying student. \
 The student runs into you and falls to the ground. \
 The student quickly gets up \
 and apologizes to you, asking if you are okay. You are sturdier than you look and \
@@ -111,7 +111,7 @@ this cave, but what I can provide are a few simple spells that will help you \
 along your way. Just read my old manuscripts and tryout those spells.\"", 
 	"item_mysteryman.gif"));
 EasternMountains.addItem(new Item("OldManuscripts", 
-    "If you ever forget a spell just use\
+    "If you ever forget a spell just use \
 \"help\" and a list of available spells will appear. If you need details on how \
 to use a specific spell, use 'man' followed by spell command. For example, \
 if you were interested in details on how to use the \"mv\" spell you would use: \
@@ -279,9 +279,9 @@ to the sands of time.",
     "item_radspellbook.gif"));
 Library.addItem(new Item("PaperbackRomance", 
     "You flip the paperback open to a random page. \
-\"Oh, Horatio!\" Antonia exclaimed, her bosom heaving as Horatio deftly ripped the \
-bodice from her lithe frame. Horatio gave an animalistic growl and he clasped her \
-fingers in his strong hands and brought them to rest upon ... — You close the \
+\"Oh, Horatio, don't worry my love! I will save you!\" Antonia exclaimed as she \
+brandished her sword and deftly stabbed the dragon. Horatio, astounded that he hadn't died a fiery death,\
+ collapsed on the ground sobbing and  ... — You close the \
 book, disinterested, and place it back on the shelf.",
     "item_romancenovel.gif"));
 Library.addItem(new Item("HistoryOfTerminus", 
